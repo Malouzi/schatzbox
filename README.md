@@ -20,5 +20,15 @@
 
 ### Frontend:
 - **React mit Vite**
+- **CSS für das Styling**
+- **JavaScript für die Interaktion**
+- **HTML für die Struktur**
+
+### Backend:
+- **Node.js mit Express**
+- **MongoDB als Datenbank**
+- **Mongoose für die Datenbank-Interaktion**
+- **Bcrypt für die Passwörter-Verschlüsselung**
+- **Authentifizierung mit JWT**
 
 
