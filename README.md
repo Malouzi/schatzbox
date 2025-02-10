@@ -31,7 +31,7 @@
 - **Bcrypt für die Passwörter-Verschlüsselung**
 - **Authentifizierung mit JWT**
 
-## API Entpunkte
+## API Endpunkte
 - **GET /api/products**: Liste aller Produkte
 - **GET /api/products/:id**: Einzelnes Produkt
 - **POST /api/products**: Neues Produkt erstellen
@@ -73,6 +73,12 @@
 - **POST /api/auth/reset-password**: Passwort zurücksetzen
 - **POST /api/auth/verify-email**: E-Mail-Adresse bestätigen
 - **POST /api/auth/resend-verification-email**: E-Mail-Adresse erneut bestätigen
+
+## Weiterentwicklung
+- **Mehrsprachigkeit**
+- **Darkmodus**
+- **Newsletter**
+- **Social-Media-Integration**
 
 
 
