@@ -81,6 +81,9 @@
 - **Social-Media-Integration**
 
 
+## Lizenz
+- **MIT-Lizenz**
+
 
 
 
