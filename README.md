@@ -1,26 +1,59 @@
 # Schnitzeljagd-Shop
 
 ## Features
+### Must:
 - **Shop-Bereich**: Verkauf von digitalen Schnitzeljagd-Dateien mit Bezahl- und Download-Funktion.
-- **Online-Spiel**: Interaktive Schnitzeljagd-Elemente für Kinder.
-- **Benutzerverwaltung**: Registrierung und Anmeldung für Benutzer.
+    - **Produkt-Übersicht**: Detailinformationen zu Produkten.
+    - **Produktsortierung**: Sortierung von Produkten nach verschiedenen Kriterien.
+    - **Sichere Zahlungsabwicklung**: Integration von Zahlungsdiensten.
+
+
 - **Admin-Bereich**: Verwaltung von Benutzern, Produkten und Bestellungen.
-- **Suchfunktion**: Schnelle Suche nach Produkten.
-- **Produkt-Übersicht**: Detailinformationen zu Produkten.
-- **Produktfilter**: Filterung von Produkten nach Kategorien, Preisen, etc
-- **Produktsortierung**: Sortierung von Produkten nach verschiedenen Kriterien.
-- **Kundenbewertungen**: Bewertungen und Kommentare von Kunden.
-- **Sichere Zahlungsabwicklung**: Integration von Zahlungsdiensten.
+- **Online-Spiel**: Interaktive Schnitzeljagd-Elemente für Kinder.
+- **Produktfilter/Generator**: Filterung von Produkten nach Kategorien, Preisen, etc
+
+### Soll:
+
 - **Kontaktformular**: Kontaktformular für Kunden.
+- **Benutzerverwaltung**: Registrierung und Anmeldung für Benutzer.
+
+### Kann:
+- **Suchfunktion**: Schnelle Suche nach Produkten.
+- **Kundenbewertungen**: Bewertungen und Kommentare von Kunden.
+
+## Pages
 - **FAQ**: Häufig gestellte Fragen.
 - **Impressum**: Impressum mit wichtigen Informationen.
 - **Datenschutz**: Datenschutzinformationen.
+
+## Produkte
+- **Deckblatt**
+- **Inhaltsangabe**
+- **Begrüßungstext (Vorwort)**
+- **Materialliste**
+- **Einkaufsliste**
+- **Einladung**
+- **Urkunde**
+- **Schatzkarte + Sticker**
+- **Ereigniskarten für die Stationen der Schnitzeljagd**
+- **Bastelvorlagen**
+- **Krone für den Schatzmeister**
+- **Fähnchen für die Stationen**
+- **Bastelvorlagen für Masken (themenbezogen)**
+- **Ausmalkarte für jedes Kind**
+
+
+- **Ideen für den Inhalt der Schatzkiste**
+- **Geschichte für die Schnitzeljagd**
+- **Abschlusstext**
 
 ## Technologien
 
 ### Frontend:
 - **React mit Vite**
-- **CSS für das Styling**
+- **CSS für das Styling**: Simia
+- **Farbschema**: https://www.schemecolor.com/retro-poster.php
+- **Motion UI für Animationen**: Simia
 - **JavaScript für die Interaktion**
 - **HTML für die Struktur**
 
