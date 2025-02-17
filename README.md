@@ -53,7 +53,7 @@
 - **React mit Vite**
 - **CSS für das Styling**: Simia
 - **Farbschema**: https://www.schemecolor.com/retro-poster.php
-- **![Farbschema](retro-poster-color-scheme.png)**
+- **![Farbschema](../pastel-print-2-color-scheme-desktop-wallpaper.png)**
 
 - **Motion UI für Animationen**: Simia
 - **JavaScript für die Interaktion**
