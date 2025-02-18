@@ -1,8 +1,11 @@
 import "./Welcome.css";
+import Kindergeburtstag from "../../assets/Kindergeburtstag.jpg";
 
 export function Welcome() {
   return (
+    <>
     <div>
+        <img className="header-bild" src={Kindergeburtstag} alt="" />
       <h1>Willkommen bei Schatzbox</h1>
       <p>
         Plane den perfekten Kindergeburtstag mit unseren spannenden
@@ -19,5 +22,6 @@ export function Welcome() {
         Erlebnis!
       </p>
     </div>
+    </>
   );
 }
