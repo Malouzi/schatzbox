@@ -3,3 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Titles */
+.title-section {
+  text-align: center;
+
+  h3 {
+      font-size: 1.5rem;
+  }
+}
