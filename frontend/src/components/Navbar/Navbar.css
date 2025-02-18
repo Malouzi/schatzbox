@@ -1,11 +1,24 @@
 .navbar {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF9EE;   
+}
+
+.navbar-left {
+    padding: 1rem;
+    img {
+        width: 20vh;
+    }
 }
 
 .navbar-right {
+    padding: 1rem;
     display: flex;
-    list-style:  none;
-    justify-content: space-between;  
-    ;  
+    justify-content: space-between; 
+    gap: 1rem; 
+    
+    li {
+        list-style:  none;
+    }
 }

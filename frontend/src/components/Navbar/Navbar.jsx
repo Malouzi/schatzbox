@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Logo.png";
 
 export function Navbar() {
   return (
@@ -8,9 +8,9 @@ export function Navbar() {
         <img src={logo} alt="Logo" />
       </div>
       <div className="navbar-right">
-          <li><a href="#">Angebote</a></li>
-          <li><a href="#">individuelle Schatzbox</a></li>
-          <li><a href="#">Kontakt</a></li>
+          <li>Angebote</li>
+          <li>individuelle Schatzbox</li>
+          <li>Kontakt</li>
       </div>
     </nav>
   );
