@@ -14,6 +14,8 @@ export function Navbar() {
           <li><a href="#">Spielbereich</a></li>
           <li><a href="#">Kontakt</a></li>
           <li><a href="#">Hallo</a></li>
+          <li><a href="#">test</a></li>
+
         </ul>
       </div>
     </nav>
