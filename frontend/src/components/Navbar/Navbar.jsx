@@ -13,6 +13,7 @@ export function Navbar() {
           <li><a href="#">Schatzsuche</a></li>
           <li><a href="#">Spielbereich</a></li>
           <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Hallo</a></li>
         </ul>
       </div>
     </nav>
