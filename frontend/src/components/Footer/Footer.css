@@ -1,0 +1,15 @@
+.footer {
+    background-color: #90d4e7;
+    padding: 2rem;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-links-container {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
