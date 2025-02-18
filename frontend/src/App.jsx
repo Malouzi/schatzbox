@@ -7,7 +7,6 @@ export default function App() {
   return (
     <>
     <Navbar/>
-      <h1>Schatzbox</h1>
     </>
   )
 }
