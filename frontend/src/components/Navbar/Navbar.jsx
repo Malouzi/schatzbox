@@ -12,6 +12,7 @@ export function Navbar() {
           <li>individuelle Schatzbox</li>
           <li>Kontakt</li>
       </div>
+
     </nav>
   );
 }
