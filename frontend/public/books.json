@@ -1,0 +1,32 @@
+[
+    {
+      "_id": 1,
+      "title": "Einhorn-Schnitzeljagd",
+      "description": "Hilf dem magischen Einhorn , das in einem Wald gefangen ist, indem du es aus dem Wald befreist.",
+      "category": "mystery",
+      "trending": true,
+      "coverImage": "book-1.png",
+      "Price": 19.99
+    },
+    
+    {
+      "_id": 2,
+      "title": "Detektiv Marco und der gestohlene Diamant",
+      "description": "Löse das Rätsel um den verschwundenen Diamanten und werde zum Meisterdetektiv!",
+      "category": "abenteuer",
+      "trending": true,
+      "coverImage": "book-2.png",
+      "Price": 29.99
+    },
+  
+    {
+      "_id": 3,
+      "title": "Zauberwald Abenteuer: Die magische Nuss",
+      "description": "Entdecke die Geheimnisse des Zauberwaldes und finde die magische Nuss.",
+      "category": "mystery",
+      "trending": true,
+      "coverImage": "book-3.png",
+      "Price": 9.99
+    }
+  ]
+  

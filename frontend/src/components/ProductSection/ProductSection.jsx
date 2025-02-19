@@ -11,7 +11,6 @@ export function ProductSection() {
             <ProductCard imgpath={"/book-1.png"} />
             <ProductCard imgpath={"/book-2.png"} />
             <ProductCard imgpath={"/book-3.png"}/>
-            <ProductCard />
         </div>
       </section>
 
