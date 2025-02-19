@@ -2,7 +2,9 @@
     background-color: #fdbec5;
     padding: 8rem 0rem;
 
-    
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
 
     .products-container {
         display: flex;

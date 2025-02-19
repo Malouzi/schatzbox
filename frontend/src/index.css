@@ -12,3 +12,18 @@
       font-size: 1.5rem;
   }
 }
+
+/* ProductCards */
+.product-card {
+  background-color: #fff9ee;
+  width: 18.75rem;
+  padding: 1rem;
+
+  .card-header {
+    margin-bottom: 1rem;
+    
+    img {
+      width: 100%;
+    }
+  }
+}
