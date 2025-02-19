@@ -1,5 +1,5 @@
 import "./Welcome.css";
-import Kindergeburtstag from "../../assets/Kindergeburtstag.jpg";
+import Kindergeburtstag from "../../assets/Bild-Header.png";
 
 export function Welcome() {
   return (

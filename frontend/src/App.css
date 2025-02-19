@@ -13,21 +13,18 @@ body {
 
 /* Container for main content */
 .container {
-  width: 100%;
-  padding: 1rem;
-  margin: 0 auto;
+    max-width: 40%;
 }
 
 /* Media queries for larger screens */
 @media (min-width: 768px) {
   .container {
-    max-width: 720px;
-    padding: 2rem;
+   
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 960px;
+    
   }
 }
