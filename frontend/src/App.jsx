@@ -6,6 +6,8 @@ import { ProductSection } from './components/ProductSection/ProductSection'
 import { Welcome } from './components/Welcome/Welcome'
 import Angebote from './components/Angebote';
 import Kontakt from './components/Kontakt';
+import Impressum from './components/Impressum';
+import Datenschutz from './components/Datenschutz';
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
         } />
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
       </Routes>
       <Footer />
     </Router>
