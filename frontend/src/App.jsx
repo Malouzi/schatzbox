@@ -4,8 +4,8 @@ import { Footer } from './components/Footer/Footer'
 import { Navbar } from './components/Navbar/Navbar'
 import { ProductSection } from './components/ProductSection/ProductSection'
 import { Welcome } from './components/Welcome/Welcome'
-import Angebote from './components/Angebote';
-import Kontakt from './components/Kontakt';
+import { Angebote } from './components/Angebote';
+import { Kontakt } from './components/Kontakt';
 
 export default function App() {
   return (
