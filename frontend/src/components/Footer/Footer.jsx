@@ -5,13 +5,15 @@ export default function Footer() {
   return (
    <>
    <footer className="footer">
-    <div className="logo-container">
-        <h3>Schatzbox</h3>
-    </div>
-    <div className="footer-links-container">
-            <li><Link to="/impressum">Impressum</Link></li>
-            <li><Link to="/datenschutz">Datenschutz</Link></li>
-            <li><Link to="/kontakt">Kontakt</Link></li>
+    <div className="footer-content">
+        <div className="copyright">
+            &copy; {new Date().getFullYear()} Schatzbox. Alle Rechte vorbehalten.
+        </div>
+        <div className="footer-links-container">
+            <Link to="/impressum">Impressum</Link>
+            <Link to="/datenschutz">Datenschutz</Link>
+            <Link to="/kontakt">Kontakt</Link>
+        </div>
     </div>
    </footer>
    </>
