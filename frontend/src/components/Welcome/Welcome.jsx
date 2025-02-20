@@ -4,11 +4,10 @@ import Kindergeburtstag from "../../assets/Bild-Header.png";
 export default function Welcome() {
   return (
     <>
-    <div>
-        <img className="header-bild" src={Kindergeburtstag} alt="" />
+    <div className="welcome-container">
+        <img className="header-bild" src={Kindergeburtstag} alt="Kindergeburtstag Schatzsuche" />
       <h1>Willkommen bei Schatzbox</h1>
-      <h4>Plane den perfekten Kindergeburtstag mit unseren spannenden
-      Schatzsuch-Vorlagen!</h4>
+      <h4>Plane den perfekten Kindergeburtstag mit unseren spannenden Schatzsuch-Vorlagen!</h4>
       <p>
         Bei uns findest du liebevoll gestaltete Abenteuer,
         die Du mit einem Mausklick kaufen, downloaden und ausdrucken kannst. Ob
@@ -19,9 +18,9 @@ export default function Welcome() {
         </p>
         
         <ul>
-          <li>Sofort-Download - Direkt nach dem Kauf verfügbar</li>
-          <li>Einfache Anleitung - Schnell vorbereitet & los geht’s </li>
-          <li>Perfekt für drinnen & draußen –Flexible Nutzung</li>
+          <li><strong>Sofort-Download</strong> - Direkt nach dem Kauf verfügbar</li>
+          <li><strong>Einfache Anleitung</strong> - Schnell vorbereitet & los geht&#39;s</li>
+          <li><strong>Perfekt für drinnen & draußen</strong> - Flexible Nutzung</li>
         </ul>
         
         <p>
@@ -35,5 +34,3 @@ export default function Welcome() {
     </>
   );
 }
-/*Listen-Elemente müssen noch gestylt werden. 
-Vor dem Bindestrich fett und vielleicht ein Haken davor?*/
