@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import "./Footer.css";
 
 export default function Footer() {
@@ -8,13 +9,11 @@ export default function Footer() {
         <h3>Schatzbox</h3>
     </div>
     <div className="footer-links-container">
-            <li>Impressum</li>
-            <li>Datenschutz</li>
-            <li>Kontakt</li>
+            <li><Link to="/impressum">Impressum</Link></li>
+            <li><Link to="/datenschutz">Datenschutz</Link></li>
+            <li><Link to="/kontakt">Kontakt</Link></li>
     </div>
    </footer>
    </>
   );
 }
-
-/*Router Links fehlen noch*/
