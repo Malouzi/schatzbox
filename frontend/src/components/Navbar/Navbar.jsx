@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./Navbar.css";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/logo-transparent.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +22,11 @@ export function Navbar() {
           <span></span>
         </div>
         <ul>
-          <li>Angebote</li>
-          <li>individuelle Schatzbox</li>
-          <li>Kontakt</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/angebote">Angebote</Link></li>
+          <li><Link to="/kontakt">Kontakt</Link></li>
         </ul>
       </div>
-
     </nav>
   );
 }

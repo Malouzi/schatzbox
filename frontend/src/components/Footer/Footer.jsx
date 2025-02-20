@@ -16,3 +16,5 @@ export function Footer() {
    </>
   );
 }
+
+/*Router Links fehlen noch*/
