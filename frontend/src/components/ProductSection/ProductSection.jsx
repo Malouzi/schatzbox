@@ -1,8 +1,8 @@
-import { ProductCard } from "../ProductCard";
-import { SectionTitles } from "../SectionTitles";
+import ProductCard from "../ProductCard";
+import SectionTitles from "../SectionTitles";
 import "./ProductSection.css";
 
-export function ProductSection() {
+export default function ProductSection() {
   return (
    <>
       <section className='product-section'>

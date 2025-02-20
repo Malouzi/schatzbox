@@ -1,7 +1,7 @@
 import "./Welcome.css";
 import Kindergeburtstag from "../../assets/Bild-Header.png";
 
-export function Welcome() {
+export default function Welcome() {
   return (
     <>
     <div>
@@ -16,6 +16,7 @@ export function Welcome() {
         Schatzsuche für jedes Kind! Unsere Schatzboxen sind entweder nach Thema
         wählbar oder wir stellen individuell für Euch eine Schatzsuche nach ganz
         ersönlichen Wünschen. Nutze dafür unsere individuelle Schatzsuche.
+        </p>
         
         <ul>
           <li>Sofort-Download - Direkt nach dem Kauf verfügbar</li>
@@ -23,10 +24,12 @@ export function Welcome() {
           <li>Perfekt für drinnen & draußen –Flexible Nutzung</li>
         </ul>
         
+        <p>
         Entdecke jetzt die passende Schatzsuche für Deine
         Liebsten und machen nächsten Kindergeburtstag zu einem unvergesslichen
         Erlebnis!
-      </p>
+        </p>
+      
 
     </div>
     </>

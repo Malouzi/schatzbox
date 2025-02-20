@@ -1,4 +1,4 @@
-export function ProductCard({imgpath}) {
+export default function ProductCard({imgpath}) {
     return (
      <>
           <div className="product-card">

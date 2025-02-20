@@ -1,4 +1,4 @@
-export function SectionTitles() {
+export default function SectionTitles() {
     return (
      <>
           <div className="title-section">
