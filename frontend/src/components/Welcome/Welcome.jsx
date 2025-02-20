@@ -6,6 +6,8 @@ export default function Welcome() {
     <>
     <div className="welcome-container">
         <img className="header-bild" src={Kindergeburtstag} alt="Kindergeburtstag Schatzsuche" />
+        <div className="header-text">
+
       <h1>Willkommen bei Schatzbox</h1>
       <h4>Plane den perfekten Kindergeburtstag mit unseren spannenden Schatzsuch-Vorlagen!</h4>
       <p>
@@ -29,6 +31,7 @@ export default function Welcome() {
         Erlebnis!
         </p>
       
+        </div>
 
     </div>
     </>

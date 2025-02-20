@@ -1,12 +1,57 @@
-h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+.header-text {
+    background-color: #FFF9EE;
+    color: #98AFF9;
+    padding: 2rem;
 }
 
-p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+h1 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #FDA7BE;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #98AFF9;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #98AFF9;
 }
 
 .header-bild{
     width: 100vw;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: #98AFF9;
+}
+
+ul li::before {
+    content: "✓";
+    color: #90D4E7;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+ul li strong {
+    color: #FDA7BE;
+}
+
+/* Mobile Styles muss noch eingefügt werden */
