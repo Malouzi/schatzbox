@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logo from "../../assets/logo-transparent.png";
 
-export function Navbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
