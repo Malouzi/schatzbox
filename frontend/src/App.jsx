@@ -20,6 +20,7 @@ export default function App() {
             <Welcome/>
             <main>
               <ProductSection />
+              <ContactForm/>
             </main>
           </>
         } />
@@ -28,7 +29,7 @@ export default function App() {
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
       </Routes>
-      <ContactForm/>
+      
       <Footer />
     </Router>
   )
