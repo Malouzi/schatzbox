@@ -2,12 +2,19 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logo from "../../assets/logo-transparent.png";
+import Cart from '../Cart/Cart';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
   };
 
   return (
@@ -25,7 +32,13 @@ export default function Navbar() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/angebote">Angebote</Link></li>
           <li><Link to="/kontakt">Kontakt</Link></li>
+          <li>
+            <button className="cart-icon" onClick={toggleCart}>
+              🛒
+            </button>
+          </li>
         </ul>
+        {showCart && <Cart />}
       </div>
     </nav>
   );
