@@ -18,13 +18,14 @@ export default function App() {
             <Welcome/>
             <main>
               <ProductSection />
+              <ContactForm/>
             </main>
           </>
         } />
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/kontakt" element={<Kontakt />} />
       </Routes>
-      <ContactForm/>
+      
       <Footer />
     </Router>
   )
