@@ -1,19 +1,34 @@
-import ProductCard from "../ProductCard";
+import { useState, useEffect } from 'react';
+import ProductCard from "../ProductCard/ProductCard.jsx";
 import SectionTitles from "../SectionTitles";
 import "./ProductSection.css";
 
 export default function ProductSection() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetch('/books.json')
+      .then(response => response.json())
+      .then(data => setBooks(data))
+      .catch(error => console.error('Error loading books:', error));
+  }, []);
   return (
    <>
       <section className='product-section'>
         <SectionTitles />
         <div className="products-container">
-            <ProductCard imgpath={"/book-1.png"} />
-            <ProductCard imgpath={"/book-2.png"} />
-            <ProductCard imgpath={"/book-3.png"}/>
+          {books.map(book => (
+            <ProductCard
+              key={book._id}
+              id={book._id}
+              title={book.title}
+              description={book.description}
+              coverImage={book.coverImage}
+              price={book.Price}
+            />
+          ))}
         </div>
       </section>
-
-      </>
+    </>
   );
 }
