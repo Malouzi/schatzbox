@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 export const CartContext = createContext();
@@ -7,7 +7,16 @@ export const CartProvider = ({ children }) => {
   CartProvider.propTypes = {
     children: PropTypes.node.isRequired
   };
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -21,6 +30,16 @@ export const CartProvider = ({ children }) => {
       }
       return [...prevItems, { ...product, quantity: 1 }];
     });
+  };
+
+  const updateQuantity = (productId, newQuantity) => {
+    setCartItems((prevItems) =>
+      prevItems.map(item =>
+        item.id === productId
+          ? { ...item, quantity: Math.max(1, newQuantity) }
+          : item
+      )
+    );
   };
 
   const removeFromCart = (productId) => {
@@ -44,7 +63,8 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         totalItems,
-        totalPrice
+        totalPrice,
+        updateQuantity
       }}
     >
       {children}
