@@ -1,14 +1,18 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import './Cart.css';
 import { CartContext } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
   const { 
     cartItems, 
     removeFromCart, 
     totalItems,
-    totalPrice 
+    totalPrice,
+    updateQuantity
   } = useContext(CartContext);
+  const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="cart">
@@ -20,13 +24,28 @@ export default function Cart() {
           <ul className="cart-items">
             {cartItems.map(item => (
               <li key={item.id} className="cart-item">
-                <span>{item.title} (x{item.quantity})</span>
-                <span>{(item.price * item.quantity).toFixed(2)}€</span>
+                <span className="item-title">{item.title}</span>
+                <div className="quantity-controls">
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    disabled={item.quantity <= 1}
+                  >
+                    -
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  >
+                    +
+                  </button>
+                </div>
+                <span className="item-price">{(item.price * item.quantity).toFixed(2)}€</span>
                 <button 
                   onClick={() => removeFromCart(item.id)}
                   className="remove-btn"
+                  aria-label="Artikel entfernen"
                 >
-                  Entfernen
+                  ×
                 </button>
               </li>
             ))}
@@ -37,9 +56,17 @@ export default function Cart() {
           </div>
           <button 
             className="checkout-btn"
-            onClick={() => alert('Checkout noch nicht implementiert')}
+            onClick={() => {
+              setIsCheckoutLoading(true);
+            
+              setTimeout(() => {
+                navigate('/checkout');
+                setIsCheckoutLoading(false);
+              }, 1000);
+            }}
+            disabled={isCheckoutLoading}
           >
-            Zur Kasse
+            {isCheckoutLoading ? 'Wird verarbeitet...' : 'Zur Kasse'}
           </button>
         </>
       )}
