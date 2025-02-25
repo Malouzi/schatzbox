@@ -13,3 +13,16 @@ Currently, two official plugins are available:
   (PassKey: bc8821f0-66f6-4b7f-875e-5c74ed828950)
 - installed sweetalert2 for popup notifications
   (npm install sweetalert2)
+
+# Design
+
+  1. Logo Colors
+     Orange #f58a08
+     Blue light #b5e7f6
+     Blue dark #5fbfed
+     Red #d6181e
+
+  2. Background Colors
+     Eggshell #FFF9EE
+     
+
