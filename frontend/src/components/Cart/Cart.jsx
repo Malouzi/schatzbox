@@ -49,7 +49,6 @@ export default function Cart() {
                 </button>
               </li>
             ))}
-          </ul>
           <div className="cart-total">
             <span>Gesamt ({totalItems} Artikel):</span>
             <span>{totalPrice.toFixed(2)}€</span>
@@ -68,6 +67,7 @@ export default function Cart() {
           >
             {isCheckoutLoading ? 'Wird verarbeitet...' : 'Zur Kasse'}
           </button>
+          </ul>
         </>
       )}
     </div>

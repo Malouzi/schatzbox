@@ -20,6 +20,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
+      </div>
+      <div className='navbar-middle'>
         <img src={logo} alt="Logo" />
       </div>
       <div className={`navbar-right ${isOpen ? 'open' : ''}`}>
