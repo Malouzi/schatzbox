@@ -19,18 +19,25 @@ export default function Welcome() {
         ersönlichen Wünschen. Nutze dafür unsere individuelle Schatzsuche.
         </p>
         
-        <ul>
-          <li><strong>Sofort-Download</strong> - Direkt nach dem Kauf verfügbar</li>
-          <li><strong>Einfache Anleitung</strong> - Schnell vorbereitet & los geht&#39;s</li>
-          <li><strong>Perfekt für drinnen & draußen</strong> - Flexible Nutzung</li>
-        </ul>
-        
+      
         <p>
         Entdecke jetzt die passende Schatzsuche für Deine
         Liebsten und machen nächsten Kindergeburtstag zu einem unvergesslichen
         Erlebnis!
         </p>
       
+        </div>
+        
+        <div className="container">
+          <h1>Und so einfach funkioniert's:</h1>
+          <p>
+          <ul>
+          <li><strong>Sofort-Download</strong> - Direkt nach dem Kauf verfügbar</li>
+          <li><strong>Einfache Anleitung</strong> - Schnell vorbereitet & los geht&#39;s</li>
+          <li><strong>Perfekt für drinnen & draußen</strong> - Flexible Nutzung</li>
+        </ul>
+        
+          </p>
         </div>
 
     </div>

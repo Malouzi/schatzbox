@@ -3,18 +3,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   min-height: 100vh;
 }
 
 /* Container for main content */
-.container {
+/* .container {
     max-width: 40%;
-}
+} */
+
+
 
 /* Media queries for larger screens */
 @media (min-width: 768px) {
