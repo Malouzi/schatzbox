@@ -10,11 +10,11 @@
   z-index: 100;
 }
 
-.navbar-left img {
+.navbar-middle img{
   height: 50px;
 }
 
-.navbar-right {
+.navbar-left {
   display: flex;
   align-items: center;
 }
@@ -48,19 +48,14 @@
   transform: translateY(-11px) rotate(-45deg);
 }
 
-.navbar-left ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+
 
 .navbar-left li::before {
   content: none;
 }
 
 .navbar-left li {
-  margin-left: 2rem;
+  margin-left: 1rem;
   cursor: pointer;
   font-size: 1.1rem;
   transition: color 0.3s ease;
@@ -106,7 +101,7 @@
     display: flex;
   }
 
-  .navbar-right li {
+  .navbar-left li {
     margin: 0.5rem 1rem;
     text-align: center;
     transition: transform 0.s ease;

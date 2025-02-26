@@ -20,20 +20,6 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-right">
-        <Link to={"/cart"}>
-          <button className="cart-icon" onClick={toggleCart}>
-            <GiShoppingBag />
-          </button>
-          {showCart && <Cart />}
-        </Link>
-      </div>
-      <div className="navbar-middle">
-        <Link to="/" className="logo">
-          <img src={logo} alt="Logo" />
-        </Link>
-      </div>
-
       <div className={`navbar-left ${isOpen ? "open" : ""}`}>
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
@@ -51,6 +37,20 @@ export default function Navbar() {
             <Link to="/kontakt">Kontakt</Link>
           </li>
         </ul>
+      </div>
+      <div className="navbar-middle">
+        <Link to="/" className="logo">
+          <img src={logo} alt="Logo" />
+        </Link>
+      </div>
+
+      <div className="navbar-right">
+        <Link to={"/cart"}>
+          <button className="cart-icon" onClick={toggleCart}>
+            <GiShoppingBag />
+          </button>
+          {showCart && <Cart />}
+        </Link>
       </div>
     </nav>
   );
