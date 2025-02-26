@@ -48,8 +48,8 @@ export default function Navbar() {
           <button className="cart-icon" onClick={toggleCart}>
             <GiShoppingBag />
           </button>
-          <span className="cart-count">0</span>
           {showCart && <Cart />}
+          <span className="cart-count">0</span>
         </Link>
       </div>
     </nav>
