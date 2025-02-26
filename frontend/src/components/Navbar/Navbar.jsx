@@ -24,7 +24,6 @@ export default function Navbar() {
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
           <span></span>
-          <span></span>
         </div>
         <ul>
           <li>
@@ -50,6 +49,7 @@ export default function Navbar() {
             <GiShoppingBag />
           </button>
           {showCart && <Cart />}
+          <span className="cart-count">0</span>
         </Link>
       </div>
     </nav>
