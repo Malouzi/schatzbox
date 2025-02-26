@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo-transparent.png";
 import Cart from '../Cart/Cart.jsx';
 import {GiShoppingBag} from 'react-icons/gi';
-
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +20,9 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
+
+ <div className={`navbar-left ${isOpen ? "open" : ""}`}>
+
 
       <div className="navbar-left">
           <Link to={"/cart"}>
@@ -44,6 +46,26 @@ export default function Navbar() {
           <span></span>
         </div>
         <ul>
+
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/angebote">Angebote</Link>
+          </li>
+          <li>
+            <Link to="/kontakt">Kontakt</Link>
+          </li>
+        </ul>
+        <div className="navbar-middle">
+          <img src={logo} alt="Logo" />
+        </div>
+        <div className="navbar-right">
+          <button className="cart-icon" onClick={toggleCart}>
+            🛒
+          </button>
+          {showCart && <Cart />}
+        </div>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/angebote">Angebote</Link></li>
           <li><Link to="/kontakt">Kontakt</Link></li>

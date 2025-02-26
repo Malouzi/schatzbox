@@ -48,18 +48,18 @@
   transform: translateY(-11px) rotate(-45deg);
 }
 
-.navbar-right ul {
+.navbar-left ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navbar-right li::before {
+.navbar-left li::before {
   content: none;
 }
 
-.navbar-right li {
+.navbar-left li {
   margin-left: 2rem;
   cursor: pointer;
   font-size: 1.1rem;
@@ -90,7 +90,7 @@
     display: flex;
   }
 
-  .navbar-right ul {
+  .navbar-left ul {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -102,7 +102,7 @@
     padding: 1rem 0;
   }
 
-  .navbar-right.open ul {
+  .navbar-left.open ul {
     display: flex;
   }
 
@@ -124,11 +124,11 @@
   transition: transform 0.5s ease;
 }
 
-.navbar-left img {
+.navbar-middle img {
   height: 68px;
   transition: transform 0.3s ease;
 }
 
-.navbar-left img:hover {
+.navbar-middle img:hover {
   transform: scale(1.05);
 }
