@@ -76,18 +76,18 @@
 }
 
 .navbar-right .cart-count {
-  background-color: orange; /* Change background color to orange */
+  background-color: orange; 
   color: white;
-  width: 20px; /* Set width for the circle */
-  height: 20px; /* Set height for the circle */
-  border-radius: 50%; /* Make it a circle */
+  width: 20px;
+  height: 20px; 
+  border-radius: 50%; 
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the text */
-  position: absolute; /* Position it over the cart icon */
-  top: -5px; /* Adjust position */
-  right: -5px; /* Adjust position */
-  font-size: 12px; /* Font size for the count */
+  justify-content: center; 
+  position: absolute; 
+  top: -5px; 
+  right: -5px; 
+  font-size: 12px; 
 }
 
 .navbar-right li:hover {
