@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo-transparent.png";
 import Cart from "../Cart/Cart.jsx";
-import { GiShoppingBag } from "react-icons/gi";
+import {BiShoppingBag} from 'react-icons/bi';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +46,7 @@ export default function Navbar() {
       <div className="navbar-right">
         <Link to={"/cart"}>
           <button className="cart-icon" onClick={toggleCart}>
-            <GiShoppingBag />
+            <BiShoppingBag />
           </button>
           {showCart && <Cart />}
           <span className="cart-count">0</span>
