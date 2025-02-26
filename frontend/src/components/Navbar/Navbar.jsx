@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/logo-transparent.png";
-import Cart from '../Cart/Cart.jsx';
-import {GiShoppingBag} from 'react-icons/gi';
+import Cart from "../Cart/Cart.jsx";
+import { GiShoppingBag } from "react-icons/gi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,33 +20,27 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-
- <div className={`navbar-left ${isOpen ? "open" : ""}`}>
-
-
-      <div className="navbar-left">
-          <Link to={"/cart"}>
-            <button className="cart-icon" onClick={toggleCart}>
-              <GiShoppingBag />
-            </button>
-        {showCart && <Cart />}
-          </Link>
-          
+      <div className="navbar-right">
+        <Link to={"/cart"}>
+          <button className="cart-icon" onClick={toggleCart}>
+            <GiShoppingBag />
+          </button>
+          {showCart && <Cart />}
+        </Link>
       </div>
-      <div className='navbar-middle'>
+      <div className="navbar-middle">
         <Link to="/" className="logo">
-        <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" />
         </Link>
       </div>
 
-      <div className={`navbar-right ${isOpen ? 'open' : ''}`}>
+      <div className={`navbar-left ${isOpen ? "open" : ""}`}>
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
         <ul>
-
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -56,19 +50,6 @@ export default function Navbar() {
           <li>
             <Link to="/kontakt">Kontakt</Link>
           </li>
-        </ul>
-        <div className="navbar-middle">
-          <img src={logo} alt="Logo" />
-        </div>
-        <div className="navbar-right">
-          <button className="cart-icon" onClick={toggleCart}>
-            🛒
-          </button>
-          {showCart && <Cart />}
-        </div>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/angebote">Angebote</Link></li>
-          <li><Link to="/kontakt">Kontakt</Link></li>
         </ul>
       </div>
     </nav>
