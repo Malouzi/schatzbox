@@ -3,6 +3,7 @@
 - npm install react-router-dom (Marie)
 - npm install sweetalert2 (Simia)
 - npm i react-icons (Marie)
+- npm install tailwindcss @tailwindcss/vite
 
 # ContactForm:
 - used web3forms and connected for results to simia_karegar@live.de
