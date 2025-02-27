@@ -44,7 +44,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="navbar-right">
+      <div>
         <Link to={"/cart"}>
           <button className="cart-icon" onClick={toggleCart}>
             <GiShoppingBag />
