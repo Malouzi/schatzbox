@@ -24,6 +24,7 @@ export default function Navbar() {
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
           <span></span>
+          <span></span>
         </div>
         <ul>
           <li>

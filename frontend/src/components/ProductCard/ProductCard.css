@@ -71,7 +71,7 @@
 }
 
 
-/* Mobile Styles */
+Mobile Styles 
 @media (max-width: 768px) {
     .product-card {
         margin: 0.5rem;
@@ -84,7 +84,7 @@
     .card-body {
         padding: 1rem;
     }
-}
+ } 
 
 
 /* Bilder werden noch nicht richtig angezeigt, muss nochmal angepasst werden*/
