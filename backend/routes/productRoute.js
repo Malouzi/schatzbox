@@ -31,5 +31,25 @@ router.post('/', async (req, res) => {
     }
 });
 
+//GET ALL PRODUCTS ROUTE
+router.get('/', async (req, res) => {
+  try {
+    const product = await Product.find({});
+
+    return res.status(200).json({
+      data: product
+    });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+  });
+
+//GET PRODUCT ROUTE
+
+//DELETE PRODUCT ROUTE
+
+//UPDATE PRODUCT ROUTE
+
 
 export default router;
