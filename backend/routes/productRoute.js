@@ -5,11 +5,12 @@ const router = express.Router();
 
 //CREATE A NEW PRODUCT ROUTE
 router.post('/', async (req, res) => {
+  const { name, price, imageUrl } = req.body;
     try {
       if (
-        !req.body.name || 
-        !req.body.price || 
-        !req.body.imageUrl
+        !name || 
+        !price || 
+        !imageUrl
     ) {
         return res.status(400).send({ message: 'Required fields are missing' 
         });
@@ -82,8 +83,8 @@ router.put('/:id', async (req, res) => {
     if (
       !req.body.name ||
       !req.body.price ||
-      !req.body.description ||
-    ) {
+      !req.body.description
+     ) {
       return res.status(400).send({ 
         message: 'Required fields are missing' 
       });
@@ -95,6 +96,7 @@ router.put('/:id', async (req, res) => {
     if (!result) {
       return res.status(404).json({ message: 'Product not found' });
       }
+      return res.status(200).json({ message: 'Product updated successfully' });
 
   } catch (error) {
     console.log(error.message);
