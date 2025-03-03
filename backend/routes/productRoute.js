@@ -46,6 +46,18 @@ router.get('/', async (req, res) => {
   });
 
 //GET PRODUCT ROUTE
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const product = await Product.findById(id);
+
+    return res.status(200).json(product);
+    } catch (error) {
+      console.log(error.message);
+      response.status(500).send({ message: error.message });
+      }
+      });
 
 //DELETE PRODUCT ROUTE
 
