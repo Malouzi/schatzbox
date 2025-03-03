@@ -1,4 +1,5 @@
-.navbar {
+
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,7 +95,7 @@
 
 }
 
-/* Mobile Styles */
+Mobile Styles 
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -141,4 +142,4 @@
 
 .navbar-middle img:hover {
   transform: scale(1.05);
-}
+} */ */ */

@@ -1,4 +1,4 @@
-.header-text {
+/* .header-text {
     padding: 2rem;
 }
 
@@ -15,7 +15,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
-.header-bild{
+.header-img{
     width: 100vw;
 }
 
@@ -26,15 +26,14 @@ ul {
 }
 
 ul li {
-    position: relative;
-    padding-left: 2rem;
+    /* position: relative; 
     margin-bottom: 1rem;
 }
 
 ul li::before {
     content: "✓";
     font-weight: bold;
-    position: absolute;
+    /* position: absolute; 
     left: 0;
 }
 
@@ -42,7 +41,8 @@ ul li strong {
 }
 
 .container {
-    margin: 10px;
+    color: white;
+    padding: 40px;
+    background-color: #55b165;
 }
-
-/* Mobile Styles muss noch eingefügt werden */
+ */

@@ -13,7 +13,7 @@
 
 # Design
   1. Logo Colors
-     Orange #f58a08
+     Orange #f58a08 tailwind amber-500
      Blue light #b5e7f6
      Blue dark #5fbfed
      Red #d6181e
