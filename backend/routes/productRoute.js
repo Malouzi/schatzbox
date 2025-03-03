@@ -77,6 +77,30 @@ router.delete('/:id', async (req, res) => {
     });
 
 //UPDATE PRODUCT ROUTE
+router.put('/:id', async (req, res) => {
+  try {
+    if (
+      !req.body.name ||
+      !req.body.price ||
+      !req.body.description ||
+    ) {
+      return res.status(400).send({ 
+        message: 'Required fields are missing' 
+      });
+    }
+    const { id } = req.params;
+
+    const result = await Product.findByIdAndUpdate(id, req.body, { new: true });
+
+    if (!result) {
+      return res.status(404).json({ message: 'Product not found' });
+      }
+
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
 
 
 export default router;
