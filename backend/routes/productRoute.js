@@ -60,6 +60,21 @@ router.get('/:id', async (req, res) => {
       });
 
 //DELETE PRODUCT ROUTE
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const result = await Product.findByIdAndDelete(id);
+
+    if (!result) {
+      return res.status(404).json({ message: 'Product not found' });
+      }
+      return res.status(200).json({ message: 'Product deleted successfully', deletedItem: result });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+    }
+    });
 
 //UPDATE PRODUCT ROUTE
 
