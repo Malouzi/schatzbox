@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-//import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export const Admin = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null); // Add error state
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
 
-    /*axios
+    axios
       .get('http://localhost:3000/product')
       .then((response) => {
         setProduct(response.data.data);
@@ -18,9 +18,9 @@ export const Admin = () => {
       })
       .catch((error) => {
         console.log(error);
-        setError("Fehler beim Laden der Produkte."); // Set error message
+        setError("Fehler beim Laden der Produkte.");
         setLoading(false);
-      });*/
+      });
   }, []);
 
   return (

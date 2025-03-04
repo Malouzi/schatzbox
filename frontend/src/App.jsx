@@ -11,6 +11,8 @@ import ContactForm from './components/ContactForm/ContactForm';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
 import { Admin } from './pages/Admin';
+import { EditProduct } from './pages/EditProduct';
+import { DeleteProduct } from './pages/DeleteProduct';
 
 export default function App() {
   return (
@@ -48,6 +50,8 @@ const AdminRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Admin/>} />
+      <Route path="/product/edit/:id" element={<EditProduct />} />
+      <Route path="/product/delete/:id" element={<DeleteProduct />} />
     </Routes>
   );
 };

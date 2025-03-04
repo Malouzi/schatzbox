@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
+    "axios": "^1.8.1",
     "hamburger-react": "^2.5.2",
+    "notistack": "^3.0.2",
     "react": "^19.0.0",
     "react-content": "^0.0.1",
     "react-dom": "^19.0.0",
