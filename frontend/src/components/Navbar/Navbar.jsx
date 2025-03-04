@@ -26,7 +26,7 @@ export default function Navbar() {
           <span></span>
           <span></span>
         </div>
-        <ul>
+        <ul className="dropdown">
           <li>
             <Link to="/">Home</Link>
           </li>
