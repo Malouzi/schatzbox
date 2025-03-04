@@ -10,7 +10,7 @@ import Kontakt from './components/Kontakt';
 import ContactForm from './components/ContactForm/ContactForm';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
-import { Admin } from './components/pages/Admin';
+import { Admin } from './pages/Admin';
 
 export default function App() {
   return (
