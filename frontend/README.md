@@ -19,6 +19,6 @@
      Red #d6181e
 
   2. Background Colors
-     Eggshell #FFF9EE
+     Eggshell #FFF9EE tailwind
      
 

@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import "./Navbar.css";
-import { HamburgerMenu } from "../Hamburgermenu/Hamburgermenu.jsx";
 import logo from "../../assets/logo-transparent.png";
-import Cart from "../Cart/Cart.jsx";
-import {BiShoppingBag} from 'react-icons/bi';
+import { BiShoppingBag } from 'react-icons/bi';
+import HamburgerMenu from "../Hamburgermenu/Hamburgermenu"; // Stellen sicher, dass dies korrekt importiert ist
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,26 +19,27 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white">
-      <div className={`navbar-left ${isOpen ? "open" : ""}`}>
+      <div className="navbar-left">
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
+        {/* Burger Menu für kleine Bildschirme */}
+        <div className="block md:hidden">
+          <HamburgerMenu />
+        </div>
         <ul className="list-none">
-          <li className="">
+          <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/angebote">Angebote</Link>
           </li>
           <li>
-        <Link to="/kontakt">Kontakt</Link>
-        </li>
+            <Link to="/kontakt">Kontakt</Link>
+          </li>
         </ul>
-        <div className="block md:hidden">
-          <HamburgerMenu/>
-        </div>
       </div>
 
       <div className="navbar-middle">
@@ -50,7 +49,7 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-right">
-        <Link to={"/cart"}>
+        <Link to="/cart">
           <button className="cart-icon" onClick={toggleCart}>
             <BiShoppingBag />
           </button>
@@ -58,12 +57,13 @@ export default function Navbar() {
           <span className="cart-count">0</span>
         </Link>
       </div>
-    
     </nav>
   );
 }
 
-{/* 
+
+{
+  /* 
 // import { useState } from "react";
 // import { Link } from "react-router-dom";
 // import "./Navbar.css";
@@ -121,4 +121,5 @@ export default function Navbar() {
 //       </div>
 //     </nav>
 //   );
-// } */}
+// } */
+}

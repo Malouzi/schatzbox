@@ -13,24 +13,21 @@ import Datenschutz from './components/Datenschutz';
 export default function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
+      <Welcome />
       <Routes>
         <Route path="/" element={
-          <>
-            <Welcome/>
-            <main>
-              <ProductSection />
-              <ContactForm/>
-            </main>
-          </>
+          <main>
+            <ProductSection />
+            <ContactForm />
+          </main>
         } />
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
       </Routes>
-      
       <Footer />
     </Router>
-  )
-};
+  );
+}
