@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoutes';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -28,9 +29,26 @@ export default function App() {
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
+        <Route path="/admin/*" element={
+          <ProtectedRoute>
+            <AdminRoutes />
+          </ProtectedRoute>
+        }
+        />
+        
       </Routes>
       
       <Footer />
     </Router>
-  )
+  );
 };
+
+const AdminRoutes = () => {
+  return (
+    <Routes>
+      
+    </Routes>
+  );
+};
+
+
