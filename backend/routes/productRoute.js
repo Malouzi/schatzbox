@@ -4,19 +4,26 @@ import { Product } from '../models/productModel.js';
 const router = express.Router();
 
 //CREATE A NEW PRODUCT ROUTE
-router.post('/', async (req, res) => {
-  const { name, price, imageUrl } = req.body;
+router.post('/', async (req, res, next) => {
+  const { name, price, description, imageUrl } = req.body;
     try {
       if (
         !name || 
         !price || 
-        !imageUrl
+        !imageUrl||
+        !description
     ) {
         return res.status(400).send({ message: 'Required fields are missing' 
         });
       }
 
-        const newProduct = {
+      const newProduct = await Product.create({
+        name, price, description, imageUrl
+      })
+
+      res.status( 201).json({ message: 'Product created successfully', newProduct });
+
+        /*const newProduct = {
             name: req.body.name,
             price: req.body.price,
             description: req.body.description,
@@ -25,11 +32,10 @@ router.post('/', async (req, res) => {
 
         const product = await Product.create(newProduct);
 
-        return res.status(201).send(product);
+        return res.status(201).send(product);*/
 
     } catch (error) {
-      console.log(error.message);
-      response.status(500).send({ message: error.message });
+      next (error);
     }
 });
 

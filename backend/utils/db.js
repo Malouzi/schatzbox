@@ -6,6 +6,7 @@ export async function connect() {
   const MONGODB_URL = process.env.MONGODB_URL;
   if (MONGODB_URL) {
     await mongoose.connect(MONGODB_URL);
+    console.log("✅ MongoDB erfolgreich verbunden! 🔥🔥");
   } else {
     throw new Error("Error: MONGODB_URL not found");
   }
