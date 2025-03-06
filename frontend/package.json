@@ -12,7 +12,7 @@
   "dependencies": {
     "framer-motion": "^12.4.7",
     "@tailwindcss/vite": "^4.0.9",
-    "axios": "^1.8.
+    "axios": "^1.8.",
     "hamburger-react": "^2.5.2",
     "notistack": "^3.0.2",
     "react": "^19.0.0",
