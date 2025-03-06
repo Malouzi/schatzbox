@@ -5,6 +5,8 @@ import productRoute from './routes/productRoute.js';
 import { connect } from './utils/db.js';
 import autRouter from './routes/autRouter.js';
 import bodyParser from 'body-parser';
+import orderRouter from './routes/orderRouter.js';
+import userRouter from './routes/userRouter.js';
 
 config();
 const PORT = process.env.PORT || 5000;
@@ -18,6 +20,10 @@ app.use(bodyParser.json());
 app.use('/product', productRoute);
 
 app.use('/auth', autRouter);
+
+app.use("/orders", orderRouter);
+
+app.use("/users", userRouter);
 
 // Error Middleware
 app.use((err, req, res, next) => {

@@ -30,6 +30,7 @@ const userSchema = new Schema({
       message: () => "Weak password",
     },
   },
+ 
   verified: Date,
   roles: {
     type: [
