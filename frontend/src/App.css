@@ -1,4 +1,3 @@
-/* Mobile-first base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,10 +10,11 @@ body {
   min-height: 100vh;
 }
 
-/* Container for main content */
-/* .container {
+/* Container for main content 
+.container {
     max-width: 40%;
-} */
+}*/
+
 
 
 

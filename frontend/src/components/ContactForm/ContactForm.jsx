@@ -87,7 +87,7 @@ export default function Contact() {
                         required
                     ></textarea>
                 </div>
-                <button type="submit">Absenden</button>
+                <button type="submit">absenden</button>
             </form>
         </section>
     );
