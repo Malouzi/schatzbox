@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,7 @@
   }
 }
 
-/* ProductCards */
+/* ProductCards 
 .product-card {
   background-color: #fff9ee;
   width: 18.75rem;

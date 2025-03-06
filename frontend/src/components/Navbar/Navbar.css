@@ -4,14 +4,9 @@
   align-items: center;
   padding: 1rem;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
-}
-
-.navbar-middle img{
-  height: 50px;
 }
 
 .navbar-left {
@@ -19,11 +14,14 @@
   align-items: center;
 }
 
+.navbar-middle img{
+  height: 50px;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  padding: 0.5rem;
 }
 
 .hamburger span {
@@ -48,17 +46,27 @@
   transform: translateY(-11px) rotate(-45deg);
 }
 
-
-
 .navbar-left li::before {
   content: none;
 }
 
 .navbar-left li {
-  margin-left: 1rem;
   cursor: pointer;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  color: black;
+  
+}
+
+.navbar-left .dropdown {
+  background-color: white;
+  opacity: 80%;
+  margin: 0;
+}
+
+.navbar-left li:hover{
+  background-color: #f58a08;
+  color: white;
+
 }
 
 .cart-icon {
@@ -75,11 +83,24 @@
   font-weight: bold;
 }
 
-.navbar-right li:hover {
-
+.navbar-right .cart-count {
+  background-color: orange; 
+  margin-top: 2.4rem;
+  margin-right:1.2rem;
+  color: white;
+  width: 15px;
+  height: 15px; 
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  position: absolute; 
+  top: -5px; 
+  right: -5px; 
+  font-size: 10px; 
 }
 
-/* Mobile Styles */
+/* Tablet */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -114,10 +135,9 @@
   transition: transform 0.3s ease;
 }
 
-.navbar a:hover {
-  font-weight: bold;
+/* .navbar ul a:hover {
   transition: transform 0.5s ease;
-}
+} */
 
 .navbar-middle img {
   height: 68px;

@@ -48,7 +48,7 @@
     background-color: #98AFF9;
 }
 
-/* Mobile Styles */
+Mobile Styles 
 @media (max-width: 768px) {
     .product-card {
         margin: 0.5rem;
