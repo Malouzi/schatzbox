@@ -10,24 +10,32 @@ import Kontakt from './components/Kontakt';
 import ContactForm from './components/ContactForm/ContactForm';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
+import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
 
+
 export default function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
+
       <Routes>
-        <Route path="/" element={
-          <>
-            <Welcome/>
-            <main>
-              <ProductSection />
-              <ContactForm/>
-            </main>
-          </>
-        } />
+        <Route
+          path="/"
+          element={
+            <>
+              <Welcome />
+              <PenguinSlideFlipCard />
+
+              <main>
+                <ProductSection />
+                <ContactForm />
+              </main>
+            </>
+          }
+        />
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/impressum" element={<Impressum />} />
@@ -40,10 +48,11 @@ export default function App() {
         />
         
       </Routes>
-      
+
       <Footer />
     </Router>
   );
+}
 };
 
 const AdminRoutes = () => {
@@ -55,5 +64,6 @@ const AdminRoutes = () => {
     </Routes>
   );
 };
+
 
 
