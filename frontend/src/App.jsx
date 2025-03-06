@@ -52,7 +52,6 @@ export default function App() {
       <Footer />
     </Router>
   );
-}
 };
 
 const AdminRoutes = () => {
