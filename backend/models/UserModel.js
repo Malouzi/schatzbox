@@ -6,6 +6,7 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
     validate: {
       validator: function (email) {
         return validator.isEmail(email);
@@ -39,14 +40,10 @@ const userSchema = new Schema({
     ],
     default: ["USER"],
   },
-  permissions: [
-    {
-      type: String,
-      enum: ["CREATE_USER", "VIEW_USER", "UPDATE_USER", "DELETE_USER"],
-    },
-  ],
+ 
 });
 
+// Email verification
 userSchema.methods.toJSON = function () {
   const obj = this.toObject();
 
@@ -56,8 +53,9 @@ userSchema.methods.toJSON = function () {
   return obj;
 };
 
+// Password Hashing
 userSchema.pre("save", function () {
   this.password = bcrypt.hashSync(this.password);
 });
 
-export const User = model("user", userSchema);
+export const User = model("User", userSchema);
