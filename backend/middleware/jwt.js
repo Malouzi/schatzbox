@@ -20,6 +20,22 @@ const verifyToken = (req, res, next) => {
 };
 
 //Admin middleware
+const isAdmin = (req, res, next) => {
+    if (req.userId && req.userRole === 'admin') {
+        next();
+    } else {
+        return res.status(403).json({ message: 'Access denied. Admins only.' });
+    }
+};
+
 //User middleware
+const isUser = (req, res, next) => {
+    if (req.userId) {
+        next();
+    } else {
+        return res.status(401).json({ message: 'Unauthorized. Please log in.' });
+    }
+};
+
 
 export { verifyToken };
