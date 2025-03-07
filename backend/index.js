@@ -27,8 +27,8 @@ app.use("/users", userRouter);
 
 // Error Middleware
 app.use((err, req, res, next) => {
-    console.error(err);
-    return res.sendStatus(500);
+  console.error(err);
+  return res.sendStatus(500);
 });
   
   connect().then(() => {
