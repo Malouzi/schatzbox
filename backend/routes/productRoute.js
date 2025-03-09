@@ -3,7 +3,7 @@ import { Product } from '../models/productModel.js';
 
 const router = express.Router();
 
-//CREATE A NEW PRODUCT ROUTE
+//Neues Produkt erstellen Route
 router.post('/', async (req, res, next) => {
   const { name, price, description, imageUrl } = req.body;
     try {
@@ -39,7 +39,7 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-//GET ALL PRODUCTS ROUTE
+//Alle Produkte anzeigen Route
 router.get('/', async (req, res) => {
   try {
     const product = await Product.find({});
@@ -53,7 +53,7 @@ router.get('/', async (req, res) => {
   }
   });
 
-//GET PRODUCT ROUTE
+// Ein Produkt anzeigen Route
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -67,7 +67,7 @@ router.get('/:id', async (req, res) => {
       }
       });
 
-//DELETE PRODUCT ROUTE
+//Produkt löschen Route
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -84,7 +84,7 @@ router.delete('/:id', async (req, res) => {
     }
     });
 
-//UPDATE PRODUCT ROUTE
+//Produkt bearbeiten Route
 router.put('/:id', async (req, res) => {
   try {
     if (

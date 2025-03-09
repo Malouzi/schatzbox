@@ -50,7 +50,7 @@ router.post('/login', async (req, res, next) => {
             } else if (user.roles === 'ADMIN'){
                 roles = 'ADMIN'
         }       
-        const token = jwt.sign( { userId: user._id, roles: user.roles }, // Rolle wird mitgeschickt
+        const token = jwt.sign( { userId: user._id, roles: user.roles },
             process.env.JWT_SECRET,
             { expiresIn: "1d" } ); 
         res.status(200).json({ message: 'Login successful', token, email: user.email, roles: user.roles });

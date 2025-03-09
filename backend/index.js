@@ -7,6 +7,7 @@ import autRouter from './routes/autRouter.js';
 import bodyParser from 'body-parser';
 import orderRouter from './routes/orderRouter.js';
 import userRouter from './routes/userRouter.js';
+import paypalRoute from './routes/paypalRoute.js';
 import paymentRoute from './routes/paymentRoute.js';
 
 config();
@@ -27,6 +28,8 @@ app.use("/orders", orderRouter);
 app.use("/users", userRouter);
 
 app.use("/payment", paymentRoute); 
+
+app.use("/paypal", paypalRoute);
 
 // Error Middleware
 app.use((err, req, res, next) => {
