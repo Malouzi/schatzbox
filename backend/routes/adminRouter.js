@@ -26,11 +26,47 @@ router.get('/users', verifyToken, async (req, res, next) => {
     }
 });
 
+ 
 // Zeige alle Bestellungen
 router.get('/orders', verifyToken, async (req, res, next) => {
     try {
         const orders = await Order.find();
         res.json(orders);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Erstelle eine neue Bestellung
+router.post('/orders', verifyToken, async (req, res, next) => {
+    try {
+        const { userId, products, totalAmount } = req.body;
+        const newOrder = new Order({ userId, products, totalAmount });
+        const savedOrder = await newOrder.save();
+        res.status(201).json(savedOrder);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Aktualisiere eine Bestellung
+router.put('/orders/:id', verifyToken, async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const { userId, products, totalAmount } = req.body;
+        const updatedOrder = await Order.findByIdAndUpdate(id, { userId, products, totalAmount }, { new: true });
+        res.json(updatedOrder);
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Lösche eine Bestellung
+router.delete('/orders/:id', verifyToken, async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        await Order.findByIdAndDelete(id);
+        res.status(204).send();
     } catch (error) {
         next(error);
     }
