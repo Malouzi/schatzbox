@@ -126,8 +126,8 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 5px;
+  right: -5px;
   font-size: 10px;
 }
 
