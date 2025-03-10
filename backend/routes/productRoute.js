@@ -3,20 +3,27 @@ import { Product } from '../models/productModel.js';
 
 const router = express.Router();
 
-//CREATE A NEW PRODUCT ROUTE
-router.post('/', async (req, res) => {
-  const { name, price, imageUrl } = req.body;
+//Neues Produkt erstellen Route
+router.post('/', async (req, res, next) => {
+  const { name, price, description, imageUrl } = req.body;
     try {
       if (
         !name || 
         !price || 
-        !imageUrl
+        !imageUrl||
+        !description
     ) {
         return res.status(400).send({ message: 'Required fields are missing' 
         });
       }
 
-        const newProduct = {
+      const newProduct = await Product.create({
+        name, price, description, imageUrl
+      })
+
+      res.status( 201).json({ message: 'Product created successfully', newProduct });
+
+        /*const newProduct = {
             name: req.body.name,
             price: req.body.price,
             description: req.body.description,
@@ -25,15 +32,14 @@ router.post('/', async (req, res) => {
 
         const product = await Product.create(newProduct);
 
-        return res.status(201).send(product);
+        return res.status(201).send(product);*/
 
     } catch (error) {
-      console.log(error.message);
-      response.status(500).send({ message: error.message });
+      next (error);
     }
 });
 
-//GET ALL PRODUCTS ROUTE
+//Alle Produkte anzeigen Route
 router.get('/', async (req, res) => {
   try {
     const product = await Product.find({});
@@ -47,7 +53,7 @@ router.get('/', async (req, res) => {
   }
   });
 
-//GET PRODUCT ROUTE
+// Ein Produkt anzeigen Route
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -61,7 +67,7 @@ router.get('/:id', async (req, res) => {
       }
       });
 
-//DELETE PRODUCT ROUTE
+//Produkt löschen Route
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -78,7 +84,7 @@ router.delete('/:id', async (req, res) => {
     }
     });
 
-//UPDATE PRODUCT ROUTE
+//Produkt bearbeiten Route
 router.put('/:id', async (req, res) => {
   try {
     if (
