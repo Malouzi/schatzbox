@@ -12,7 +12,9 @@ h2 {
 }
 
 .container2 {
-    margin: 2rem;
+  background-color: beige;
+    margin: 2rem 0rem;
+    padding: 2rem
 }
 
 p {
