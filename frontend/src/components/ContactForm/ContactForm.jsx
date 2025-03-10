@@ -1,6 +1,6 @@
-import React from "react";
-import "../ContactForm/ContactForm.css";
-import Swal from "sweetalert2";
+import React from "react"
+import styles from './ContactForm.module.css'
+import Swal from "sweetalert2"
 
 
 export default function Contact() {
@@ -32,10 +32,10 @@ export default function Contact() {
     };
 
     return (
-        <section className="contact">
+        <section className={styles.contact}>
             <form onSubmit={onSubmit}>
                 <h2>Kontaktformular</h2>
-                <div className="input-box">
+                <div className={styles.inputBox}>
                     <input
                         type="text"
                         className="field"
@@ -44,7 +44,7 @@ export default function Contact() {
                         required
                     />
                 </div>
-                <div className="input-box">
+                <div className={styles.inputBox}>
                     <input
                         type="text"
                         className="field"
@@ -52,7 +52,7 @@ export default function Contact() {
                         name="nachname"
                     />
                 </div>
-                <div className="input-box">
+                <div className={styles.inputBox}>
                     <input
                         type="email"
                         className="field"
@@ -61,7 +61,7 @@ export default function Contact() {
                         required
                     />
                 </div>
-                <div className="input-box">
+                <div className={styles.inputBox}>
                     <input
                         type="text"
                         className="field"
@@ -69,7 +69,7 @@ export default function Contact() {
                         name="telefon"
                     />
                 </div>
-                <div className="input-box">
+                <div className={styles.inputBox}>
                     <input
                         type="text"
                         className="field"
@@ -78,7 +78,7 @@ export default function Contact() {
                         required
                     />
                 </div>
-                <div className="input-box">
+                <div className={styles.inputBox}>
                     <textarea
                         name="nachricht"
                         placeholder="Nachricht*"

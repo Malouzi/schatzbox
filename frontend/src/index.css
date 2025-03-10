@@ -1,9 +1,13 @@
-@import 'tailwindcss';
-
 * {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100vh;
 }
 
 /* Titles */
@@ -12,20 +16,5 @@
 
   h3 {
       font-size: 1.5rem;
-  }
-}
-
-/* ProductCards 
-.product-card {
-  background-color: #fff9ee;
-  width: 18.75rem;
-  padding: 1rem;
-
-  .card-header {
-    margin-bottom: 1rem;
-    
-    img {
-      width: 100%;
-    }
   }
 }
