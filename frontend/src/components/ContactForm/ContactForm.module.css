@@ -28,7 +28,7 @@ form .input-box {
     margin-top: 10px;
 }
 
-.input-box .field {
+.input-box input {
     width: 100%;
     height: 3rem;
     background: transparent;
