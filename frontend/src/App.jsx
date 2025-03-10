@@ -13,6 +13,8 @@ import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlip
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 export default function App() {
