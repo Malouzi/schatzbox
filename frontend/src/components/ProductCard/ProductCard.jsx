@@ -8,23 +8,23 @@ export default function ProductCard({ id, title, description, coverImage, price 
   const { addToCart } = useContext(CartContext);
     return (
      <>
-          <div className={styles.product-card}>
-            <div className="card-header">
+          <div className={styles.productCard}>
+            <div className={styles.cardHeader}>
                 <img src={`/${coverImage}`} alt={title} />
             </div>
-            <div className={styles.card-body}>
+            <div className="card-body">
                 <h4>{title}</h4>
                 <p>{description}</p>
-                <p className="price">Preis: {price.toFixed(2)}€</p>
-                <div className="product-actions">
+                <p className={styles.price}>Preis: {price.toFixed(2)}€</p>
+                <div className={styles.productActions}>
                   <button 
-                    className={styles.dd-to-cart}
+                    className="add-to-cart"
                     onClick={() => addToCart({ id, title, price, coverImage })}
                   >
                     In den Warenkorb
                   </button>
                   <button 
-                    className={styles.view-product}
+                    className="view-product"
                     onClick={() => window.location.href = `/product/${id}`}
                   >
                     Zum Produkt

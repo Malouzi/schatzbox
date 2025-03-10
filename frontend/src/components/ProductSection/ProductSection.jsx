@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import SectionTitles from "../SectionTitles";
-import "./ProductSection.css";
+import styles from "./ProductSection.module.css";
 
 export default function ProductSection() {
   const [books, setBooks] = useState([]);
@@ -14,9 +14,9 @@ export default function ProductSection() {
   }, []);
   return (
    <>
-      <section className='product-section'>
+      <section className={styles.productSection}>
         <SectionTitles />
-        <div className="products-container">
+        <div className={styles.productsContainer}>
           {books.map(book => (
             <ProductCard
               key={book._id}
