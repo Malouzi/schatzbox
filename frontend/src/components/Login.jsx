@@ -1,39 +1,71 @@
-import { useState } from 'react';
-import axios from 'axios';
+import axios from "axios";
+import { useState } from "react";
+import { Alert, Button, FormControl, Input, InputLabel } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+  const [formError, setFormError] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:3000/auth/login', { email, password });
-            localStorage.setItem('token', response.data.token);
-            navigate('/');
-        } catch (error) {
-            console.error('Login failed:', error.response.data.message);            
-        }
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/auth/login', { email, password });
+      localStorage.setItem('token', response.data.token);
+      setFormSuccess(true);
+      navigate('/');
+      setTimeout(() => {
+        setFormSuccess(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Login failed:', error.response.data.message);
+      setFormError(true);
+      setTimeout(() => {
+        setFormError(false);
+      }, 2000);
+    }
+  };
 
-    return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                </div>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    );
+  return (
+      <div>
+
+      {formError ? (
+        <Alert severity="error">Es gab einen Fehler beim Einloggen!</Alert>
+      ) : null}
+      {formSuccess ? <Alert severity="success">Benutzer eingeloggt!</Alert> : null}
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <FormControl>
+          <InputLabel htmlFor="email">E-Mail</InputLabel>
+          <Input
+            name="email"
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required={true}
+          />
+        </FormControl>
+        <FormControl>
+          <InputLabel htmlFor="password">Passwort</InputLabel>
+          <Input
+            name="password"
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required={true}
+          />
+        </FormControl>
+        <Button type="submit" variant="contained">
+          Einloggen
+        </Button>
+      </form>
+    </div>
+  );
 };
 
 export default Login;
