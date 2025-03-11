@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo-transparent.png";
 import Cart from "../Cart/Cart.jsx";
@@ -7,22 +7,25 @@ import { BiShoppingBag } from "react-icons/bi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const [showCart, setShowCart] = useState(false);
-
   const toggleCart = () => {
     setShowCart(!showCart);
   };
+  
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  }
 
   return (
     <nav className={styles.navbar}>
-      <div
-        className={`${styles["navbar-left"]} ${isOpen ? styles["open"] : ""}`}
-      >
+      <div className={`${styles["navbar-left"]} ${isOpen ? styles["open"] : ""}`}>
         <div className={styles.hamburger} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -37,6 +40,9 @@ export default function Navbar() {
           </li>
           <li>
             <Link to="/kontakt">Kontakt</Link>
+          </li>
+          <li>
+            <Link to="/login" onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
       </div>

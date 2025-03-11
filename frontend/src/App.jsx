@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './components/Welcome/Welcome';
+import Login from './components/Login';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import ProductSection from './components/ProductSection/ProductSection';
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/admin/*" element={
           <ProtectedRoute>
             <AdminRoutes />
@@ -64,6 +66,3 @@ const AdminRoutes = () => {
     </Routes>
   );
 };
-
-
-
