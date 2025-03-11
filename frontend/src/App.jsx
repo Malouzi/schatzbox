@@ -1,3 +1,5 @@
+// src/App.jsx
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
@@ -13,42 +15,48 @@ import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlip
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import ParallaxSection from './components/ParallaxSection/ParallaxSection';
 
+// Importieren des ParallaxProvider für den Parallax-Effekt
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 export default function App() {
   return (
     <Router>
       <Navbar />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Welcome />
-              <PenguinSlideFlipCard />
+      <ParallaxProvider> 
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Welcome />
+                <PenguinSlideFlipCard />
 
-              <main>
-                <ProductSection />
-                <ContactForm />
-              </main>
-            </>
+                <main>
+                  <ProductSection />
+                  <ParallaxSection /> 
+                  <ContactForm />
+                </main>
+              </>
+            }
+          />
+          <Route path="/angebote" element={<Angebote />} />
+          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/admin/*" element={
+            <ProtectedRoute>
+              <AdminRoutes />
+            </ProtectedRoute>
           }
-        />
-        <Route path="/angebote" element={<Angebote />} />
-        <Route path="/kontakt" element={<Kontakt />} />
-        <Route path="/impressum" element={<Impressum />} />
-        <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/admin/*" element={
-          <ProtectedRoute>
-            <AdminRoutes />
-          </ProtectedRoute>
-        }
-        />
-        
-      </Routes>
+          />
+          
+        </Routes>
+      </ParallaxProvider>
 
       <Footer />
     </Router>
@@ -58,12 +66,9 @@ export default function App() {
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Admin/>} />
+      <Route path="/" element={<Admin />} />
       <Route path="/product/edit/:id" element={<EditProduct />} />
       <Route path="/product/delete/:id" element={<DeleteProduct />} />
     </Routes>
   );
 };
-
-
-
