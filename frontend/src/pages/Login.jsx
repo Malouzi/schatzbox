@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Alert, Button, FormControl, Input, InputLabel } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
   const [formError, setFormError] = useState(false);
@@ -64,6 +64,9 @@ const Login = () => {
           Einloggen
         </Button>
       </form>
+      <p>
+        Noch kein Konto? <Link to="/register">Registriere dich hier</Link>
+      </p>
     </div>
   );
 };

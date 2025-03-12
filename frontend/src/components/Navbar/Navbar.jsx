@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo-transparent.png";
 import Cart from "../Cart/Cart.jsx";
@@ -8,7 +8,6 @@ import { BiShoppingBag } from "react-icons/bi";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,11 +16,6 @@ export default function Navbar() {
   const toggleCart = () => {
     setShowCart(!showCart);
   };
-  
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-  }
 
   return (
     <nav className={styles.navbar}>
@@ -42,7 +36,7 @@ export default function Navbar() {
             <Link to="/kontakt">Kontakt</Link>
           </li>
           <li>
-            <Link to="/login" onClick={handleLogout}>Logout</Link>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </div>
