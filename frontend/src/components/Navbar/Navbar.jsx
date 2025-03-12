@@ -7,12 +7,11 @@ import { BiShoppingBag } from "react-icons/bi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  const [showCart, setShowCart] = useState(false);
 
   const toggleCart = () => {
     setShowCart(!showCart);
@@ -20,9 +19,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <div
-        className={`${styles["navbar-left"]} ${isOpen ? styles["open"] : ""}`}
-      >
+      <div className={`${styles["navbar-left"]} ${isOpen ? styles["open"] : ""}`}>
         <div className={styles.hamburger} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -37,6 +34,9 @@ export default function Navbar() {
           </li>
           <li>
             <Link to="/kontakt">Kontakt</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </div>
