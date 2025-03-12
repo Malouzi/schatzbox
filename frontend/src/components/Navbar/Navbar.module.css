@@ -23,9 +23,9 @@
 .hamburger span {
   display: block;
   width: 29px;
-  height: 2px;
+  height: 2.5px;
   background-color: #f58a08;
-  margin: 3px 0;
+  margin: 2.7px 0;
   transition: all 0.3s ease;
   transform-origin: center;
 }
@@ -65,12 +65,14 @@
   color: black;
   text-align: center;
   transition: transform 0.3s ease;
-  padding: 1rem;
 }
+
 .navbar-left a{
+  display: block;
   color: #f58a08;
   text-decoration: none;
   list-style: none;
+  padding: 1rem;
 }
 
 .navbar-left a:hover{
