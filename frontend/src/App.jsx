@@ -1,19 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProtectedRoute from './components/ProtectedRoutes';
-import './App.css';
+import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import ProductSection from './components/ProductSection/ProductSection';
-import Welcome from './components/Welcome/Welcome';
 import Angebote from './components/Angebote';
 import Kontakt from './components/Kontakt';
 import ContactForm from './components/ContactForm/ContactForm';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
+import ProtectedRoute from './components/ProtectedRoutes';
 import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 export default function App() {

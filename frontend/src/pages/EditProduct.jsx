@@ -34,12 +34,7 @@ export const EditProduct = () => {
 
 
     const handleEditProduct = () => {
-        const data = {
-            name,
-            price,
-            category,
-            description
-        };
+        const data = { name, price, category, description};
         setLoading(true);
         axios
         .put(`http://localhost:3000/products/${id}`, data)
@@ -50,8 +45,8 @@ export const EditProduct = () => {
         })
         .catch(error => {
             setLoading(false);
+            enqueueSnackbar('Error', {variant: 'error'});
             console.log(error);
-            alert('Fehler beim Bearbeiten des Produkts.');
         });
 
     };

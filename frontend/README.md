@@ -5,7 +5,6 @@
 - npm i react-icons (Marie)
 - npm i axios (Marie)
 - npm i notistack (Marie)
-- npm install tailwindcss @tailwindcss/vite
 
 # ContactForm:
 - used web3forms and connected for results to simia_karegar@live.de
@@ -21,6 +20,5 @@
      Red #d6181e
 
   2. Background Colors
-     Eggshell #FFF9EE
      
 

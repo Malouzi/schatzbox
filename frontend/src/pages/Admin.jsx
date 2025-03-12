@@ -33,7 +33,7 @@ export const Admin = () => {
             <tr>
               <th>
                 <Link to="/add-product" className='bg-blue-400 py-2 px-4 hover:bg-sky-200 text-white rounded'>
-                Produkt zufügen +
+                Produkt zufügen
                 </Link>
               </th>
               <th>Name</th>
@@ -42,18 +42,25 @@ export const Admin = () => {
               <th>Kategorie</th>
             </tr>
           </thead>
+
           <tbody>
             {product.map((product, index) => (
               <tr key={product._id} className=''>
                 <td>
                   <div className=''>
                     <img src={product.image} alt={product.title} />
-                  </div>                
+                  </div>  
+
                 </td>
                 <td className=''>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.description}</td>
-                <td>{product.category}</td>
+                <td className=''>{product.price}</td>
+                <td className=''>{product.description}</td>
+                <td className=''>{product.category}</td>
+                <td className=''>
+                  <div>
+                  <Link to={`/admin/product/edit/${product._id}`}>Bearbeiten</Link>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
