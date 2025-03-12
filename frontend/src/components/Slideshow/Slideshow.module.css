@@ -1,0 +1,23 @@
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slide {
+  position: relative;
+}
+
+.sliderImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.customDot {
+  background-color: #f58a08;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

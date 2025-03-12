@@ -16,11 +16,11 @@ import { DeleteProduct } from './pages/DeleteProduct';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 export default function App() {
   return (
     <Router>
       <Navbar />
+      
 
       <Routes>
         <Route
@@ -47,23 +47,19 @@ export default function App() {
           </ProtectedRoute>
         }
         />
-        
       </Routes>
 
       <Footer />
     </Router>
   );
-};
+}
 
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Admin/>} />
+      <Route path="/" element={<Admin />} />
       <Route path="/product/edit/:id" element={<EditProduct />} />
       <Route path="/product/delete/:id" element={<DeleteProduct />} />
     </Routes>
   );
 };
-
-
-

@@ -1,18 +1,17 @@
-/* Container für die Slideshow */
+/* Container für die Slideshow
 .sliderContainer {
   position: relative;
   width: 100%;
-  height: 400px; /* Höhe anpassen */
+  height: 400px; 
   overflow: hidden;
 }
 
 .sliderImage {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Sorgt dafür, dass das Bild den Container vollständig ausfüllt */
+  object-fit: cover;
 }
 
-/* Anpassung der Punkte für die Slideshow */
 .slick-dots {
   position: absolute;
   bottom: 10px;
@@ -36,10 +35,9 @@
 }
 
 .slick-dots li.slick-active .customDot {
-  background-color: #fff; /* Aktive Punkte */
-}
+  background-color: #fff; 
+} */
 
-/* Rest des Designs */
 .container1 {
   margin: 2rem;
 }
