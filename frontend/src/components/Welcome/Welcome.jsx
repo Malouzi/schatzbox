@@ -25,20 +25,32 @@ export default function Welcome() {
           Entdecke jetzt die passende Schatzsuche für Deine Liebsten und machen
           nächsten Kindergeburtstag zu einem unvergesslichen Erlebnis!
         </p>
+
+        <h1>Und so einfach funktioniert's:</h1>
       </div>
 
       <div className={styles.container2}>
-        <h1>Und so einfach funktioniert's:</h1>
         <ul className={styles.listWelcome}>
           <li>
-            <strong>Sofort-Download</strong> - Direkt nach dem Kauf verfügbar
+            Sofort-Download <br />
+            Direkt nach dem Kauf verfügbar
           </li>
+        </ul>
+      </div>
+
+      <div className={styles.container3}>
+        <ul className={styles.listWelcome}>
           <li>
-            <strong>Einfache Anleitung</strong> - Schnell vorbereitet & los
-            geht's
+            Einfache Anleitung - Schnell vorbereitet & los
+            geht&#39;s
           </li>
+        </ul>
+      </div>
+
+      <div className={styles.container4}>
+        <ul className={styles.listWelcome}>
           <li>
-            <strong>Perfekt für drinnen & draußen</strong> - Flexible Nutzung
+            Perfekt für drinnen & draußen - Flexible Nutzung
           </li>
         </ul>
       </div>
