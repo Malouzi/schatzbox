@@ -1,21 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo-transparent.png";
-import Cart from "../Cart/Cart.jsx";
 import { BiShoppingBag } from "react-icons/bi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showCart, setShowCart] = useState(false);
+  const { totalItems } = useContext(CartContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleCart = () => {
-    setShowCart(!showCart);
-  };
 
   return (
     <nav className={styles.navbar}>
@@ -47,14 +44,18 @@ export default function Navbar() {
       </div>
 
       <div className={styles.navbarRight}>
-        <Link to={"/cart"}>
-          <button className={styles.cartIcon} onClick={toggleCart}>
+        <Link to={"/cart"} className={styles.cartIcon}>
             <BiShoppingBag />
-          </button>
-          {showCart && <Cart />}
-          <span className={styles.cartCount}>0</span>
+          <span className={styles.cartCount}>{totalItems}</span> {/* Anzahl der Artikel im Warenkorb anzeigen */}
         </Link>
       </div>
+
+
+
+
+
+
+
     </nav>
   );
 }

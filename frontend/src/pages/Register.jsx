@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import styles from './Register.module.css';
 
-export default function Register() {
+/* export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,12 +11,50 @@ export default function Register() {
     e.preventDefault();
     console.log('Registrierungsversuch gestartet', { email, password });
     try {
+      console.log("Hallo Welt");
+      
       const response = await axios.post('http://localhost:3000/auth/register', { email, password, roles: 'User' });
       console.log('Benutzer registriert:', response.data);
     } catch (error) {
       console.error('Registrierung fehlgeschlagen:', error.response.data.message);
     }
-  };
+  }; */
+
+  export default function Register() {
+    const [formUser, setFormUser] = useState({
+      username: "",
+      email: "",
+      password: "",
+    });
+    const handleChange = (e) => {
+      e.preventDefault();
+      setFormUser({
+        ...formUser,
+        [e.target.name]: e.target.value,
+      });
+    };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log("hallo");
+      try {
+        const response = await fetch(`http://localhost:3000/auth/register`, {
+          method: "POST",
+          credentials: "include",
+          body: JSON.stringify(formUser),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          setFormUser({ username: "", email: "", password: "" });
+        } else {
+          console.log("error");
+          
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
   return (
     <div className={styles.container}>
@@ -27,8 +65,9 @@ export default function Register() {
           <input
             autoComplete="username"
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name='username'            
+            value={formUser.username}
+            onChange={handleChange}
             required
           />
         </div>
@@ -37,8 +76,9 @@ export default function Register() {
           <input
             autoComplete="email"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name='email'
+            value={formUser.email}          
+           onChange={handleChange}
             required
           />
         </div>
@@ -47,8 +87,9 @@ export default function Register() {
           <input
             autoComplete="new-password"
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name='password'
+            value={formUser.password}        
+            onChange={handleChange}
             required
           />
         </div>
