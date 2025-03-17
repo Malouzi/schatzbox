@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './pages/Register';
+import Cart from './components/Cart/Cart';
 import Welcome from './components/Welcome/Welcome';
 import Login from './pages/Login';
 import Footer from './components/Footer/Footer';
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/admin/*" element={
           <ProtectedRoute>
             <AdminRoutes />
