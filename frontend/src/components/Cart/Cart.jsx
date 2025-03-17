@@ -31,7 +31,7 @@ const Cart = () => {
           <h3>Gesamtpreis: {totalPrice} €</h3>
         </div>
       )}
-      <button onClick={handlePrepayment}>Zahlung per Vorkasse</button>
+      <button onClick={handlePrepayment}>Bezahlen</button>
     </div>
   );
 }

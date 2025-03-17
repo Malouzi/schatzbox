@@ -14,14 +14,14 @@
 }
 
 .cartItem {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  align-items: center;
 }
 
 .cartItemImage {
-  width: 100px; /* Set the width of the image */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 15px; /* Add space between image and text */
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
 }
 
 .cartCount {
