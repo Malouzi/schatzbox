@@ -9,26 +9,26 @@ import ContactForm from './components/ContactForm/ContactForm';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
 import ProtectedRoute from './components/ProtectedRoutes';
-import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
+//import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import TreasureMap from './components/TreasureMapPath/TreasureMap';
+import TM from './components/TM/TM';
 export default function App() {
   return (
     <Router>
       <Navbar />
-
+      {/*<TreasureMap /> */}
       <Routes>
         <Route
           path="/"
           element={
             <>
               <Welcome />
-              <PenguinSlideFlipCard />
+              {/* <PenguinSlideFlipCard /> */}
 
               <main>
                 <ProductSection />
@@ -41,29 +41,29 @@ export default function App() {
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/admin/*" element={
-          <ProtectedRoute>
-            <AdminRoutes />
-          </ProtectedRoute>
-        }
+        <Route path="/schatzkarte" element={<TM />} />
+
+        <Route
+          path="/admin/*"
+          element={
+            <ProtectedRoute>
+              <AdminRoutes />
+            </ProtectedRoute>
+          }
         />
-        
       </Routes>
 
       <Footer />
     </Router>
   );
-};
+}
 
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Admin/>} />
+      <Route path="/" element={<Admin />} />
       <Route path="/product/edit/:id" element={<EditProduct />} />
       <Route path="/product/delete/:id" element={<DeleteProduct />} />
     </Routes>
   );
 };
-
-
-

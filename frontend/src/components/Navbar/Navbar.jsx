@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css";
-import logo from "../../assets/logo-transparent.png";
-import Cart from "../Cart/Cart.jsx";
-import { BiShoppingBag } from "react-icons/bi";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Navbar.module.css';
+import logo from '../../assets/logo-transparent.png';
+import Cart from '../Cart/Cart.jsx';
+import { BiShoppingBag } from 'react-icons/bi';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div
-        className={`${styles["navbar-left"]} ${isOpen ? styles["open"] : ""}`}
+        className={`${styles['navbar-left']} ${isOpen ? styles['open'] : ''}`}
       >
         <div className={styles.hamburger} onClick={toggleMenu}>
           <span></span>
@@ -38,6 +38,9 @@ export default function Navbar() {
           <li>
             <Link to="/kontakt">Kontakt</Link>
           </li>
+          <li>
+            <Link to="/schatzkarte">Schatzkarte</Link>
+          </li>
         </ul>
       </div>
       <div className={styles.navbarMiddle}>
@@ -47,7 +50,7 @@ export default function Navbar() {
       </div>
 
       <div className={styles.navbarRight}>
-        <Link to={"/cart"}>
+        <Link to={'/cart'}>
           <button className={styles.cartIcon} onClick={toggleCart}>
             <BiShoppingBag />
           </button>

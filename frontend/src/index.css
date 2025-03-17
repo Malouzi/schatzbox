@@ -5,9 +5,10 @@
   padding: 0;
 }
 
+html,
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  min-height: 100vh;
+  height: 100%; /* das hat Nell geändert*/
 }
 
 /* Titles */
@@ -15,6 +16,6 @@ body {
   text-align: center;
 
   h3 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
