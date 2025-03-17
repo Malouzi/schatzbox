@@ -13,31 +13,17 @@ p {
 }
 
 .container1 {
-  margin: 2rem;
-}
-
-
-
-.container2 {
-  background-color: beige;
-  margin: 2rem 0rem;
-  padding: 2rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
+  margin: 3rem;
 }
 
 .container2,
 .container3,
 .container4 {
+  margin: 0.5rem auto;
   width: 400px;
   height: 250px;
-  margin: 2rem auto;
-  padding: 40px 30px;
-  border-radius: 15px;
+  padding: 20px 20px;
+  border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -50,23 +36,21 @@ ul {
   animation: fadeInRight 1s ease-in-out forwards;
 }
 
-/* Hintergrund mit Farbverlauf */
 .container2 {
-  background: linear-gradient(135deg, #f99e2e, #ffb347);
-  animation-delay: 0s; /* Startet sofort */
+  background-color: #ffc885;
+  animation-delay: 0s;
 }
 
 .container3 {
-  background: linear-gradient(135deg, #b5e7f6, #89cff0);
-  animation-delay: 0.5s; /* Startet 0.5s nach container2 */
+  background-color: #ffc885;
+  animation-delay: 0.5s;
 }
 
 .container4 {
-  background: linear-gradient(135deg, #dccde5, #c5aed9);
-  animation-delay: 1s; /* Startet 1s nach container2 */
+  background-color: #ffc885;
+  animation-delay: 1s; 
 }
 
-/* Animation von rechts nach links */
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -78,7 +62,6 @@ ul {
   }
 }
 
-/* Liste stylen */
 .listWelcome {
   list-style: none;
   padding: 0;
@@ -92,8 +75,15 @@ ul {
   gap: 10px;
 }
 
-/* Icons vor den Text setzen */
 .listWelcome li::before {
-  content: "✅"; /* Hier kannst du andere Icons nehmen */
   font-size: 1.5rem;
+}
+
+.downloadButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-left: 8px;
+  color: white;
+  transition: color 0.3s ease-in-out;
 }
