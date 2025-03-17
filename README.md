@@ -3,17 +3,15 @@
 ## Features
 ### Must:
 - **Shop-Bereich**: Verkauf von digitalen Schnitzeljagd-Dateien mit Bezahl- und Download-Funktion.
-    - **Produkt-Übersicht**: Detailinformationen zu Produkten.
-    - **Produktsortierung**: Sortierung von Produkten nach verschiedenen Kriterien.
-    - **Sichere Zahlungsabwicklung**: Integration von Zahlungsdiensten.
-
+    - **Produkt-Übersicht**: Detailinformationen zu Produkten. (In Arbeit)
+    - **Produktsortierung**: Sortierung von Produkten nach verschiedenen Kriterien. (Fertig)
+    - **Sichere Zahlungsabwicklung**: Integration von Zahlungsdiensten. (Nicht begonnen)
 
 - **Admin-Bereich**: Verwaltung von Benutzern, Produkten und Bestellungen.
 - **Online-Spiel**: Interaktive Schnitzeljagd-Elemente für Kinder.
 - **Produktfilter/Generator**: Filterung von Produkten nach Kategorien, Preisen, etc
 
 ### Soll:
-
 - **Kontaktformular**: Kontaktformular für Kunden.
 - **Benutzerverwaltung**: Registrierung und Anmeldung für Benutzer.
 
@@ -42,7 +40,6 @@
 - **Bastelvorlagen für Masken (themenbezogen)**
 - **Ausmalkarte für jedes Kind**
 
-
 - **Ideen für den Inhalt der Schatzkiste**
 - **Geschichte für die Schnitzeljagd**
 - **Abschlusstext**
@@ -68,8 +65,14 @@
 
 ## API Endpunkte
 - **GET /api/products**: Liste aller Produkte
+  - Beispiel: `GET /api/products`
+  - Antwort: `[{ "id": 1, "name": "Produkt 1" }, ...]`
 - **GET /api/products/:id**: Einzelnes Produkt
+  - Beispiel: `GET /api/products/1`
+  - Antwort: `{ "id": 1, "name": "Produkt 1" }`
 - **POST /api/products**: Neues Produkt erstellen
+  - Beispiel: `POST /api/products` mit Payload `{ "name": "Neues Produkt" }`
+  - Antwort: `{ "id": 2, "name": "Neues Produkt" }`
 - **PUT /api/products/:id**: Produkt bearbeiten
 - **DELETE /api/products/:id**: Produkt löschen
 - **GET /api/users**: Liste aller Benutzer
@@ -110,15 +113,10 @@
 - **POST /api/auth/resend-verification-email**: E-Mail-Adresse erneut bestätigen
 
 ## Weiterentwicklung
-- **Mehrsprachigkeit**
-- **Darkmodus**
-- **Newsletter**
-- **Social-Media-Integration**
-
+- **Mehrsprachigkeit**: Unterstützung für mehrere Sprachen.
+- **Darkmodus**: Möglichkeit, zwischen hellem und dunklem Modus zu wechseln.
+- **Newsletter**: Implementierung eines Newsletter-Systems.
+- **Social-Media-Integration**: Anbindung an soziale Netzwerke.
 
 ## Lizenz
 - **MIT-Lizenz**
-
-
-
-
