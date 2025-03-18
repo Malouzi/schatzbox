@@ -5,6 +5,7 @@
 - npm i react-icons (Marie)
 - npm i axios (Marie)
 - npm i notistack (Marie)
+- npm i react-slick (Simia)
 
 # ContactForm:
 - used web3forms and connected for results to simia_karegar@live.de

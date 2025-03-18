@@ -10,8 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.7",
     "@tailwindcss/vite": "^4.0.9",
     "axios": "^1.8.1",
+    "cors": "^2.8.5",
     "framer-motion": "^12.4.7",
     "hamburger-react": "^2.5.2",
     "notistack": "^3.0.2",
