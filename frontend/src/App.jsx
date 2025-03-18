@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Cart from './components/Cart/Cart';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -40,6 +43,9 @@ export default function App() {
         <Route path="/imprint" element={<Imprint />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/admin/*" element={
           <ProtectedRoute>
             <AdminRoutes />

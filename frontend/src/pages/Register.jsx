@@ -9,9 +9,16 @@ import styles from './Register.module.css';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Registrierungsversuch gestartet', { email, password });
+      console.log('Registrierungsversuch gestartet', formUser);
+      if (response.ok) {
+        alert('Registrierung erfolgreich!');
+        setFormUser({ username: "", email: "", password: "" });
+      } else {
+        alert('Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.');
+      }
+
     try {
-      console.log("Hallo Welt");
+      console.log("Registrierung erfolgreich");
       
       const response = await axios.post('http://localhost:3000/auth/register', { email, password, roles: 'User' });
       console.log('Benutzer registriert:', response.data);
