@@ -1,15 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Welcome from "./components/Welcome/Welcome";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import ProductSection from "./components/ProductSection/ProductSection";
-import Angebote from "./components/Angebote";
-import ContactForm from "./components/ContactForm/ContactForm";
-import ProtectedRoute from "./components/ProtectedRoutes";
-import PenguinSlideFlipCard from "./components/PenguinRiddleBox/PenguinSlideFlipCard";
-import { Admin } from "./pages/Admin";
-import { EditProduct } from "./pages/EditProduct";
-import { DeleteProduct } from "./pages/DeleteProduct";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Welcome from './components/Welcome/Welcome';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
+import ProductSection from './components/ProductSection/ProductSection';
+import Angebote from './components/Angebote';
+import ContactForm from './components/ContactForm/ContactForm';
+import ProtectedRoute from './components/ProtectedRoutes';
+import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
+import { Admin } from './pages/Admin';
+import { EditProduct } from './pages/EditProduct';
+import { DeleteProduct } from './pages/DeleteProduct';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Circles from "./components/Circles/Circles";
@@ -37,18 +37,14 @@ export default function App() {
           }
         />
         <Route path="/angebote" element={<Angebote />} />
-
         <Route path="/imprint" element={<Imprint />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/contact" element={<Contact />} />
-
-        <Route
-          path="/admin/*"
-          element={
-            <ProtectedRoute>
-              <AdminRoutes />
-            </ProtectedRoute>
-          }
+        <Route path="/admin/*" element={
+          <ProtectedRoute>
+            <AdminRoutes />
+          </ProtectedRoute>
+        }
         />
       </Routes>
 
