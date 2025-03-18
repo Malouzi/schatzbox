@@ -1,31 +1,5 @@
 import { useState } from 'react';
-//import axios from 'axios';
 import styles from './Register.module.css';
-
-/* export default function Register() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-      console.log('Registrierungsversuch gestartet', formUser);
-      if (response.ok) {
-        alert('Registrierung erfolgreich!');
-        setFormUser({ username: "", email: "", password: "" });
-      } else {
-        alert('Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.');
-      }
-
-    try {
-      console.log("Registrierung erfolgreich");
-      
-      const response = await axios.post('http://localhost:3000/auth/register', { email, password, roles: 'User' });
-      console.log('Benutzer registriert:', response.data);
-    } catch (error) {
-      console.error('Registrierung fehlgeschlagen:', error.response.data.message);
-    }
-  }; */
 
   export default function Register() {
     const [formUser, setFormUser] = useState({
