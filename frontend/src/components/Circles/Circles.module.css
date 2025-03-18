@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    height: 220px;
+    width: 100%; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+}

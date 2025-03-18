@@ -1,49 +1,3 @@
-/* Container für die Slideshow */
-.sliderContainer {
-  position: relative;
-  width: 100%;
-  height: 400px; /* Höhe anpassen */
-  overflow: hidden;
-}
-
-.sliderImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Sorgt dafür, dass das Bild den Container vollständig ausfüllt */
-}
-
-/* Anpassung der Punkte für die Slideshow */
-.slick-dots {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-}
-
-.slick-dots li {
-  margin: 5px 0;
-}
-
-.customDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #f58a08;
-}
-
-.slick-dots li.slick-active .customDot {
-  background-color: #fff; /* Aktive Punkte */
-}
-
-/* Rest des Designs */
-.container1 {
-  margin: 2rem;
-}
-
 h1 {
   font-size: 1.5rem;
 }
@@ -53,82 +7,83 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.container2 {
-  background-color: beige;
-  margin: 2rem 0rem;
-  padding: 2rem;
-}
-
 p {
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-ul {
+.container1 {
+  margin: 3rem;
+}
+
+.container2,
+.container3,
+.container4 {
+  margin: 0.5rem auto;
+  width: 400px;
+  height: 250px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 1s ease-in-out forwards;
+}
+
+.container2 {
+  background-color: #ffc885;
+  animation-delay: 0s;
+}
+
+.container3 {
+  background-color: #ffc885;
+  animation-delay: 0.5s;
+}
+
+.container4 {
+  background-color: #ffc885;
+  animation-delay: 1s; 
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.listWelcome {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
 }
 
 .listWelcome li {
+  font-size: 1.3rem;
   position: relative;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .listWelcome li::before {
-  content: "✓";
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  padding-left: 1rem;
-}
-
-
-/* .container1 {
-  margin: 2rem;
-}
-
-h1 {
   font-size: 1.5rem;
 }
 
-h2 {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.downloadButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-left: 8px;
+  color: white;
+  transition: color 0.3s ease-in-out;
 }
-
-.container2 {
-  background-color: beige;
-    margin: 2rem 0rem;
-    padding: 2rem
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.header{
-  width: 100vw;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-}
-
-.listWelcome ul li {
-  position: relative;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-.listWelcome li::before {
-  content: "✓";
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  padding-left: 1rem;
-} */
