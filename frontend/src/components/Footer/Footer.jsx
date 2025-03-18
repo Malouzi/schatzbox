@@ -7,9 +7,9 @@ export default function Footer() {
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerLinksContainer}>
-            <Link to="/impressum">Impressum</Link>
-            <Link to="/datenschutz">Datenschutz</Link>
-            <Link to="/kontakt">Kontakt</Link>
+            <Link to="/Imprint">Impressum</Link>
+            <Link to="/PrivacyPolicy">Datenschutz</Link>
+            <Link to="/Contact">Kontakt</Link>
           </div>
           <div className={styles.copyright}>
             Schatzbox&copy;{new Date().getFullYear()} <br />Alle Rechte
