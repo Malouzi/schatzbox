@@ -17,9 +17,8 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Hier könnte die Logik für die Bestellung implementiert werden
-    alert('Bestellung erfolgreich!');
-    clearCart(); // Warenkorb leeren nach der Bestellung
+     alert('Bestellung erfolgreich!');
+    clearCart();
   };
 
   return (
