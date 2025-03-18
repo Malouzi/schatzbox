@@ -15,13 +15,11 @@ import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import TreasureMap from './components/TreasureMapPath/TreasureMap';
 import TM from './components/TM/TM';
 export default function App() {
   return (
     <Router>
       <Navbar />
-      {/*<TreasureMap /> */}
       <Routes>
         <Route
           path="/"
