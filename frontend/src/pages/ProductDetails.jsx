@@ -7,7 +7,6 @@ const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
   
-  // Hier sollten die Produktdaten abgerufen werden, z.B. von einer API oder aus einem lokalen Array
   const product = {
     id: id,
     title: 'Beispiel Produkt',

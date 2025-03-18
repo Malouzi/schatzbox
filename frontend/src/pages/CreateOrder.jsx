@@ -14,7 +14,7 @@ const CreateOrder = () => {
         try {
             const response = await axios.post('/order', { userId, productId, status, notes });
             console.log('Order created:', response.data);
-            navigate('/orders'); // Nach dem Erstellen zur Bestellseite zurückkehren
+            navigate('/orders');
         } catch (error) {
             console.error('Error creating order:', error);
         }
