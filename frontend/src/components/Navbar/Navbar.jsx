@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
@@ -13,6 +13,20 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  // Effekt, um das Menü beim Scrollen zu schließen
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
 
   return (
     <nav className={styles.navbar}>
@@ -45,17 +59,10 @@ export default function Navbar() {
 
       <div className={styles.navbarRight}>
         <Link to={"/cart"} className={styles.cartIcon}>
-            <BiShoppingBag />
-          <span className={styles.cartCount}>{totalItems}</span> {/* Anzahl der Artikel im Warenkorb anzeigen */}
+          <BiShoppingBag />
+          <span className={styles.cartCount}>{totalItems}</span>
         </Link>
       </div>
-
-
-
-
-
-
-
     </nav>
   );
 }
