@@ -15,7 +15,7 @@ import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Circles from "./components/Circles/Circles";
+import ProductDetails from './pages/ProductDetails';
 import Imprint from "./components/Imprint/Imprint";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Contact from "./components/Contact/Contact";
@@ -26,9 +26,7 @@ export default function App() {
       <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={
+        <Route path="/" element={
             <>
               <Welcome />
               <PenguinSlideFlipCard />
@@ -46,6 +44,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/admin/*" element={
           <ProtectedRoute>
             <AdminRoutes />
