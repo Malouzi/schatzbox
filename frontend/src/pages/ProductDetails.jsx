@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import styles from './productDetails.module.css';
-import productsData from '../../public/books.json';
+import productsData from '../../public/books.json?url';
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
