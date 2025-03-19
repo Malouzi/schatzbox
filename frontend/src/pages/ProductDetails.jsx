@@ -7,32 +7,25 @@ import productsData from '../../public/books.json';
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    const fetchProduct = () => {
-      const foundProduct = productsData.find((item) => item._id === parseInt(id));
-      if (foundProduct) {
-        setProduct(foundProduct);
-      } else {
-        setError("Produkt nicht gefunden");
-      }
-      setLoading(false);
-    };
-    fetchProduct();
-  }, [id]);
-  if (loading) {
-    return <p>Lädt...</p>;
-  }
-  if (error) {
-    return <p>{error}</p>;
-  }
+  
+  // Hier sollten die Produktdaten abgerufen werden, z.B. von einer API oder aus einem lokalen Array
+  const product = {
+    id: id,
+    title: 'Beispiel Produkt',
+    description: 'Dies ist eine detaillierte Beschreibung des Produkts.',
+    price: 29.99,
+    coverImage: 'path/to/image.jpg',
+    rating: 4.5,
+    availability: true,
+  }; 
+
   const handleAddToCart = () => {
     addToCart(product);
     alert(`${product.title} wurde zum Warenkorb hinzugefügt!`);
   };
-  return (
+
+  return ( 
+
     <div className={styles.productDetailsContainer}>
       <h2>{product.name}</h2>
       <img src={`/${product.coverImage}`} alt={product.title} />
