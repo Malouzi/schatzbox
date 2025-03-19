@@ -9,7 +9,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 1"
         />
       </g>
@@ -18,7 +18,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACWCAYAAAA8AXHiAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACWCAYAAAA8AXHiAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 2"
         />
       </g>
@@ -27,7 +27,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 3"
         />
       </g>
@@ -40,7 +40,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 4"
         />
       </g>
@@ -49,7 +49,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 5"
         />
       </g>
@@ -62,7 +62,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 6"
         />
       </g>
@@ -75,7 +75,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 7"
         />
       </g>
@@ -88,7 +88,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 8"
         />
       </g>
@@ -101,7 +101,7 @@ const Coins = () => {
         <image
           width="150"
           height="150"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
           alt="Coin 9"
         />
       </g>

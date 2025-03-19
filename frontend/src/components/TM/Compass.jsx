@@ -12,11 +12,11 @@ const Compass = () => {
       <image
         width="119"
         height="154"
-        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAACaCAYAAACT49fWAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
+        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAACaCAYAAACT49fWAAAACXBIWXMAAAsSAAALEgHS3X78AAAg..."
         alt="Kompass"
       />
     </g>
   );
 };
 
-export default Compass;
+export default Compass; 

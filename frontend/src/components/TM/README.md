@@ -11,3 +11,11 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
 plugins: [react(), svgr()],
 });
+
+npm install -g svgo 
+dann zu dem ordner wo das svg liegt wechseln
+cd src/assets
+danach ggf mit ls die Inhalte auflisten lassen 
+
+und dann mit svgo namedesbildes.svg die Datei optimieren und überschreiben
+oder mit svgo namedesbildes.svg -o namedesbildes.svg-optimized.svg eine neue Datei erstellen und die alte Datei bleibt aber erhalten

@@ -1,9 +1,10 @@
-/* TM.module.css */
-.mapContainer {
+/*TM.module.css */
+/* .mapContainer {
   position: relative;
-  width: 100%;
-  min-height: 100vh; /* feste Höhe */
-  background-color: #f0f0f0; /* Fallback Hintergrundfarbe */
+  min-height: 100vh; /* feste Höhe 
+  max-width: 100vw;
+  background-color: #f0f0f0; /* Fallback Hintergrundfarbe 
+  overflow: hidden;
 }
 
 .background {
@@ -12,22 +13,39 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /*z-index: -1;  Damit der Hintergrund hinter den animierten SVG-Elementen liegt 
-} 
-
-#Hintergrund {
-  display: block; /* oder visibility: visible; */
+  object-fit: contain;
 }
+
+
 
 .st0 {
-  fill: #ffffff; /*FArbe für den Pfad */
+  fill: #ffffff; /*FArbe für den Pfad 
 }
-/*
-.st1 {
-  fill: #a2cc81;  Farben für den Pfad  - keine ahnung warum grün? 
-} */
 
-/*.path {
+
+.path {
   /* weitere animation für den pfad 
 } 
 */
+.mapContainer {
+  position: relative;
+  width: 100%; /* Stellt sicher, dass die Karte sich anpasst */
+  height: auto; /* Passt die Höhe automatisch an */
+  max-width: 100vw; /* Verhindert, dass sie zu groß wird */
+  overflow: hidden; /* Schneidet alles Überstehende ab */
+}
+
+.background {
+  width: 100%; /* Damit die Schatzkarte sich an den Container anpasst */
+  height: auto;
+  object-fit: contain; /* Behält das Seitenverhältnis bei */
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
