@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
+import styles from './productDetails.module.css';
 import productsData from '../../public/books.json';
 
 const ProductDetails = () => {
