@@ -1,0 +1,33 @@
+.productDetailsContainer {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.productDetailsContainer h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.productDetailsContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.productDetailsContainer p {
+  margin: 5px 0;
+}
+
+.productDetailsContainer button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.productDetailsContainer button:disabled {
+  background-color: #ccc;
+}
