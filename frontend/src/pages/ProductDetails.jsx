@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import styles from './productDetails.module.css';
 import productsData from '../../public/books.json';
+
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
