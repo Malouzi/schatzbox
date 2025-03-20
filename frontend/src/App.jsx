@@ -19,6 +19,7 @@ import ProductDetails from './pages/ProductDetails';
 import Imprint from "./components/Imprint/Imprint";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Contact from "./components/Contact/Contact";
+import CustomerProfile from "./pages/CustomerProfile";
 
 export default function App() {
   return (
@@ -35,8 +36,14 @@ export default function App() {
                 <ContactForm />
               </main>
             </>
-          }
-        />
+          } />
+          
+        <Route path="/customer-profile" element={
+          <ProtectedRoute>
+            <CustomerProfile />
+          </ProtectedRoute>
+        } />
+        
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/imprint" element={<Imprint />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -46,11 +53,13 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/admin/*" element={
-          <ProtectedRoute>
+          
+            <ProtectedRoute>
+              <CustomerProfile />
             <AdminRoutes />
           </ProtectedRoute>
-        }
-        />
+        } />
+
       </Routes>
 
       <Footer />
