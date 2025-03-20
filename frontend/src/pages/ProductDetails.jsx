@@ -1,8 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
-import styles from './ProductDetails.module.css';
-import productsData from '../../public/books.json?url';
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
+import styles from "./ProductDetails.module.css";
+import productsData from "../../public/books.json?url";
+
 const ProductDetails = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
@@ -11,7 +12,9 @@ const ProductDetails = () => {
   const [error, setError] = useState(null);
   useEffect(() => {
     const fetchProduct = () => {
-      const foundProduct = productsData.find((item) => item._id === parseInt(id));
+      const foundProduct = productsData.find(
+        (item) => item._id === parseInt(id)
+      );
       if (foundProduct) {
         setProduct(foundProduct);
       } else {
@@ -38,8 +41,12 @@ const ProductDetails = () => {
       <p>{product.description}</p>
       <p>Preis: {product.price} €</p>
       <p>Bewertung: {product.rating} ★</p>
-      <p>Verfügbarkeit: {product.availability ? 'Auf Lager' : 'Nicht verfügbar'}</p>
-      <button onClick={handleAddToCart} disabled={!product.availability}>In den Warenkorb</button>
+      <p>
+        Verfügbarkeit: {product.availability ? "Auf Lager" : "Nicht verfügbar"}
+      </p>
+      <button onClick={handleAddToCart} disabled={!product.availability}>
+        In den Warenkorb
+      </button>
     </div>
   );
 };
