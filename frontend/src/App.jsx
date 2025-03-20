@@ -35,8 +35,14 @@ export default function App() {
                 <ContactForm />
               </main>
             </>
-          }
-        />
+          } />
+          
+        <Route path="/customer-profile" element={
+          <ProtectedRoute>
+            <CustomerProfile />
+          </ProtectedRoute>
+        } />
+        
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/imprint" element={<Imprint />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -46,11 +52,13 @@ export default function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/admin/*" element={
-          <ProtectedRoute>
+          
+            <ProtectedRoute>
+              <CustomerProfile />
             <AdminRoutes />
           </ProtectedRoute>
-        }
-        />
+        } />
+
       </Routes>
 
       <Footer />
