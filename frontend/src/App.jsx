@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Cart from './components/Cart/Cart';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -12,10 +15,11 @@ import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Circles from "./components/Circles/Circles";
+import ProductDetails from './pages/ProductDetails';
 import Imprint from "./components/Imprint/Imprint";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Contact from "./components/Contact/Contact";
+import CustomerProfile from "./pages/CustomerProfile";
 
 export default function App() {
   return (
@@ -23,9 +27,7 @@ export default function App() {
       <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={
+        <Route path="/" element={
             <>
               <Welcome />
               <PenguinSlideFlipCard />
@@ -34,18 +36,30 @@ export default function App() {
                 <ContactForm />
               </main>
             </>
-          }
-        />
+          } />
+          
+        <Route path="/customer-profile" element={
+          <ProtectedRoute>
+            <CustomerProfile />
+          </ProtectedRoute>
+        } />
+        
         <Route path="/angebote" element={<Angebote />} />
         <Route path="/imprint" element={<Imprint />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/admin/*" element={
-          <ProtectedRoute>
+          
+            <ProtectedRoute>
+              <CustomerProfile />
             <AdminRoutes />
           </ProtectedRoute>
-        }
-        />
+        } />
+
       </Routes>
 
       <Footer />

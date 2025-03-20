@@ -21,7 +21,11 @@ const Login = () => {
         setFormSuccess(false);
       }, 2000);
     } catch (error) {
-      console.error('Login failed:', error.response.data.message);
+      console.error('Login failed:', error.response ? error.response.data.message : 'Server not reachable');
+      setFormError(true);
+      setTimeout(() => {
+        setFormError(false);
+      }, 2000);
       setFormError(true);
       setTimeout(() => {
         setFormError(false);
