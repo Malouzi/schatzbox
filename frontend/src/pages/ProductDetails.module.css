@@ -39,8 +39,10 @@
   button:disabled {
     background-color: gray;
     cursor: not-allowed;
-  }
-  /* Tablet (min-width: 768px) */
+   }
+/* 
+
+  Tablet (min-width: 768px)
   @media screen and (min-width: 768px) {
     .productDetailsContainer {
       max-width: 70%;
@@ -57,7 +59,7 @@
       padding: 1rem 2rem;
     }
   }
-  /* Desktop (min-width: 1024px) */
+  Desktop (min-width: 1024px)
   @media screen and (min-width: 1024px) {
     .productDetailsContainer {
       max-width: 60%;
@@ -123,7 +125,7 @@
     background-color: gray;
     cursor: not-allowed;
   }
-  /* Tablet (min-width: 768px) */
+  Tablet (min-width: 768px)
   @media screen and (min-width: 768px) {
     .productDetailsContainer {
       max-width: 70%;
@@ -140,7 +142,7 @@
       padding: 1rem 2rem;
     }
   }
-  /* Desktop (min-width: 1024px) */
+  Desktop (min-width: 1024px) 
   @media screen and (min-width: 1024px) {
     .productDetailsContainer {
       max-width: 60%;
@@ -165,4 +167,4 @@
     button {
       font-size: 1.5rem;
     }
-  }
+  } */
