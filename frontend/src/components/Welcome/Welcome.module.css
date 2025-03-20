@@ -1,7 +1,6 @@
 .container1 {
   margin: 3rem;
 }
-
 .container2,
 .container3,
 .container4 {
@@ -21,22 +20,18 @@
   transform: translateX(50px);
   animation: fadeInRight 1s ease-in-out forwards;
 }
-
 .container2 {
-  background-color: #ffc885;
+  background-color: #FFC885;
   animation-delay: 0s;
 }
-
 .container3 {
-  background-color: #ffc885;
+  background-color: #FFC885;
   animation-delay: 0.5s;
 }
-
 .container4 {
-  background-color: #ffc885;
-  animation-delay: 1s; 
+  background-color: #FFC885;
+  animation-delay: 1s;
 }
-
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -47,12 +42,10 @@
     transform: translateX(0);
   }
 }
-
 .listWelcome {
   list-style: none;
   padding: 0;
 }
-
 .listWelcome li {
   font-size: 1.3rem;
   position: relative;
@@ -60,11 +53,9 @@
   align-items: center;
   gap: 10px;
 }
-
 .listWelcome li::before {
   font-size: 1.5rem;
 }
-
 .downloadButton {
   background: none;
   border: none;
