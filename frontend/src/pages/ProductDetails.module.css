@@ -7,21 +7,18 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
+
   img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
   }
-  p {
+  /* p {
     font-size: 1.2rem;
     margin: 0.5rem 0;
-  }
-  
+  } */
+
   .btnProduct {
     background-color: #007BFF;
     color: white;
@@ -33,14 +30,14 @@
     transition: "background" 0.3s ease;
     margin-top: 1rem;
   }
-  button:hover {
-    background-color: #0056B3;
+  .btnProduct:hover {
+    background-color: blue;
   }
-  button:disabled {
+  .btnProduct:disabled {
     background-color: gray;
     cursor: not-allowed;
    }
-/* 
+/*
 
   Tablet (min-width: 768px)
   @media screen and (min-width: 768px) {
@@ -142,7 +139,7 @@
       padding: 1rem 2rem;
     }
   }
-  Desktop (min-width: 1024px) 
+  Desktop (min-width: 1024px)
   @media screen and (min-width: 1024px) {
     .productDetailsContainer {
       max-width: 60%;

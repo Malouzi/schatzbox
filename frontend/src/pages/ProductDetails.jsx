@@ -44,7 +44,7 @@ const ProductDetails = () => {
       <p>
         Verfügbarkeit: {product.availability ? "Auf Lager" : "Nicht verfügbar"}
       </p>
-      <button onClick={handleAddToCart} disabled={!product.availability}>
+      <button className={styles.btnProduct} onClick={handleAddToCart} disabled={!product.availability}>
         In den Warenkorb
       </button>
     </div>
