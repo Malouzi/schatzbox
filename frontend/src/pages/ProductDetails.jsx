@@ -10,20 +10,41 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // useEffect(() => {
+  //   const fetchProduct = () => {
+  //     const foundProduct = productsData.find(
+  //       (item) => item._id === parseInt(id)
+  //     );
+  //     if (foundProduct) {
+  //       setProduct(foundProduct);
+  //     } else {
+  //       setError("Produkt nicht gefunden");
+  //     }
+  //     setLoading(false);
+  //   };
+  //   fetchProduct();
+  // }, [id]);
+
   useEffect(() => {
-    const fetchProduct = () => {
-      const foundProduct = productsData.find(
-        (item) => item._id === parseInt(id)
-      );
-      if (foundProduct) {
-        setProduct(foundProduct);
-      } else {
-        setError("Produkt nicht gefunden");
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch("/books.json");
+        const data = await response.json();
+        const foundProduct = data.find((item) => item._id.toString() === id);
+        if (foundProduct) {
+          setProduct(foundProduct);
+        } else {
+          setError("Produkt nicht gefunden");
+        }
+      } catch (err) {
+        setError("Fehler beim Laden der Produktdaten");
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
     fetchProduct();
   }, [id]);
+  
   if (loading) {
     return <p>Lädt...</p>;
   }

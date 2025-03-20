@@ -40,9 +40,12 @@ export default function Navbar() {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
+
+          {/* Optional */}
+          {/* <li>
             <Link to="/angebote">Angebote</Link>
-          </li>
+          </li> */}
+          
           <li>
             <Link to="/kontakt">Kontakt</Link>
           </li>
