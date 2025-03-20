@@ -19,6 +19,7 @@ import ProductDetails from './pages/ProductDetails';
 import Imprint from "./components/Imprint/Imprint";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Contact from "./components/Contact/Contact";
+import CustomerProfile from "./pages/CustomerProfile";
 
 export default function App() {
   return (
