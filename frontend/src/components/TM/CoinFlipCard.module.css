@@ -1,0 +1,162 @@
+/* CoinFlipCard.module.css */
+
+.flipCardContainerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .flipCardContainerWrapper {
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+  }
+  
+  /* Hintergrundkasten, der direkt um die Flip-Card liegt */
+  .flipCardContainer {
+    background-color: white;
+    padding: 20px;
+    display: inline-flex;
+    border-radius: 10px;
+    position: relative;
+    overflow: visible;
+  }
+  
+  /* Flip-Karte */
+  .flipCard {
+    width: 280px;
+    height: 350px;
+    perspective: 1000px;
+  }
+  
+  /* Innerer Bereich mit Drehung */
+  .flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+  }
+  
+  /* Zustand, wenn umgedreht */
+  .flipped .flipCardInner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Vorder- und Rückseite */
+  .flipCardFront,
+  .flipCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: visible;
+  }
+  
+  /* Vorderseite: Münze */
+  .flipCardFront {
+    background-color: #b5e7f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  /* Rückseite: Rätselkarte */
+  .flipCardBack {
+    top: 0;
+    left: 0;
+    background-color: white;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 2px solid #5fbfed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Schließen-Button, nur auf der Rückseite */
+  .closeButton {
+    position: absolute;
+    top: -52px;
+    right: -20px;
+    background-color: #fff9ee;
+    border: 2px solid #5fbfed;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  @media (max-width: 767px) {
+    .closeButton {
+      top: -40px;
+      right: -10px;
+      left: auto;
+      transform: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .closeButton {
+      right: -20px;
+      left: auto;
+      transform: none;
+    }
+  }
+  
+  /* Rätselbox */
+  .riddleBox {
+    text-align: center;
+    width: 90%;
+  }
+  
+  /* Rätseltext */
+  .riddleText {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Antwortoptionen */
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Antwort-Buttons */
+  .optionButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #f58a08;
+    border-radius: 4px;
+    background-color: #fff9ee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .optionButton:hover {
+    background-color: #b5e7f6;
+    color: white;
+  }
+  
+  /* Feedback-Text */
+  .feedbackText {
+    min-height: 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #d9534f;
+    transition: opacity 0.5s ease;
+  }
+  

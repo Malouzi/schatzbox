@@ -1,6 +1,6 @@
 //Background.jsx
 
-import bgImage from '../../assets/background.png';
+import bgImage from '../../assets/Background.png';
 
 export default function Hintergrund(props) {
   return (
