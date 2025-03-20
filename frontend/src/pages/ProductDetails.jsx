@@ -37,7 +37,7 @@ const ProductDetails = () => {
   return (
     <div className={styles.productDetailsContainer}>
       <h2>{product.name}</h2>
-      <img src={`/${product.coverImage}`} alt={product.title} />
+      <img className={styles.imgProductDetails} src={`/${product.coverImage}`} alt={product.title} />
       <p>{product.description}</p>
       <p>Preis: {product.price} €</p>
       <p>Bewertung: {product.rating} ★</p>
