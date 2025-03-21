@@ -4,13 +4,15 @@ import { LuSearchCheck } from "react-icons/lu";
 import { TbFlagCheck } from "react-icons/tb";
 import Slideshow from "../Slideshow/Slideshow";
 import styles from "./Welcome.module.css";
-import Circles from "../Circles/Circles";
+import CirclesRight from "../Circles/CirclesRight";
+import CirclesLeft from "../Circles/CirclesLeft";
+
 
 export default function Welcome() {
   return (
     <>
       <Slideshow />
-      <Circles />
+      <CirclesRight />
       <div className={styles.container1}>
         <h1>Willkommen bei Schatzbox</h1><br />
         <h2>
@@ -66,6 +68,7 @@ export default function Welcome() {
           Perfekt für drinnen & draußen – Flexible Nutzung</li>
         </ul>
       </div>
+      <CirclesLeft />
     </>
   );
 }
