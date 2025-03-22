@@ -1,0 +1,34 @@
+
+/* CoinRiddle.module.css */
+
+/* Container für das Icon und Overlay – transparent und interaktiv */
+.container {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+ 
+}
+
+/* Icon-Button – keine Hintergrund- oder Rahmenstile */
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Das Münz-Icon; hier in rem angegeben (1rem entspricht typischerweise 16px) */
+.coinIcon {
+  width: 35rem;  /* ca. 160px, anpassbar */
+  height: auto;
+  background: transparent;
+  transition: transform 0.2s ease;
+}
+
+/* Hover-Effekt per Framer Motion könnte die CSS-Regel ersetzen,
+   falls du Framer Motion direkt nutzt, kannst du diese Zeile ggf. entfernen.
+   Für fallback-Zwecke oder Browser ohne Motion: 
+.iconButton:hover .coinIcon {
+  transform: scale(1.1);
+}
+*/

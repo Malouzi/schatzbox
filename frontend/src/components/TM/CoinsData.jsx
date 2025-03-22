@@ -1,12 +1,11 @@
-// Coins.jsx
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import CoinFlipCard from './CoinFlipCard';
+// CoinsData.jsx
+
+import coinImg from '../../assets/coin.png';
 
 const coinsData = [
     {
       id: "Coin1",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...", // vollständiger Base64-Code hier
+      imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 252 634)",
       riddle: {
         text: "Was hat vier Beine, aber kann nicht laufen?",
@@ -19,7 +18,7 @@ const coinsData = [
     },
     {
       id: "Coin2",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
+      imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 26 928)",
       riddle: {
         text: "Welches Tier hat einen Rüssel?",
@@ -32,8 +31,8 @@ const coinsData = [
     },
     {
       id: "Coin3",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 100 700)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 146 1288)",
       riddle: {
         text: "Was wird beim Trocknen nass?",
         options: [
@@ -45,8 +44,8 @@ const coinsData = [
     },
     {
       id: "Coin4",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 150 750)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 590 1362)",
       riddle: {
         text: "Was hat viele Schlüssel, aber kann keine Türen öffnen?",
         options: [
@@ -58,8 +57,8 @@ const coinsData = [
     },
     {
       id: "Coin5",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 200 800)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 810 972)",
       riddle: {
         text: "Was hat einen Kopf und einen Fuß, aber keinen Körper?",
         options: [
@@ -71,8 +70,8 @@ const coinsData = [
     },
     {
       id: "Coin6",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 250 850)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 1030 610)",
       riddle: {
         text: "Was kann man brechen, ohne es in die Hand zu nehmen?",
         options: [
@@ -84,8 +83,8 @@ const coinsData = [
     },
     {
       id: "Coin7",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 300 900)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 1398 610)",
       riddle: {
         text: "Was hat einen Hals, aber keinen Kopf?",
         options: [
@@ -97,8 +96,8 @@ const coinsData = [
     },
     {
       id: "Coin8",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 350 950)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 1326 1059.2264)",
       riddle: {
         text: "Was läuft, ohne zu gehen?",
         options: [
@@ -110,8 +109,8 @@ const coinsData = [
     },
     {
       id: "Coin9",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 400 1000)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 1572.4528 1375.2264)",
       riddle: {
         text: "Was hat Flügel, aber kann nicht fliegen?",
         options: [
@@ -123,8 +122,8 @@ const coinsData = [
     },
     {
       id: "Coin10",
-      imageSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAEAAAQBCAYAAABbg5MYAAAACXBIWXMA...",
-      transform: "matrix(0.1704 0 0 0.1704 450 1050)",
+      imageSrc: coinImg,
+      transform: "matrix(0.1704 0 0 0.1704 1716.4528 1033.38)",
       riddle: {
         text: "Was kommt einmal in einer Minute, zweimal in einem Moment, aber nie in tausend Jahren?",
         options: [
@@ -137,49 +136,7 @@ const coinsData = [
   ];
   
 
-const Coins = () => {
-  const [activeCoin, setActiveCoin] = useState(0);
+         
+          
 
-  // Sobald das Rätsel der aktiven Münze gelöst wurde, wird diese Funktion aufgerufen
-  const handleCoinSolved = () => {
-    if (activeCoin < coinsData.length - 1) {
-      setActiveCoin(activeCoin + 1);
-    }
-  };
-
-  return (
-    <motion.svg
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      x="0"
-      y="0"
-      width="2360px"
-      height="1640px"
-      viewBox="0 0 2360 1640"
-      style={{ enableBackground: 'new 0 0 2360 1640' }}
-      xmlSpace="preserve"
-    >
-      <g id="Münzen">
-        {coinsData.map((coin, index) => {
-          // Zeige Münzen nur, wenn ihr Index <= activeCoin ist
-          if (index <= activeCoin) {
-            return (
-              // hier <foreignObject> verwendet, weil ich CSS innerhalb eines SVGs anwenden
-              <foreignObject key={coin.id} x={index * 300} y={100} width="300" height="400">
-                <CoinFlipCard
-                  coinData={coin}
-                  active={index === activeCoin}
-                  onSolved={handleCoinSolved}
-                />
-              </foreignObject>
-            );
-          }
-          return null;
-        })}
-      </g>
-    </motion.svg>
-  );
-};
-
-export default Coins;
+export default coinsData;

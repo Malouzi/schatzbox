@@ -25,3 +25,10 @@ aus
 		<image style="overflow:visible;" WIRD <image style={{ overflow:'visible' }}
 
 		npm install framer-motion
+
+
+npx @svgr/cli src/assets/TreasureChest.svg --out-dir src/components/TM
+
+npx @svgr/cli src/assets/Eichhörnchen.svg --out-dir src/components/TM
+
++ svgo.config.cjs
