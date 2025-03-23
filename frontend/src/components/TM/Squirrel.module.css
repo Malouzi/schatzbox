@@ -1,0 +1,22 @@
+.squirrelContainer {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+  }
+  
+  .sprechblase {
+    position: absolute;
+    top: 10%;
+    left: 110%;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+  }
+  
+  .textContainer {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+  }
+  

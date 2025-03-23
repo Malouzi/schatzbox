@@ -1,8 +1,8 @@
 // TreasureChest.jsx
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ChestBody from './ChestBody.jsx'; // Das SVG für den Körper (ohne Deckel) muss ich noch machen
-import ChestLid from './ChestLid.jsx';   // Den separater SVG-Deckel auch
+import ChestBody from './TreasureBottomSVG.jsx'; // Das SVG für den Körper (ohne Deckel)
+import ChestLid from './TreasureLidSVG.jsx';   // Den separater SVG-Deckel 
 import styles from './TreasureChest.module.css';
 
 const chestVariants = {

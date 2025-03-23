@@ -31,4 +31,10 @@ npx @svgr/cli src/assets/TreasureChest.svg --out-dir src/components/TM
 
 npx @svgr/cli src/assets/Eichhörnchen.svg --out-dir src/components/TM
 
+npx @svgr/cli src/assets/Truhenboden.svg --out-dir src/components/TM
+
+npx @svgr/cli src/assets/Deckel.svg --out-dir src/components/TM
+
+npx @svgr/cli src/assets/Münze.svg --out-dir src/components/TM
+
 + svgo.config.cjs

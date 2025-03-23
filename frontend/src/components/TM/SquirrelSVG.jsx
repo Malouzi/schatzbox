@@ -1,9 +1,9 @@
-//Eichhoernchen.jsx
+//SquirrelSVG.jsx
 
 import React from "react";
 
 
-const EichhoernchenSVG = (props) => (
+const SquirrelSVG = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -1177,4 +1177,4 @@ const EichhoernchenSVG = (props) => (
     </g>
   </svg>
 );
-export default EichhoernchenSVG;
+export default SquirrelSVG;

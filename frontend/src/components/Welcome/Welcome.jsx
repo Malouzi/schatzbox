@@ -58,7 +58,6 @@ export default function Welcome() {
 
       <div className={styles.container2}>
         <h1>Und so einfach funkioniert's:</h1>
-        <p>
           <ul className={styles.listWelcome}>
             <li>
               <strong>Sofort-Download</strong> - Direkt nach dem Kauf
@@ -73,7 +72,6 @@ export default function Welcome() {
               Nutzung
             </li>
           </ul>
-        </p>
       </div>
     </>
   );
