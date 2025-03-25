@@ -32,7 +32,7 @@ const Orders = () => {
     return ( 
         <div>
             <h1>Your Orders</h1>
-            {error && <p>{error}</p>} {/* Fehlernachricht anzeigen */}
+            {error && <p>{error}</p>}
             <ul>
                 {orders.map(order => (
                     <li key={order._id}>

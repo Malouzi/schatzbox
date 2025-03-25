@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import SectionTitles from "../SectionTitles";
 import styles from "./ProductSection.module.css";
-import Circles from '../Circles/Circles.jsx';
+/*import Circles from '../Circles/Circles.jsx';*/
 
 export default function ProductSection() {
   const [books, setBooks] = useState([]);
@@ -15,8 +15,10 @@ export default function ProductSection() {
   }, []);
   return (
    <> 
-      <br /><br />
-      <Circles /> <br /><br />
+     {/*
+     <br /><br />
+      <Circles /> <br /><br />*/}
+    
       <section className={styles.productSection}>
         <SectionTitles />
        

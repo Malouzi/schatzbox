@@ -23,7 +23,11 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
-    rules: {
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off"
+    },
+    /*rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
@@ -34,5 +38,6 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    */
   },
 ]
