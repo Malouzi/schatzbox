@@ -7,12 +7,12 @@ export const CartProvider = ({ children }) => {
   CartProvider.propTypes = {
     children: PropTypes.node.isRequired
   };
+
   const [cartItems, setCartItems] = useState(() => {    
     const savedCart = localStorage.getItem('cart');
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
@@ -71,3 +71,4 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+

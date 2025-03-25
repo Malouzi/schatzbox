@@ -1,65 +1,78 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import styles from './Admin.module.css';
 
 export const Admin = () => {
-  const [product, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
+    const fetchProducts = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('/books.json');
+        setProducts(response.data);
+        
 
-    axios
-      .get('http://localhost:3000/product')
-      .then((response) => {
-        setProduct(response.data.data);
+        setProducts(response.data.books);
+      } catch (error) {
+        console.error('Fehler beim Laden der Produkte:', error);
+        setError('Fehler beim Laden der Produkte.');
+      } finally {
         setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError("Fehler beim Laden der Produkte.");
-        setLoading(false);
-      });
+      }
+    };
+    fetchProducts();
   }, []);
 
+  if (loading) {
+    return <div className={styles.message}>Lade Produkte...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.messageError}>{error}</div>;
+  }
+
   return (
-    <div className='px-4 py-8 max-w-7x1 mx-auto'>
+    <div className={styles.container}>
+      <div className={styles.addButtonContainer}>
+        <Link to="/add-product" className={styles.addButton}>
+          Produkt hinzufügen
+        </Link>
+      </div>
 
-      <div className='overflow-x-auto'>
-
-        <table className='table-auto w-full'>
+      <div className={styles.tableContainer}>
+        <table className={styles.productTable}>
           <thead>
             <tr>
-              <th>
-                <Link to="/add-product" className='bg-blue-400 py-2 px-4 hover:bg-sky-200 text-white rounded'>
-                Produkt zufügen
-                </Link>
-              </th>
+              <th>Bild</th>
               <th>Name</th>
               <th>Preis</th>
               <th>Beschreibung</th>
               <th>Kategorie</th>
+              <th>Aktionen</th>
             </tr>
           </thead>
-
           <tbody>
-            {product.map((product, index) => (
-              <tr key={product._id} className=''>
+            {products.map((product) => (
+              <tr key={product.id}>
                 <td>
-                  <div className=''>
-                    <img src={product.image} alt={product.title} />
-                  </div>  
-
+                  <img
+                    src={product.image}
+                    alt={product.title || 'Produktbild'}
+                    className={styles.productImage}
+                  />
                 </td>
-                <td className=''>{product.name}</td>
-                <td className=''>{product.price}</td>
-                <td className=''>{product.description}</td>
-                <td className=''>{product.category}</td>
-                <td className=''>
-                  <div>
-                  <Link to={`/admin/product/edit/${product._id}`}>Bearbeiten</Link>
-                  </div>
+                <td>{product.name}</td>
+                <td>{product.price.toFixed(2)}€</td>
+                <td>{product.description}</td>
+                <td>{product.category}</td>
+                <td>
+                  <Link to={`/admin/product/edit/${product.id}`} className={styles.editLink}>
+                    Bearbeiten
+                  </Link>
                 </td>
               </tr>
             ))}
@@ -67,5 +80,5 @@ export const Admin = () => {
         </table>
       </div>
     </div>
-  )
-}
+  );
+};

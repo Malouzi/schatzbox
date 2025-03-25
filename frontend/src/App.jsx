@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './components/Cart/Cart';
@@ -23,11 +24,12 @@ import CustomerProfile from "./pages/CustomerProfile";
 
 export default function App() {
   return (
-    <Router>
-      <Navbar />
+    <AuthProvider>
+      <Router>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={
+        <Routes>
+          <Route path="/" element={
             <>
               <Welcome />
               <PenguinSlideFlipCard />
@@ -38,31 +40,28 @@ export default function App() {
             </>
           } />
           
-        <Route path="/customer-profile" element={
-          <ProtectedRoute>
-            <CustomerProfile />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/angebote" element={<Angebote />} />
-        <Route path="/imprint" element={<Imprint />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/admin/*" element={
-          
+          <Route path="/customer-profile" element={
             <ProtectedRoute>
-            <AdminRoutes />
-          </ProtectedRoute>
-        } />
+              <CustomerProfile />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/angebote" element={<Angebote />} />
+          <Route path="/imprint" element={<Imprint />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          
+          {/* Admin Bereich ohne Schutz zum Testen vorläufig */}
+          <Route path="/admin/*" element={<AdminRoutes />} />
+        </Routes>
 
-      </Routes>
-
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 }
 
@@ -75,3 +74,5 @@ const AdminRoutes = () => {
     </Routes>
   );
 };
+
+

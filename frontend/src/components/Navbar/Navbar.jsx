@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo-transparent.png";
 import { BiShoppingBag } from "react-icons/bi";
@@ -8,6 +9,13 @@ import { BiShoppingBag } from "react-icons/bi";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { totalItems } = useContext(CartContext);
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -50,7 +58,13 @@ export default function Navbar() {
             <Link to="/kontakt">Kontakt</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            {isAuthenticated ? (
+              <button onClick={logout} className={styles.logoutButton}>
+                Logout
+              </button>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </li>
         </ul>
       </div>
