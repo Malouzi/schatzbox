@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import styles from './Register.module.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
   export default function Register() {
     const [formUser, setFormUser] = useState({
@@ -7,6 +10,9 @@ import styles from './Register.module.css';
       email: "",
       password: "",
     });
+
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
       e.preventDefault();
       setFormUser({
@@ -28,6 +34,7 @@ import styles from './Register.module.css';
         });
         if (response.ok) {
           setFormUser({ username: "", email: "", password: "" });
+          navigate("/login");
         } else {
           console.log("error");
           

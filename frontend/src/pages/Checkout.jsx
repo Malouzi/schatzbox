@@ -4,10 +4,14 @@ import styles from './Checkout.module.css';
 
 const Checkout = () => {
   const { cartItems, totalPrice, clearCart } = useContext(CartContext);
+  const [sameAddress, setSameAddress] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    address: '',
-    paymentMethod: 'creditCard',
+    billingStreet: '',
+    billingPostalCode: '',
+    shippingStreet: '',
+    shippingPostalCode: '',
+    paymentMethod: 'rechnung',
   });
 
   const handleChange = (e) => {
@@ -15,9 +19,20 @@ const Checkout = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleCheckboxChange = (e) => {
+    setSameAddress(e.target.checked);
+    if (e.target.checked) {
+      setFormData({
+        ...formData,
+        shippingStreet: formData.billingStreet,
+        shippingPostalCode: formData.billingPostalCode,
+      });
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-     alert('Bestellung erfolgreich!');
+    alert('Bestellung erfolgreich!');
     clearCart();
   };
 
@@ -38,16 +53,64 @@ const Checkout = () => {
               required
             />
           </div>
+
+          <h3>Rechnungsadresse</h3>
           <div>
-            <label>Adresse:</label>
+            <label>Straße:</label>
             <input
               type="text"
-              name="address"
-              value={formData.address}
+              name="billingStreet"
+              value={formData.billingStreet}
               onChange={handleChange}
               required
             />
           </div>
+          <div>
+            <label>Postleitzahl:</label>
+            <input
+              type="text"
+              name="billingPostalCode"
+              value={formData.billingPostalCode}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              checked={sameAddress}
+              onChange={handleCheckboxChange}
+            />
+            <label>Lieferadresse gleich Rechnungsadresse</label>
+          </div>
+
+          {!sameAddress && (
+            <>
+              <h3>Lieferadresse</h3>
+              <div>
+                <label>Straße:</label>
+                <input
+                  type="text"
+                  name="shippingStreet"
+                  value={formData.shippingStreet}
+                  onChange={handleChange}
+                  required={!sameAddress}
+                />
+              </div>
+              <div>
+                <label>Postleitzahl:</label>
+                <input
+                  type="text"
+                  name="shippingPostalCode"
+                  value={formData.shippingPostalCode}
+                  onChange={handleChange}
+                  required={!sameAddress}
+                />
+              </div>
+            </>
+          )}
+
           <div>
             <label>Zahlungsmethode:</label>
             <select
@@ -55,10 +118,11 @@ const Checkout = () => {
               value={formData.paymentMethod}
               onChange={handleChange}
             >
-              <option value="creditCard">Kreditkarte</option>
-              <option value="paypal">PayPal</option>
+              <option value="rechnung">Rechnung</option>
+              <option value="vorkasse">Vorkasse</option>
             </select>
           </div>
+
           <h3>Gesamtpreis: {totalPrice} €</h3>
           <button type="submit">Bestellen</button>
         </form>
