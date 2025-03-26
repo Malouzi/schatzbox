@@ -16,19 +16,9 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: true,
-    validate: {
-      validator: function (password) {
-        return validator.isStrongPassword(password, {
-          minLength: 10,
-          minNumbers: 1,
-          minSymbols: 1,
-          minUppercase: 1,
-          minLowercase: 1,
-        });
-      },
-      message: () => "Weak password",
-    },
+    required: true
+  
+    
   },
  
   verified: Date,

@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './components/Cart/Cart';
+import Checkout from './pages/Checkout';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -53,6 +54,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           
           {/* Admin Bereich ohne Schutz zum Testen vorläufig */}
@@ -74,5 +76,3 @@ const AdminRoutes = () => {
     </Routes>
   );
 };
-
-
