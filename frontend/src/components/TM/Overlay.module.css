@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 100; /*Überdenken wegen Kompass */
   }
   
   .modal {
@@ -23,10 +23,10 @@
   
   .closeButton {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #fff9ee;
-    border: 2px solid #5fbfed;
+    top: -28px;
+    right: -28px;
+    background: #cbe07c;
+    border: 2px solid #478121;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -34,10 +34,3 @@
   }
   
 
-/* Feedback-Text im Overlay 
-.feedback {
-    margin-top: 10px;
-    font-size: 1rem;
-    text-align: center;
-  } 
-*/

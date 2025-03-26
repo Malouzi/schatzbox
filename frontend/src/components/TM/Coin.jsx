@@ -6,15 +6,28 @@ import React from 'react';
 
 const Coin = ({ transform, imageSrc, onClick }) => {
   return (
-    <g transform={transform} onClick={onClick} style={{ cursor: 'pointer' }}>
+   
+     
+
+   <g transform={transform} onClick={onClick} style={{ cursor: 'pointer', pointerEvents: 'all' }}>
       <image
-        href={imageSrc}
-        width="200"  //  Größe noch anpassen
-        height="200"
+        href={imageSrc}   //oder xlinkHref ???
+        width="2500"  //  Größe HIER anpassen
+        height="2500"
         style={{ pointerEvents: 'all' }}
       />
-    </g>
-  );
-};
+    </g> 
+);
+}; 
 
-export default Coin;
+export default Coin; 
+
+   /* <g transform={transform} style={{ cursor: 'pointer', pointerEvents: 'all' }}>
+  <image
+    href={imageSrc}
+    width="2500"
+    height="2500"
+    style={{ pointerEvents: 'all' }}
+    onClick={() => console.log("Image clicked")}
+  />
+</g> */

@@ -1,22 +1,46 @@
-.squirrelContainer {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-  }
-  
-  .sprechblase {
-    position: absolute;
-    top: 10%;
-    left: 110%;
-    padding: 10px;
-    background: #fff;
-    border: 2px solid #000;
+/*Squirrel.module.css */
+
+.sprechblase {
+    background: rgba(188, 74, 12, 0.7);
+    border: 2px solid rgba (165, 65, 12, 0.8);
+    padding: 15px;
     border-radius: 10px;
+    border-bottom-left-radius: 0;
+    position:relative; 
+    font-family: Arial, sans-serif;
+    font-size: 26px; /* Etwas größere Schrift */
+    color: #fff;
+    /*-webkit-box-shadow: -8px 4px  rgba(185, 84, 29, 0.4);
+    -moz-box-shadow: -8px 4px  rgba(197, 81, 17,0.4);
+    box-shadow: -8px 4px  rgba(197, 81, 17,0.4);
+    -moz-border-radius: 10px;*/
+    -webkit-box-shadow: 0 0 10px rgba(185, 84, 29, 0.4);
+    -moz-box-shadow: 0 0 10px rgba(197, 81, 17, 0.4);
+    box-shadow: 0 0 10px 3px rgba(197, 81, 17, 0.4);
+    overflow: visible;
+  }
+
+  
+ .sprechblase::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+   left: 4%;
+   margin-left: 11px;
+    width: 0;
+    border-width: 25px 22px 0 0;
+    border-style: solid;
+    border-color: rgba(188, 74, 12, 0.7) transparent;
+  } 
+
+
+  .textLine {
+    margin: 10;
+    padding: 10;
+    line-height: 1.6;
   }
   
   .textContainer {
-    display: flex;
-    flex-wrap: wrap;
+    /* Sorgt dafür, dass Zeilenumbrüche aus den <div>-Blöcken (oder auch in einem <pre>–Fall) respektiert werden - argh */
     white-space: pre-wrap;
   }
-  

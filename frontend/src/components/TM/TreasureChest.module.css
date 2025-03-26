@@ -1,18 +1,44 @@
 /* TreasureChest.module.css */
 .chestContainer {
     position: absolute;
-    bottom: 20px;  /* Beispielposition */
+    bottom: 20px;  
     left: 50%;
     transform: translateX(-50%);
+   width: 2360px;
+    height: 1640px;
+    /*overflow: visible;*/
+    z-index: 100;
     cursor: pointer;
+  
+  }
+
+  .deckel {
+    transform-origin: 50% 0%; /* Legt den Bezugspunkt der Transformation fest */
+    transform: rotateX(0deg); /* Ausgangsgröße: 100% */
+    transition: transform 0.5s ease; /* Für eine sanfte Animation */
   }
   
-  .chest {
-    position: relative;
-    width: 200px; /* anpassbar */
-    height: auto;
+  /* Beispiel: Klasse, um den Deckel zu vergrößern */
+  .groesser {
+    transform: scale(1.2) rotateX(0deg); /* 120% der ursprünglichen Größe */
   }
   
+  
+
+
+  /*
+  .chestContainer .st0{fill:#592E08;}
+  .chestContainer .st1{fill:#BF6211;}
+  .chestContainer .st2{fill:#F2E641;fill-opacity:0.7723;}
+  .chestContainer .st3{fill:#F2E641;}
+  .chestContainer .st4{fill:#F2D544;}
+  .chestContainer .st5{fill:#F2C744;}
+  .chestContainer .st6{fill:#353FAA;}
+  .chestContainer .st7{fill:#A1142D;}
+  .chestContainer .st8{fill:#402915;}
+  .chestContainer .st9{fill:#F2E2CE;}
+  
+*/
   .overlay {
     position: absolute;
     top: 0;
@@ -32,3 +58,13 @@
     font-weight: bold;
   }
   
+  /*
+	.st10{fill:#F29C50;fill-opacity:0.7294;}
+	.st11{fill:#A65638;}
+	.st12{fill:#F2D9BB;}
+	.st13{fill:#F29C50;}
+	.st14{fill:#F5AE6E;}
+	.st15{fill:#FFFFFF;}
+	.st16{fill:#774E3F;}
+	.st17{fill:#F28F38;}
+	.st18{fill:#BF5E3B;} */

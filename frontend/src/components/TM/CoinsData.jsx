@@ -1,12 +1,12 @@
 // CoinsData.jsx
 
-import coinImg from '../../assets/coin.png';
+import coinImg from '../../assets/Coin.svg';
 
 const coinsData = [
     {
       id: "Coin1",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 252 634)",
+      transform: "matrix(0.1704 0 0 0.1704 125 520)",
       riddle: {
         text: "Was hat vier Beine, aber kann nicht laufen?",
         options: [
@@ -19,12 +19,12 @@ const coinsData = [
     {
       id: "Coin2",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 26 928)",
+      transform: "matrix(0.1704 0 0 0.1704 -70 805)",
       riddle: {
         text: "Welches Tier hat einen Rüssel?",
         options: [
-          { label: "Ein Elefant", correct: true },
           { label: "Ein Löwe", correct: false },
+          { label: "Ein Elefant", correct: true },
           { label: "Ein Vogel", correct: false }
         ]
       }
@@ -32,25 +32,25 @@ const coinsData = [
     {
       id: "Coin3",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 146 1288)",
+      transform: "matrix(0.1704 0 0 0.1704 17 1138)",
       riddle: {
         text: "Was wird beim Trocknen nass?",
         options: [
-          { label: "Ein Handtuch", correct: true },
           { label: "Ein Schwamm", correct: false },
-          { label: "Ein Fön", correct: false }
+          { label: "Ein Fön", correct: false },
+          { label: "Ein Handtuch", correct: true }
         ]
       }
     },
     {
       id: "Coin4",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 590 1362)",
+      transform: "matrix(0.1704 0 0 0.1704 450 1190)",
       riddle: {
         text: "Was hat viele Schlüssel, aber kann keine Türen öffnen?",
         options: [
-          { label: "Ein Klavier", correct: true },
           { label: "Ein Schloss", correct: false },
+          { label: "Ein Klavier", correct: true },
           { label: "Eine Tastatur", correct: false }
         ]
       }
@@ -58,7 +58,7 @@ const coinsData = [
     {
       id: "Coin5",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 810 972)",
+      transform: "matrix(0.1704 0 0 0.1704 680 850)",
       riddle: {
         text: "Was hat einen Kopf und einen Fuß, aber keinen Körper?",
         options: [
@@ -71,38 +71,38 @@ const coinsData = [
     {
       id: "Coin6",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 1030 610)",
+      transform: "matrix(0.1704 0 0 0.1704 910 515)",
       riddle: {
         text: "Was kann man brechen, ohne es in die Hand zu nehmen?",
         options: [
-          { label: "Ein Versprechen", correct: true },
           { label: "Ein Glas", correct: false },
-          { label: "Ein Stift", correct: false }
+          { label: "Ein Stift", correct: false },
+          { label: "Ein Versprechen", correct: true }
         ]
       }
     },
     {
       id: "Coin7",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 1398 610)",
+      transform: "matrix(0.1704 0 0 0.1704 1205 520)",
       riddle: {
         text: "Was hat einen Hals, aber keinen Kopf?",
         options: [
-          { label: "Eine Flasche", correct: true },
           { label: "Ein Elefant", correct: false },
-          { label: "Ein Baum", correct: false }
+          { label: "Ein Baum", correct: false },
+          { label: "Eine Flasche", correct: true }
         ]
       }
     },
     {
       id: "Coin8",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 1326 1059.2264)",
+      transform: "matrix(0.1704 0 0 0.1704 1220 920)",
       riddle: {
         text: "Was läuft, ohne zu gehen?",
         options: [
-          { label: "Ein Fluss", correct: true },
           { label: "Ein Auto", correct: false },
+          { label: "Ein Fluss", correct: true },
           { label: "Eine Uhr", correct: false }
         ]
       }
@@ -110,7 +110,7 @@ const coinsData = [
     {
       id: "Coin9",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 1572.4528 1375.2264)",
+      transform: "matrix(0.1704 0 0 0.1704 1445 1205)",
       riddle: {
         text: "Was hat Flügel, aber kann nicht fliegen?",
         options: [
@@ -123,12 +123,12 @@ const coinsData = [
     {
       id: "Coin10",
       imageSrc: coinImg,
-      transform: "matrix(0.1704 0 0 0.1704 1716.4528 1033.38)",
+      transform: "matrix(0.1704 0 0 0.1704 1600 910)",
       riddle: {
         text: "Was kommt einmal in einer Minute, zweimal in einem Moment, aber nie in tausend Jahren?",
         options: [
-          { label: "Der Buchstabe M", correct: true },
           { label: "Der Tag", correct: false },
+          { label: "Der Buchstabe M", correct: true },
           { label: "Die Stunde", correct: false }
         ]
       }

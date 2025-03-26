@@ -1,4 +1,4 @@
-// TM.jsx
+
 import React from "react";
 import Background from "./Background.jsx";
 import TreasureChest from "./TreasureChest.jsx";
@@ -7,24 +7,29 @@ import Coins from "./Coins.jsx";
 import EichhoernchenMitSprechblase from "./Squirrel.jsx";
 import Path from "./Path.jsx";
 import Compass from "./Compass.jsx";
-//import SquirrelSVG from "./SquirrelSVG.jsx";
 
 const TM = () => {
   return (
-    <div className={styles.mapContainer} style={{ position: "relative" }}>
-      {/* Hintergrundbild */}
-      <Background className={styles.background} />
+    <div className={styles.mapContainer}>
+       Hintergrundbild 
+        <Background className={styles.background} /> 
+        
 
-      {/* SVG-Element mit den reinen SVG-Komponenten */}
-      <svg viewBox="0 0 2360 1640" xmlns="http://www.w3.org/2000/svg">
+      {/* SVG-Container für die Animationen */}
+      <svg
+        viewBox="0 0 2360 1640"
+        xmlns="http://www.w3.org/2000/svg"
+        className={styles.svgContainer}
+      >
         <Coins />
         <Path />
-        <TreasureChest />
-        <Compass />
+        <Compass /> 
+        <EichhoernchenMitSprechblase /> 
       </svg>
-
-      {/* Eichhörnchen mit Sprechblase (als HTML außerhalb des SVG) */}
-      <EichhoernchenMitSprechblase />
+         {/* TreasureChest-Komponente mit Test-Props */}
+         <TreasureChest 
+        solvedAll={true} 
+        onClose={() => console.log("Truhe geschlossen")} />
     </div>
   );
 };

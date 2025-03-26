@@ -2,11 +2,11 @@
 
 /* Container für die Fragekarte */
 .card {
-  background-color: white;
-  border: 2px solid #5fbfed;
+  background: #cbe07c;
+  border: 2px solid #478121;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   text-align: center;
   width: 280px;
   margin: auto;
@@ -28,15 +28,15 @@
 /* Stil für jeden Antwort-Button */
 .optionButton {
   padding: 0.5rem 1rem;
-  border: 1px solid #f58a08;
+  border: 1px solid #794607;
   border-radius: 4px;
-  background-color: #fff9ee;
+  background-color: #fff4e2;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 /* Hover-Zustand für Antwort-Buttons */
 .optionButton:hover {
-  background-color: #b5e7f6;
-  color: white;
+  background-color: #e1efc4;
+  color: #794607;
 }

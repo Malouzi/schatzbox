@@ -9,7 +9,7 @@ import ContactForm from './components/ContactForm/ContactForm';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
 import ProtectedRoute from './components/ProtectedRoutes';
-//import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
+import SquirrelCard from './components/SquirrelCard/SquirrelCard';
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
@@ -26,7 +26,7 @@ export default function App() {
           element={
             <>
               <Welcome />
-              {/* <PenguinSlideFlipCard /> */}
+              { <SquirrelCard /> }
 
               <main>
                 <ProductSection />

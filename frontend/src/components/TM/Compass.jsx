@@ -18,7 +18,7 @@ const Compass = () => {
     >
 
 <g id="Kompass">
-<motion.image x="-100" y="-70"style={{ overflow:'visible' }} width="450" height="572" alt="EinBildeinesKompasses"
+<motion.image x="-60" y="-70"style={{ pointerEvents: 'all', overflow:'visible' }} width="450" height="572" alt="EinBildeinesKompasses"
   whileHover={{ rotate: 360 }}
   transition={{ duration: 1, ease: 'linear' }}
  xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAI8CAYAAABiaKuxAAAACXBIWXMAABR0AAAUdAG5O1bwAAAg

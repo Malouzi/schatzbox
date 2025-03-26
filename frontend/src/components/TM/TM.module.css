@@ -1,71 +1,87 @@
 /*TM.module.css */
-/* .mapContainer {
-  position: relative;
-  min-height: 100vh; /* feste Höhe 
-  max-width: 100vw;
-  background-color: #f0f0f0; /* Fallback Hintergrundfarbe 
-  overflow: hidden;
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
 
-
-.st0 {
-  fill: #ffffff; /*FArbe für den Pfad 
-}
-
-
-.path {
-  /* weitere animation für den pfad 
-} 
-*/
 .mapContainer {
   position: relative;
   width: 100%; /* Stellt sicher, dass die Karte sich anpasst */
-  height: auto; /* Passt die Höhe automatisch an */
-  max-width: 100vw; /* Verhindert, dass sie zu groß wird */
-  overflow: hidden; /* Schneidet alles Überstehende ab */
+  /*height: auto;  Passt die Höhe automatisch an */
+  /*max-width: 100vw;  Verhindert, dass sie zu groß wird */
+  overflow: hidden;
+  min-height:100vh; /* Schneidet alles Überstehende ab */
+  pointer-events: none;
 }
 
 .background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%; /* Damit die Schatzkarte sich an den Container anpasst */
-  height: auto;
-  object-fit: contain; /* Behält das Seitenverhältnis bei */
+  height: 100%;
+  /*object-fit: contain;  Seitenverhältnis */
+  pointer-events: auto; /* Damit die Karte nicht klickbar ist  TEST*/
+  z-index: 1;
 }
 
-svg {
+.svgContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 110%;
+ z-index: 10; 
+ 
+} 
+
+/*	  
+.st0{fill:#592E08;}
+.st1{fill:#BF6211;}
+.st2{fill:#F2E641;fill-opacity:0.7723;}
+.st3{fill:#F2E641;}
+.st4{fill:#F2D544;}
+.st5{fill:#F2C744;}
+.st6{fill:#353FAA;}
+.st7{fill:#A1142D;}
+.st8{fill:#402915;}
+.st9{fill:#F2E2CE;}
+.st10{fill:#F29C50;fill-opacity:0.7294;}
+.st11{fill:#A65638;}
+.st12{fill:#F2D9BB;}
+.st13{fill:#F29C50;}
+.st14{fill:#F5AE6E;}
+.st15{fill:#FFFFFF;}
+.st16{fill:#774E3F;}
+.st17{fill:#F28F38;}
+.st18{fill:#BF5E3B;}
+
+*/
+
+/* Media Queries für größere Bildschirme */
+/* Ab 768px (Tablet) – evtl. leicht angepasste Höhe oder Positionierung */
+@media (min-width: 768px) {
+  .mapContainer {
+    /* Beispiel: Erhöhe ggf. die Mindesthöhe, wenn du mehr Platz brauchst */
+    min-height: 100vh;
+  }
+  .background {
+    /* Hier kannst du z. B. von cover auf contain wechseln, falls das sinnvoller ist */
+    object-fit: cover;
+  }
+  .svgContainer {
+    /* Falls die Positionen der interaktiven Elemente im SVG angepasst werden müssen,
+       könntest du hier auch zusätzliche Anpassungen vornehmen */
+  }
 }
 
-	.st0{fill:#592E08;}
-	.st1{fill:#BF6211;}
-	.st2{fill:#F2E641;fill-opacity:0.7723;}
-	.st3{fill:#F2E641;}
-	.st4{fill:#F2D544;}
-	.st5{fill:#F2C744;}
-	.st6{fill:#353FAA;}
-	.st7{fill:#A1142D;}
-	.st8{fill:#402915;}
-	.st9{fill:#F2E2CE;}
-	.st10{fill:#F29C50;fill-opacity:0.7294;}
-	.st11{fill:#A65638;}
-	.st12{fill:#F2D9BB;}
-	.st13{fill:#F29C50;}
-	.st14{fill:#F5AE6E;}
-	.st15{fill:#FFFFFF;}
-	.st16{fill:#774E3F;}
-	.st17{fill:#F28F38;}
-	.st18{fill:#BF5E3B;}
-
+/* Ab 1024px (Desktop) – weitere Anpassungen */
+@media (min-width: 1024px) {
+  .mapContainer {
+    min-height: 100vh; /* Oder einen festen Wert, falls gewünscht */
+  }
+  .background {
+    /* Eventuell unterschiedliche object-fit-Werte oder Padding */
+    object-fit: cover;
+  }
+  .svgContainer {
+    /* Hier kannst du z. B. die Skalierung der interaktiven Elemente optimieren */
+  }
+}

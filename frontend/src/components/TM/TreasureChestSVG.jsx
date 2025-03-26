@@ -1,4 +1,4 @@
-//TreasureChestSVG.jsx
+/*TreasureChestSVG.jsx
 
 import React from "react";
 
@@ -255,4 +255,4 @@ const SvgTreasureChest = (props) => (
     </g>
   </svg>
 );
-export default SvgTreasureChest;
+export default SvgTreasureChest; */
