@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo-transparent.png";
 import { BiShoppingBag } from "react-icons/bi";
@@ -11,6 +11,7 @@ export default function Navbar() {
   const { totalItems } = useContext(CartContext);
   const { isAuthenticated, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();  
 
   const handleLogout = () => {
     logout();
@@ -21,20 +22,23 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  // Effekt, um das Menü beim Scrollen zu schließen
   useEffect(() => {
     const handleScroll = () => {
       if (isOpen) {
-        setIsOpen(false);
+        setIsOpen(false); 
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsOpen(false);  
+  }, [location]);
 
   return (
     <nav className={styles.navbar}>
