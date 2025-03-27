@@ -1,0 +1,30 @@
+.cartContainer {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.cartItem {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+}
+
+.cartItemImage {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.cartCount {
+  font-weight: bold;
+  color: #333;
+}

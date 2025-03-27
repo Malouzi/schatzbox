@@ -5,10 +5,30 @@
   padding: 0;
 }
 
+
 html,
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 100%; /* das hat Nell geändert*/
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
 }
 
 /* Titles */

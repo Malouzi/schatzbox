@@ -1,0 +1,29 @@
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  position: relative;
+}
+
+.sliderImage {
+  width: 100%;
+  object-fit: cover;
+  object-position: center; /* Bild Ausichtung Mitte */
+}
+
+.customDot {
+  background-color: #f58a08;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .sliderImage {
+    height: 60vh; 
+    }
+}

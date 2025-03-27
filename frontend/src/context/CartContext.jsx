@@ -7,18 +7,18 @@ export const CartProvider = ({ children }) => {
   CartProvider.propTypes = {
     children: PropTypes.node.isRequired
   };
-  const [cartItems, setCartItems] = useState(() => {
-    
+
+  const [cartItems, setCartItems] = useState(() => {    
     const savedCart = localStorage.getItem('cart');
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (product) => {
+    console.log('Adding to cart:', product);
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(item => item.id === product.id);
       if (existingItem) {
@@ -71,3 +71,4 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
