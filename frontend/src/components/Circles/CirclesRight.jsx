@@ -24,7 +24,10 @@ const CirclesRight = () => {
   return (
     <section className={styles.container}>
       {circles.map((circle) => {
+        // expo Skalierung 
         const scaleFactor = Math.min((windowWidth / startWidth) ** 1.2, 3);
+        
+        // berechnung Größe der Kreise
         const size = Math.min(circle.baseSize * scaleFactor, maxCircleSize);
 
         return (
@@ -36,7 +39,7 @@ const CirclesRight = () => {
               width: `${size}px`,
               top: circle.top,
               right: circle.right,
-              boxShadow: `inset 0 0 30px 5px ${circle.color}`
+              boxShadow: `inset 0 0 30px 5px ${circle.color}`,
             }}
           ></motion.span>
         );
@@ -46,3 +49,5 @@ const CirclesRight = () => {
 };
 
 export default CirclesRight;
+
+
