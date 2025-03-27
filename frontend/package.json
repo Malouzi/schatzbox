@@ -14,22 +14,25 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.7",
     "@tailwindcss/vite": "^4.0.9",
-    "axios": "^1.8.1",
+    "axios": "^1.8.3",
+    "framer-motion": "^12.5.0",
+    "gsap": "^3.12.7",    
     "cors": "^2.8.5",
-    "framer-motion": "^12.4.7",
     "hamburger-react": "^2.5.2",
     "notistack": "^3.0.2",
     "react": "^19.0.0",
     "react-content": "^0.0.1",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.2.0",
+    "react-router-dom": "^7.3.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
-    "sweetalert2": "^11.17.2"
+    "sweetalert2": "^11.17.2",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@svgr/cli": "^8.1.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
@@ -41,6 +44,7 @@
     "globals": "^15.14.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.9",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "vite-plugin-svgr": "^4.3.0"
   }
 }

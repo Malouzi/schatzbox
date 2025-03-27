@@ -1,0 +1,36 @@
+
+/* CoinRiddle.module.css */
+
+/* Container für den Inhalt der Fragekarte */
+.container {
+  position: relative;
+  display: block;
+  background: transparent;
+  padding: 1rem; /* optionaler Innenabstand */
+}
+
+/* Styling für den Feedback-Text */
+.feedback {
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+
+/* Icon-Button – keine Hintergrund- oder Rahmenstile 
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Das Münz-Icon; hier in rem angegeben (1rem entspricht typischerweise 16px) 
+.coinIcon {
+  width: 35rem;  /* ca. 160px, anpassbar 
+  height: auto;
+  background: transparent;
+  transition: transform 0.2s ease;
+}
+*/
