@@ -27,6 +27,13 @@ const CirclesLeft = () => {
         const scaleFactor = Math.min((windowWidth / startWidth) ** 1.2, 3);
         const size = Math.min(circle.baseSize * scaleFactor, maxCircleSize);
 
+        // Dynamische Anpassung für größere Bildschirme
+        let adjustedLeft = circle.left;
+        if (windowWidth >= 1024) {
+          if (circle.id === 2) adjustedLeft = "22%"; // Etwas näher an den Rest
+          if (circle.id === 4) adjustedLeft = "32%"; // Damit es nicht überlappt
+        }
+
         return (
           <motion.span
             key={circle.id}
@@ -35,8 +42,8 @@ const CirclesLeft = () => {
               height: `${size}px`,
               width: `${size}px`,
               top: circle.top,
-              left: circle.left,
-              boxShadow: `inset 0 0 30px 5px ${circle.color}`
+              left: adjustedLeft,
+              boxShadow: `inset 0 0 30px 5px ${circle.color}`,
             }}
           ></motion.span>
         );

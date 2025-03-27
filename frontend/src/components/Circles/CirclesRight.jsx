@@ -27,6 +27,12 @@ const CirclesRight = () => {
         const scaleFactor = Math.min((windowWidth / startWidth) ** 1.2, 3);
         const size = Math.min(circle.baseSize * scaleFactor, maxCircleSize);
 
+        let adjustedRight = circle.right;
+        if (windowWidth >= 1024) {
+          if (circle.id === 2) adjustedRight = "20%"; // Leicht nach rechts verschoben
+          if (circle.id === 4) adjustedRight = "30%"; // Damit es nicht überlappt
+        }
+
         return (
           <motion.span
             key={circle.id}
@@ -35,8 +41,8 @@ const CirclesRight = () => {
               height: `${size}px`,
               width: `${size}px`,
               top: circle.top,
-              right: circle.right,
-              boxShadow: `inset 0 0 30px 5px ${circle.color}`
+              right: adjustedRight,
+              boxShadow: `inset 0 0 30px 5px ${circle.color}`,
             }}
           ></motion.span>
         );
