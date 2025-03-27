@@ -13,7 +13,7 @@ const TM = () => {
 
    // Beispiel: Hier wird ein Zustand simuliert, der angibt, ob alle Münzen gefunden wurden.
    const [activeCoin, setActiveCoin] = useState(0);
-   const coinsTotal = coinsData.length -1; // Beispiel: 10 Münzen insgesamt
+   const coinsTotal = coinsData.length; // Beispiel: 10 Münzen insgesamt
    const solvedAll = activeCoin === coinsTotal; // Oder passe die Logik an
 
 
@@ -21,7 +21,7 @@ const TM = () => {
 
   return (
     <div className={styles.mapContainer}>
-       Hintergrundbild 
+      {/* Hintergrundbild */}
         <Background className={styles.background} /> 
         
 
@@ -31,13 +31,13 @@ const TM = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={styles.svgContainer}
       >
-        <Coins activeCoin={activeCoin} />
+        <Coins activeCoin={activeCoin} setActiveCoin={setActiveCoin}/>
         <Path />
         <Compass /> 
         <EichhoernchenMitSprechblase /> 
       </svg>
          {/* TreasureChest-Komponente mit Test-Props */}
-         <TreasureChest solvedAll={solvedAll} discountCode="Rabattcode10%" />
+         <TreasureChest solvedAll={solvedAll} discountCode="SCHATZBOX10"/> 
     </div>
   );
 };

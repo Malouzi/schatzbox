@@ -97,9 +97,10 @@ import Overlay from './Overlay.jsx';
     }
   };
 
+
   const handleRiddleSolved = () => {
     setShowRiddle(false);
-    if (activeCoin < coinsData.length -1) {
+    if (activeCoin < coinsData.length) {
       setActiveCoin(activeCoin + 1);
     }
   };

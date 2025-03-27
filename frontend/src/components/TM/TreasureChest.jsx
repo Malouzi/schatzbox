@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ChestBody from './TreasureBottomSVG.jsx';
 import ChestLid from './LidOpenSVG.jsx';
-import OverlayChest from './OverlayChest.jsx';
+import ChestLidClosed from './LidClosedSVG.jsx';
 import styles from './TreasureChest.module.css';
 
 const TreasureChest = ({ solvedAll, discountCode }) => {
@@ -13,7 +13,6 @@ const TreasureChest = ({ solvedAll, discountCode }) => {
   // Overlay automatisch anzeigen, wenn solvedAll true wird
   useEffect(() => {
     if (solvedAll) {
-      console.log("All solved - triggering overlay in 1s"); //DEBUG TEST HIER
       setTimeout(() => {
         setShowOverlay(true);
       }, 1000);
@@ -28,6 +27,7 @@ const TreasureChest = ({ solvedAll, discountCode }) => {
   };
 
   return (
+
     <div className={styles.chestContainer} onClick={handleChestClick}>
       <motion.svg
         viewBox="0 0 2360 1640"
@@ -36,28 +36,31 @@ const TreasureChest = ({ solvedAll, discountCode }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        {/* Truhenkörper */}
+       
         <ChestBody />
-        {/* Ausgelagerte Deckel-Komponente */}
-        <ChestLid open={solvedAll} />
-      </motion.svg>
-      {showOverlay && (
-        <OverlayChest onClose={() => setShowOverlay(false)}>
-          <div>
-            <h2>Rabattcode: 10%</h2>
-            <p>{discountCode}</p>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(discountCode);
-                alert('Rabattcode kopiert!');
-              }}
-            >
-              Code kopieren
-            </button>
-          </div>
-        </OverlayChest>
-      )}
-    </div>
+        {solvedAll ? <ChestLid open={solvedAll} /> : <ChestLidClosed />}
+        </motion.svg> 
+     
+    
+    {showOverlay && (
+      <div className={styles.overlay} onClick={() => setShowOverlay(false)}>
+        <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+          {/*<h2>Rabattcode:</h2>*/}
+          <p>{discountCode}</p>
+          <button
+            className={styles.copyButton}
+            onClick={() => {
+              navigator.clipboard.writeText(discountCode);
+              alert('Rabattcode kopiert!');
+            }}
+          >
+            Code kopieren
+          </button>
+        </div>
+      </div>
+    )}
+  </div>
+  
   );
 };
 
