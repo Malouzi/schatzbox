@@ -9,18 +9,17 @@ export default function Kontakt() {
 
   return (
     <div className={styles.kontaktPage}>
-      <h1>Kontakt</h1>
-      <p>So könnt Ihr uns erreichen:</p>
-      <ul>
-        <li>Telefon: 0123 456789</li>
-        <li>Email: <a href="mailto:kontakt@schatzbox.de">kontakt@schatzbox.de</a></li>
-        <li>Adresse: Musterstraße 10, 12345 Musterstadt</li>
-      </ul>
+   
 
       <section className={styles.contact}>
         <form onSubmit={onSubmit}>
-          <h2>Kontaktformular</h2>
-
+          <h2>Schreib uns eine Nachricht:</h2>
+   <h1>Unsere Kontaktdaten</h1>
+      <ul>
+        <li>Telefon: 030 123456789</li>
+        <li>Email: <a href="mailto:kontakt@schatzbox.de">kontakt@schatzbox.de</a></li>
+        <li>Adresse: Schatzkarte 10, 12345 Berlin</li>
+      </ul>
           <div className={styles.inputBox}>
             <input
               type="text"
