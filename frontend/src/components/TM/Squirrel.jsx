@@ -10,15 +10,15 @@ import squirrelImage from "../../assets/Eichhörnchen.svg";
 
 // Sprechblase als HTML innerhalb eines foreignObject im SVG
 const Sprechblase = () => {
-  const text = `Hallo, ich bin Juli.
-Hast du Lust mit mir auf eine Schatzsuche zu gehen?
-Dann mal los! 
+  const text = `Hallo, ich bin übrigens Juli.
+Wie wäre es mit einer kleinen Schatzsuche? Ja?
+Super, dann lass uns loslegen:
 Gehe zu der ersten Münze und berühre sie.
 ... 
 danach werden weitere Münzen auftauchen 
 ...
-beantworte alle Rätselfragen die du finden kannst,
-dann wirst du den Schatz entdecken!`;
+wenn du alle Münzen gefunden hast öffnet sich die Schatztruhe.
+Viel Glück!`;
 
   // Animation für die Buchstaben der Sprechblase
   const containerVariants = {

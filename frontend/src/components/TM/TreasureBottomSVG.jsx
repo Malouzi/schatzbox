@@ -6,10 +6,10 @@ const SvgTruhenboden = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    x="-200px"
-    y="400px"
-    width="2360px"
-    height="1640px"
+    x="740px"
+    y="890px"
+    width="1180px"
+    height="820px"
     viewBox="0 0 2360 1640"
     style={{
       enableBackground: "new 0 0 2360 1640",

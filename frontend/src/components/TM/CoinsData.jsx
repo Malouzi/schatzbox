@@ -11,7 +11,7 @@ const coinsData = [
         text: "Was hat vier Beine, aber kann nicht laufen?",
         options: [
           { label: "Ein Tisch", correct: true },
-          { label: "Ein Stuhl", correct: false },
+          { label: "Ein Tiger", correct: false },
           { label: "Ein Hund", correct: false }
         ]
       }
@@ -47,11 +47,11 @@ const coinsData = [
       imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 450 1190)",
       riddle: {
-        text: "Was hat viele Schlüssel, aber kann keine Türen öffnen?",
+        text: "Was ist süss, kalt und schmilzt in der Sonne?",
         options: [
-          { label: "Ein Schloss", correct: false },
-          { label: "Ein Klavier", correct: true },
-          { label: "Eine Tastatur", correct: false }
+          { label: "Popcorn", correct: false },
+          { label: "Eis", correct: true },
+          { label: "Käsebrot", correct: false }
         ]
       }
     },
@@ -60,11 +60,11 @@ const coinsData = [
       imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 680 850)",
       riddle: {
-        text: "Was hat einen Kopf und einen Fuß, aber keinen Körper?",
+        text: "Wer scheint in der Nacht?",
         options: [
-          { label: "Ein Bett", correct: true },
-          { label: "Ein Mensch", correct: false },
-          { label: "Ein Stuhl", correct: false }
+          { label: "Der Mond", correct: true },
+          { label: "Die Sonne", correct: false },
+          { label: "Die Planeten", correct: false }
         ]
       }
     },
@@ -73,11 +73,11 @@ const coinsData = [
       imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 910 515)",
       riddle: {
-        text: "Was kann man brechen, ohne es in die Hand zu nehmen?",
+        text: "Was fehlt bei diesem Kinderlied? Laterne, Laterne, Sonne, Mond und ...",
         options: [
-          { label: "Ein Glas", correct: false },
-          { label: "Ein Stift", correct: false },
-          { label: "Ein Versprechen", correct: true }
+          { label: "Wolken", correct: false },
+          { label: "Flugzeug", correct: false },
+          { label: "Sterne", correct: true }
         ]
       }
     },
@@ -86,11 +86,11 @@ const coinsData = [
       imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 1205 520)",
       riddle: {
-        text: "Was hat einen Hals, aber keinen Kopf?",
+        text: "Wer legt Geschenke in die Stiefel?",
         options: [
-          { label: "Ein Elefant", correct: false },
-          { label: "Ein Baum", correct: false },
-          { label: "Eine Flasche", correct: true }
+          { label: "Der Weihnachtsmann", correct: false },
+          { label: "Der Osterhase", correct: false },
+          { label: "Der Nikolaus", correct: true }
         ]
       }
     },

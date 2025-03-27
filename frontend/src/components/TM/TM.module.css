@@ -32,28 +32,6 @@
  
 } 
 
-/*	  
-.st0{fill:#592E08;}
-.st1{fill:#BF6211;}
-.st2{fill:#F2E641;fill-opacity:0.7723;}
-.st3{fill:#F2E641;}
-.st4{fill:#F2D544;}
-.st5{fill:#F2C744;}
-.st6{fill:#353FAA;}
-.st7{fill:#A1142D;}
-.st8{fill:#402915;}
-.st9{fill:#F2E2CE;}
-.st10{fill:#F29C50;fill-opacity:0.7294;}
-.st11{fill:#A65638;}
-.st12{fill:#F2D9BB;}
-.st13{fill:#F29C50;}
-.st14{fill:#F5AE6E;}
-.st15{fill:#FFFFFF;}
-.st16{fill:#774E3F;}
-.st17{fill:#F28F38;}
-.st18{fill:#BF5E3B;}
-
-*/
 
 /* Media Queries für größere Bildschirme */
 /* Ab 768px (Tablet) – evtl. leicht angepasste Höhe oder Positionierung */
@@ -66,10 +44,7 @@
     /* Hier kannst du z. B. von cover auf contain wechseln, falls das sinnvoller ist */
     object-fit: cover;
   }
-  .svgContainer {
-    /* Falls die Positionen der interaktiven Elemente im SVG angepasst werden müssen,
-       könntest du hier auch zusätzliche Anpassungen vornehmen */
-  }
+
 }
 
 /* Ab 1024px (Desktop) – weitere Anpassungen */
@@ -81,7 +56,5 @@
     /* Eventuell unterschiedliche object-fit-Werte oder Padding */
     object-fit: cover;
   }
-  .svgContainer {
-    /* Hier kannst du z. B. die Skalierung der interaktiven Elemente optimieren */
-  }
+  
 }

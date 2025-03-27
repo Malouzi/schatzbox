@@ -1,37 +1,5 @@
 //SquirrelCard.jsx
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-// Importiere das SVG als React-Komponente (vorausgesetzt, dein Build-Setup unterstützt das)
-import { ReactComponent as SquirrelWaving } from '../../assets/EichhörnchenWinkt.svg?svgr';
-import styles from './SquirrelCard.module.css';
 
-export default function WavingSquirrel() {
-  const svgRef = useRef(null);
-
-  useEffect(() => {
-    // Greife auf das Arm-Element innerhalb des SVGs zu
-    const arm = svgRef.current.querySelector('#arm');
-    if (arm) {
-      gsap.to(arm, {
-        rotation: 20,              // Arm schwingt 20 Grad
-        transformOrigin: "left center", // Drehpunkt anpassen (evtl. muss dieser Wert optimiert werden)
-        repeat: -1,                // Endlosschleife
-        yoyo: true,                // Hin- und herbewegen
-        duration: 0.5,             // Animationsdauer
-        ease: "power1.inOut"
-      });
-    }
-  }, []);
-
-  return (
-    <div className={styles.container}>
-      <SquirrelWaving ref={svgRef} />
-    </div>
-  );
-}
-
-
-/*
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdClose, MdKeyboardArrowRight } from 'react-icons/md';
@@ -68,7 +36,7 @@ export default function SquirrelCard() {
 
   return (
     <div className={styles.cardContainer}>
-      {/* Schließ-Button 
+      {/* Schließ-Button */}
       <button
         className={styles.closeButton}
         onClick={handleClose}
@@ -88,13 +56,13 @@ export default function SquirrelCard() {
 
         <div className={styles.speechBubble}>
           <p className={styles.speechText}>
-            Hallo, ich bin Juli.
+            Hey, Lust auf einen Rabattcode?
             <br />
-            Hast du Lust auf eine Schatzsuche?
+            Dann komm mal mit ...
           </p>
         </div>
 
-        {/* Pfeil außerhalb der Sprechblase 
+        {/* Pfeil außerhalb der Sprechblase */}
         <a
           href="/schatzkarte"
           onClick={handleNavigate}
@@ -107,4 +75,4 @@ export default function SquirrelCard() {
       </div>
     </div>
   );
-} */
+} 

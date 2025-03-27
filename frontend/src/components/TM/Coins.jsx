@@ -1,6 +1,6 @@
 
 // Coins.jsx
-
+/*
 import React, { useState } from 'react';
 import Coin from './Coin.jsx';
 import coinsData from './CoinsData.jsx';
@@ -20,6 +20,86 @@ const Coins = () => {
   const handleRiddleSolved = () => {
     setShowRiddle(false);
     if (activeCoin < coinsData.length - 1) {
+      setActiveCoin(activeCoin + 1);
+    }
+  };
+
+  return (
+    <div style={{ position: 'relative' }}>
+      <svg width="100%" height="100%">
+        <g id="coins" style={{ pointerEvents: 'all' }}>
+          {coinsData.map((coin, index) => {
+            if (index > activeCoin) return null;
+            return (
+              <Coin
+                key={coin.id}
+                transform={coin.transform}
+                imageSrc={coin.imageSrc}
+                onClick={() => handleCoinClick(index)}
+              />
+            );
+          })}
+        </g>
+      </svg>
+
+      {showRiddle && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <Overlay onClose={() => setShowRiddle(false)}>
+            <CoinRiddle
+              questionData={coinsData[activeCoin].riddle}
+              onSolved={handleRiddleSolved}
+            />
+          </Overlay>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Coins;
+
+
+*/
+
+
+import React, { useState } from 'react';
+import Coin from './Coin.jsx';
+import coinsData from './CoinsData.jsx';
+import CoinRiddle from './CoinRiddle.jsx';
+import Overlay from './Overlay.jsx';
+
+
+//lokale Verwaltung des activecoin nur hier in der Coins.jsx
+/*const Coins = () => {
+  const [activeCoin, setActiveCoin] = useState(0);
+  const [showRiddle, setShowRiddle] = useState(false);*/
+
+  //ausgelagert in die TM komponente u deswegen state lifting damit 
+  //sie als props an die TM.jsx übergeben werden
+
+  const Coins = ({ activeCoin, setActiveCoin }) => {
+    const [showRiddle, setShowRiddle] = useState(false);
+
+  const handleCoinClick = (index) => {
+    if (index === activeCoin) {
+      setShowRiddle(true);
+    }
+  };
+
+  const handleRiddleSolved = () => {
+    setShowRiddle(false);
+    if (activeCoin < coinsData.length -1) {
       setActiveCoin(activeCoin + 1);
     }
   };

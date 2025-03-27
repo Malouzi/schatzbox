@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState } from 'react';
 import Background from "./Background.jsx";
 import TreasureChest from "./TreasureChest.jsx";
 import styles from "./TM.module.css";
@@ -7,8 +6,19 @@ import Coins from "./Coins.jsx";
 import EichhoernchenMitSprechblase from "./Squirrel.jsx";
 import Path from "./Path.jsx";
 import Compass from "./Compass.jsx";
+import coinsData from "./CoinsData.jsx";
+
 
 const TM = () => {
+
+   // Beispiel: Hier wird ein Zustand simuliert, der angibt, ob alle Münzen gefunden wurden.
+   const [activeCoin, setActiveCoin] = useState(0);
+   const coinsTotal = coinsData.length -1; // Beispiel: 10 Münzen insgesamt
+   const solvedAll = activeCoin === coinsTotal; // Oder passe die Logik an
+
+
+   console.log("solvedAll:", solvedAll); // Debug-Ausgabe zum TESTEN 
+
   return (
     <div className={styles.mapContainer}>
        Hintergrundbild 
@@ -21,15 +31,13 @@ const TM = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={styles.svgContainer}
       >
-        <Coins />
+        <Coins activeCoin={activeCoin} />
         <Path />
         <Compass /> 
         <EichhoernchenMitSprechblase /> 
       </svg>
          {/* TreasureChest-Komponente mit Test-Props */}
-         <TreasureChest 
-        solvedAll={true} 
-        onClose={() => console.log("Truhe geschlossen")} />
+         <TreasureChest solvedAll={solvedAll} discountCode="Rabattcode10%" />
     </div>
   );
 };

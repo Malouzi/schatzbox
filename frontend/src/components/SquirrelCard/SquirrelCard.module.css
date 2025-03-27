@@ -1,11 +1,4 @@
-.container {
-  /* z. B. Zentrierung oder Positionierung */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*
+/*SquirrelCard.module.css*/
 
 .cardContainer {
   position: relative;
@@ -14,7 +7,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(185, 115, 95, 0.2);
   max-width: 420px;
-  margin-left: 68%; /* Abstand zum rechten Rand 
+  margin-left: 68%; /* Abstand zum rechten Rand */
 }
 
 .cardContent {
@@ -23,7 +16,7 @@
   padding-left: 100px;
   align-items: center;
   display: flex;
-  flex-direction: column; /* Damit Sprechblase und Pfeil untereinander stehen 
+  flex-direction: column; /* Damit Sprechblase und Pfeil untereinander stehen */
 }
 
 .closeButton {
@@ -64,7 +57,7 @@
   position: relative;
   text-align: center;
   flex: 1;
-  margin-bottom: 20px; /* Abstand zum Pfeil 
+  margin-bottom: 20px; /* Abstand zum Pfeil */
 }
 
 .speechText {
@@ -73,7 +66,7 @@
   line-height: 1.4;
 }
 
-/* Pfeil außerhalb der Sprechblase, in Schwarz und mit Hover-Effekt 
+/* Pfeil außerhalb der Sprechblase, in Schwarz und mit Hover-Effekt */
 .arrowLink {
   display: inline-flex;
   align-items: center;
@@ -82,7 +75,7 @@
   z-index: 10;
   text-decoration: none;
   transition: transform 0.4s ease;
-  color: #000;  /* Pfeil in Schwarz 
+  color: #000;  /* Pfeil in Schwarz */
 }
 
 .arrowLink:hover {
@@ -91,10 +84,10 @@
 
 .arrowIcon {
   font-size: 48px;
-  color: inherit;  /*Erbt die Farbe (#000) vom Link 
+  color: inherit;  /*das Icoon erbt die Farbe (#000) vom Link */
 }
 
-/* Responsive Anpassung für mobile Geräte 
+/* Responsive Anpassung für mobile Geräte */
 @media (max-width: 768px) {
   .cardContainer {
     width: 95%;
@@ -108,4 +101,3 @@
     width: 100%;
   }
 }
-*/
