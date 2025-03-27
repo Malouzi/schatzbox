@@ -20,6 +20,12 @@ const userSchema = new Schema({
   
     
   },
+  orders: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Order",
+      },
+      ],
  
   verified: Date,
   roles: {
