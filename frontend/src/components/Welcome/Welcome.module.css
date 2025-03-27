@@ -1,6 +1,110 @@
+/* ---- Allgemeines Styling ---- */
 .container1 {
-  margin: 3rem;
+  margin: 3rem 1rem; /* Standard für Mobile */
+  text-align: center;
+  text-align: justify;
 }
+
+/* Wrapper für die 3 Boxen */
+.listContainer {
+  display: flex;
+  flex-direction: column; /* Mobile: untereinander */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Einzelne Boxen */
+.container2,
+.container3,
+.container4 {
+  width: 400px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: #FFC885;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 1s ease-in-out forwards;
+}
+
+/* Animation */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Listen-Styling */
+.listWelcome {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column; /* Icon & Text untereinander */
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* Button Styling */
+.downloadButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+/* ---- Tablet & Desktop: Listen-Elemente nebeneinander ---- */
+@media screen and (min-width: 768px) {
+  /* Links & rechts 200px Rand */
+  .container1 {
+    margin: 3rem 200px;
+  }
+
+  /* Boxen nebeneinander anordnen */
+  .listContainer {
+    flex-direction: row; /* Setzt die Boxen nebeneinander */
+    justify-content: center;
+    gap: 2rem; /* Abstand zwischen den Boxen */
+  }
+
+  /* Breite anpassen, damit sie nebeneinander passen */
+  .container2,
+  .container3,
+  .container4 {
+    width: 300px;
+  }
+}
+
+/* ---- Sehr große Bildschirme: Mehr Rand ---- */
+@media screen and (min-width: 1768px) {
+  .container1 {
+    margin: 3rem 500px;
+  }
+}
+
+
+
+
+/* .container1 {
+  margin: 3rem 1rem; /* Standard für Mobile 
+}
+
 .container2,
 .container3,
 .container4 {
@@ -19,18 +123,22 @@
   transform: translateX(50px);
   animation: fadeInRight 1s ease-in-out forwards;
 }
+
 .container2 {
   background-color: #FFC885;
   animation-delay: 0s;
 }
+
 .container3 {
   background-color: #FFC885;
   animation-delay: 0.5s;
 }
+
 .container4 {
   background-color: #FFC885;
   animation-delay: 1s;
 }
+
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -41,10 +149,12 @@
     transform: translateX(0);
   }
 }
+
 .listWelcome {
   list-style: none;
   padding: 0;
 }
+
 .listWelcome li {
   font-size: 1.3rem;
   position: relative;
@@ -52,9 +162,11 @@
   align-items: center;
   gap: 10px;
 }
+
 .listWelcome li::before {
   font-size: 1.5rem;
 }
+
 .downloadButton {
   background: none;
   border: none;
@@ -63,3 +175,16 @@
   color: white;
   transition: color 0.3s ease-in-out;
 }
+
+ ---- NEUE STYLES FÜR DEN RAND AUF TABLET & DESKTOP ---- */
+/* @media screen and (min-width: 768px) {
+  .container1 {
+    margin:;  Links & rechts 200px Rand 
+  }
+}
+
+@media screen and (min-width: 1768px) {
+  .container1 {
+    margin: 3rem 500px;  Sicherstellen, dass auch auf großen Screens der Rand bleibt 
+  }
+} */
