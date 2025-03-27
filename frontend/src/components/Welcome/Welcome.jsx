@@ -38,6 +38,7 @@ export default function Welcome() {
         <h1>Und so einfach funktioniert's:</h1>
       </div>
 
+
       <div className={styles.listContainer}>
         <div className={styles.container2}>
           <ul className={styles.listWelcome}>
@@ -71,7 +72,7 @@ export default function Welcome() {
               Perfekt für drinnen & draußen – Flexible Nutzung
             </li>
           </ul>
-        </div>
+
       </div>
 
       <CirclesLeft />

@@ -1,0 +1,62 @@
+/* TreasureChest.module.css */
+
+
+.chestContainer {
+    position: absolute;
+    bottom: 200px;  
+    left: 400px;
+    transform: translateX(-50%);
+   width: 2360px;
+    height: 1640px;
+    /*overflow: visible;*/
+    z-index: 20;
+    cursor: pointer;  
+}
+
+.overlay {
+  position: absolute;
+  top: 1370px;
+  right: 180px;
+transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+.modal {
+
+  width: 180px;   /* Feste Breite */
+  height: 90px;  /* Feste Höhe */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: rgb(62, 207, 103);
+  padding: 10px 15px;
+  border: 2px solid rgb(112, 59, 13);
+  border-radius: 5px;
+  background-color: #F0EAD6;
+  pointer-events: auto;
+}
+
+.copyButton { 
+  width: 130px;
+  height: 50px;
+  background-color: rgb(77, 171, 60);
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.copyButton:hover {
+  background-color: #85e730;
+}
+
