@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
+import axios from 'axios';
 import styles from './Checkout.module.css';
 
 const Checkout = () => {
@@ -13,6 +14,7 @@ const Checkout = () => {
     shippingPostalCode: '',
     paymentMethod: 'rechnung',
   });
+  const [orderStatus, setOrderStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,10 +32,33 @@ const Checkout = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Bestellung erfolgreich!');
-    clearCart();
+    const userId = '12345'; 
+    const productIds = cartItems.map(item => item.id);
+    const status = 'pending';
+    const notes = '';
+
+    try {
+      const response = await axios.post('/orders/order', {
+        userId,
+        productIds,
+        status,
+        notes,
+      });
+    
+      console.log("Antwort vom Server:", response.data);
+      
+      if (response.status === 201) {
+        setOrderStatus('Bestellung erfolgreich!');
+        clearCart();
+      } else {
+        setOrderStatus('Fehler beim Absenden der Bestellung. Bitte versuchen Sie es erneut.');
+      }
+    } catch (error) {
+      console.error('Fehler beim Erstellen der Bestellung:', error);
+      setOrderStatus('Fehler beim Absenden der Bestellung. Bitte versuchen Sie es erneut.');
+    }
   };
 
   return (
@@ -127,6 +152,9 @@ const Checkout = () => {
           <button type="submit">Bestellen</button>
         </form>
       )}
+
+      {/* Erfolgs-/Fehlermeldung anzeigen */}
+      {orderStatus && <p>{orderStatus}</p>}
     </div>
   );
 };
