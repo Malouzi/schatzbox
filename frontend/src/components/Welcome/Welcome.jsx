@@ -72,7 +72,7 @@ export default function Welcome() {
               Perfekt für drinnen & draußen – Flexible Nutzung
             </li>
           </ul>
-
+    </div>
       </div>
 
       <CirclesLeft />
