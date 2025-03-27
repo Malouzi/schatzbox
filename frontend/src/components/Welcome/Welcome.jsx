@@ -4,15 +4,17 @@ import { LuSearchCheck } from "react-icons/lu";
 import { TbFlagCheck } from "react-icons/tb";
 import Slideshow from "../Slideshow/Slideshow";
 import styles from "./Welcome.module.css";
-import Circles from "../Circles/Circles";
+import CirclesRight from "../Circles/CirclesRight";
+import CirclesLeft from "../Circles/CirclesLeft";
 
 export default function Welcome() {
   return (
     <>
       <Slideshow />
-      <Circles />
+      <CirclesRight />
       <div className={styles.container1}>
-        <h1>Willkommen bei Schatzbox</h1><br />
+        <h1>Willkommen bei Schatzbox</h1>
+        <br />
         <h2>
           Plane den perfekten Kindergeburtstag mit unseren spannenden
           Schatzsuch-Vorlagen!
@@ -29,43 +31,50 @@ export default function Welcome() {
         <p>
           Entdecke jetzt die passende Schatzsuche für deine Liebsten und mache
           den nächsten Kindergeburtstag zu einem unvergesslichen Erlebnis!
-        </p> <br /><br /><br />
+        </p>
+        <br />
+        <br />
+        <br />
         <h1>Und so einfach funktioniert's:</h1>
       </div>
 
-      <div className={styles.container2}>
-        <ul className={styles.listWelcome}>
-          <li>
-          <button className={styles.downloadButton}>
-              <LuSearchCheck size={50} />
-            </button>
-            Schatzsuche auswählen – <br />
-            und schon kann der Spaß beginnen
-          </li>
-        </ul>
+      <div className={styles.listContainer}>
+        <div className={styles.container2}>
+          <ul className={styles.listWelcome}>
+            <li className={styles.listItem}>
+              <button className={styles.downloadButton}>
+                <LuSearchCheck size={50} />
+              </button>
+              Schatzsuche auswählen – <br />
+              und schon kann der Spaß beginnen
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.container3}>
+          <ul className={styles.listWelcome}>
+            <li className={styles.listItem}>
+              <button className={styles.downloadButton}>
+                <HiArrowDownTray size={50} />
+              </button>
+              Direkt Download – Schnell vorbereitet & los geht's
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.container4}>
+          <ul className={styles.listWelcome}>
+            <li className={styles.listItem}>
+              <button className={styles.downloadButton}>
+                <TbFlagCheck size={50} />
+              </button>
+              Perfekt für drinnen & draußen – Flexible Nutzung
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div className={styles.container3}>
-        <ul className={styles.listWelcome}>
-          <li>
-            <button className={styles.downloadButton}>
-              <HiArrowDownTray size={50} />
-            </button>
-            Direkt Download – Schnell vorbereitet & los geht's
-            
-          </li>
-        </ul>
-      </div>
-
-      <div className={styles.container4}>
-        <ul className={styles.listWelcome}>
-          <li>
-          <button className={styles.downloadButton}>
-              <TbFlagCheck size={50} />
-            </button>
-          Perfekt für drinnen & draußen – Flexible Nutzung</li>
-        </ul>
-      </div>
+      <CirclesLeft />
     </>
   );
 }

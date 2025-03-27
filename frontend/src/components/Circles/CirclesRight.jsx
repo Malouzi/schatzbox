@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import styles from "./Circles.module.css";
+import styles from "./CirclesRight.module.css";
 
-const Circles = () => {
+const CirclesRight = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const startWidth = 500;
-  const maxCircleSize = 200; 
+  const maxCircleSize = 200;
 
-  
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -24,9 +23,15 @@ const Circles = () => {
 
   return (
     <section className={styles.container}>
-      {circles.map((circle, index) => {
-        const scaleFactor = Math.min((windowWidth / startWidth) ** 1.2, 3); // Exponentielles Wachstum mit einer Maximalgrenze
-        const size = Math.min(circle.baseSize * scaleFactor, maxCircleSize); // Maximalgröße einstellen
+      {circles.map((circle) => {
+        const scaleFactor = Math.min((windowWidth / startWidth) ** 1.2, 3);
+        const size = Math.min(circle.baseSize * scaleFactor, maxCircleSize);
+
+        let adjustedRight = circle.right;
+        if (windowWidth >= 1024) {
+          if (circle.id === 2) adjustedRight = "20%"; // Leicht nach rechts verschoben
+          if (circle.id === 4) adjustedRight = "30%"; // Damit es nicht überlappt
+        }
 
         return (
           <motion.span
@@ -35,9 +40,9 @@ const Circles = () => {
             style={{
               height: `${size}px`,
               width: `${size}px`,
-              top: circle.top,  
-              right: circle.right,  
-              boxShadow: `inset 0 0 30px 5px ${circle.color}`
+              top: circle.top,
+              right: adjustedRight,
+              boxShadow: `inset 0 0 30px 5px ${circle.color}`,
             }}
           ></motion.span>
         );
@@ -46,4 +51,4 @@ const Circles = () => {
   );
 };
 
-export default Circles;
+export default CirclesRight;
