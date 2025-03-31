@@ -20,7 +20,7 @@
   } */
 
   .btnProduct {
-    background-color: #007BFF;
+    /* background-color: #007BFF; */
     color: white;
     font-size: 1.2rem;
     padding: 0.8rem 1.5rem;
@@ -31,7 +31,7 @@
     margin-top: 1rem;
   }
   .btnProduct:hover {
-    background-color: blue;
+    /* background-color: blue; */
   }
   .btnProduct:disabled {
     background-color: gray;

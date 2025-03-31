@@ -6,6 +6,7 @@ import Slideshow from "../Slideshow/Slideshow";
 import styles from "./Welcome.module.css";
 import CirclesRight from "../Circles/CirclesRight";
 import CirclesLeft from "../Circles/CirclesLeft";
+import { FaHome, FaUser, FaCog } from 'react-icons/fa'
 
 export default function Welcome() {
   return (
