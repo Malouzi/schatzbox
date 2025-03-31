@@ -22,7 +22,7 @@ input, select {
   margin-bottom: 15px;
 }
 
-button {
+.buttonblue {
   padding: 10px;
   background-color: #007bff;
   color: white;
@@ -30,6 +30,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.buttonblue:hover {
   background-color: #0056b3;
 }

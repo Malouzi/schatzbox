@@ -6,10 +6,10 @@
   position: relative;
   display: block;
   background: transparent;
-  padding: 1rem; /* optionaler Innenabstand */
+  padding: 1rem; /* Innenabstand */
 }
 
-/* Styling für den Feedback-Text */
+/* Styling fürs feedback */
 .feedback {
   margin-top: 1rem;
   font-size: 1rem;

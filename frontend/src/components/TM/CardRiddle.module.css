@@ -1,7 +1,7 @@
 /* CardRiddle.module.css */
 
 /* Container für die Fragekarte */
-.card {
+.cardriddle {
   background: #cbe07c;
   border: 2px solid #478121;
   border-radius: 10px;
@@ -18,25 +18,25 @@
   margin-bottom: 1rem;
 }
 
-/* Container für Antwortoptionen, als Spalte angeordnet */
+/* Container für Antwortoptionen/ in Spalten angeordnet */
 .options {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Stil für jeden Antwort-Button */
-.optionButton {
+/* Antwort-Button */
+.optionButton1 {
   padding: 0.5rem 1rem;
   border: 1px solid #794607;
   border-radius: 4px;
-  background-color: #fff4e2;
+  background-color: #d3a966;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Hover-Zustand für Antwort-Buttons */
-.optionButton:hover {
+/* Hover ... Antwort-Buttons */
+.optionButton1:hover {
   background-color: #e1efc4;
   color: #794607;
 }

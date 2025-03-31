@@ -34,8 +34,12 @@
   z-index: 10;
 }
 
-.closeIcon {
-  font-size: 1.5rem;
+.closeIcon5 {
+  font-size: 24px;
+  color: #742e0b;
+}
+
+.closeIcon5:hover {
   color: #742e0b;
 }
 
@@ -98,6 +102,6 @@
     flex-direction: column;
   }
   .squirrelImage {
-    width: 100%;
+    width: 80%;
   }
 }

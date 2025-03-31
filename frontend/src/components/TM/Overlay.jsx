@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import styles from './Overlay.module.css';
 
 const Overlay = ({ children, onClose }) => {
-  //Container-DIV für das Portal erstellen
+  //Container-DIV für das Portal erstellen - JO!
   const el = document.createElement('div');
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Overlay = ({ children, onClose }) => {
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         {children}
-        <button className={styles.closeButton} onClick={onClose}>
+        <button className={styles.closeButton5} onClick={onClose}>
           ✖
         </button>
       </div>

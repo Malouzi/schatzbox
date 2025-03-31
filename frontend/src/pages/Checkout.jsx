@@ -149,7 +149,7 @@ const Checkout = () => {
           </div>
 
           <h3>Gesamtpreis: {totalPrice} €</h3>
-          <button type="submit">Bestellen</button>
+          <button type="submit" className={styles.buttonblue}>Bestellen</button>
         </form>
       )}
 
