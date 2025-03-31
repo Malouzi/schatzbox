@@ -10,6 +10,7 @@ html,
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 100%; /* das hat Nell geändert*/
+}
 
 h1 {
   font-size: 1.6rem;

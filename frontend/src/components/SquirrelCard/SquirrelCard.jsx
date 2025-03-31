@@ -43,7 +43,7 @@ export default function SquirrelCard() {
         onTouchStart={handleClose}
         aria-label="Karte schließen"
       >
-        <MdClose className={styles.closeIcon} />
+        <MdClose className={styles.closeIcon5} />
       </button>
 
       <div className={styles.cardContent}>

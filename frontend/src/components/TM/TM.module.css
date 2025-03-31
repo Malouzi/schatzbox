@@ -17,7 +17,6 @@
   left: 0;
   width: 100%; /* Damit die Schatzkarte sich an den Container anpasst */
   height: 100%;
-  /*object-fit: contain;  Seitenverhältnis */
   pointer-events: auto; /* Damit die Karte nicht klickbar ist  TEST*/
   z-index: 1;
 }
@@ -29,32 +28,28 @@
   width: 100%;
   height: 110%;
  z-index: 10; 
- 
 } 
 
-
 /* Media Queries für größere Bildschirme */
-/* Ab 768px (Tablet) – evtl. leicht angepasste Höhe oder Positionierung */
+
+/*Tablet*/
 @media (min-width: 768px) {
   .mapContainer {
-    /* Beispiel: Erhöhe ggf. die Mindesthöhe, wenn du mehr Platz brauchst */
     min-height: 100vh;
   }
   .background {
-    /* Hier kannst du z. B. von cover auf contain wechseln, falls das sinnvoller ist */
-    object-fit: cover;
+   object-fit: cover;
   }
 
 }
 
-/* Ab 1024px (Desktop) – weitere Anpassungen */
+/* Desktop */
 @media (min-width: 1024px) {
   .mapContainer {
-    min-height: 100vh; /* Oder einen festen Wert, falls gewünscht */
+    min-height: 100vh; 
   }
   .background {
-    /* Eventuell unterschiedliche object-fit-Werte oder Padding */
-    object-fit: cover;
+   object-fit: cover;
   }
   
 }
