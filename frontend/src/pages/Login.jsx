@@ -39,7 +39,9 @@ const Login = () => {
   return (
     <div className={styles.loginPage}>
       <div className={styles.loginContainer}>
-        {formError && <Alert severity="error">Es gab einen Fehler beim Einloggen!</Alert>}
+        {formError && (
+          <Alert severity="error">Es gab einen Fehler beim Einloggen!</Alert>
+        )}
         {formSuccess && <Alert severity="success">Benutzer eingeloggt!</Alert>}
 
         <h1 className={styles.loginTitle}>Login</h1>
@@ -66,12 +68,29 @@ const Login = () => {
               required
             />
           </FormControl>
-          <Button type="submit" variant="contained" className={styles.loginButton}>
+          <Button
+            type="submit"
+            variant="contained"
+            className={styles.loginButton}
+            sx={{
+              backgroundColor: "#f58a08",
+              color: "#fff",
+              border: "2px solid transparent",
+              "&:hover": {
+                backgroundColor: "#fff",
+                color: "#f58a08",
+                border: "2px solid #f58a08",
+              },
+            }}
+          >
             Einloggen
           </Button>
         </form>
         <p className={styles.loginText}>
-          Noch kein Konto? <Link to="/register" className={styles.loginLink}>Registriere dich hier</Link>
+          Noch kein Konto?{" "}
+          <Link to="/register" className={styles.loginLink}>
+            Registriere dich hier
+          </Link>
         </p>
       </div>
     </div>

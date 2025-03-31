@@ -1,111 +1,172 @@
-.container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    color: #f58a08;
-  }
-  
-  .button {
-    background-color: #f58a08;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: white;
-    color: #f58a08;
-    border: 0.1rem solid #f58a08;
-  }
-  
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.kontaktPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  min-height: 20vh;
+  width: 100%;
+  background-color: #fca438;
+  padding: 4rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 2rem;
+}
+
+.contactInfo {
+  flex: 1;
+  padding: 1rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.contactInfo h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contactInfo p {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.contactInfo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  width: 1px;
+  background-color: #fff;
+  margin: 0 2rem;
+  flex-basis: 1px;
+}
+
+.contactForm {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  color: #333;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.contactForm h2 {
+  color: #000;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.inputBox {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: 100%;
+  background: transparent;
+  border: 0.1rem solid #eaeaea;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.inputBox textarea {
+  height: 5rem;
+}
+
+.contactForm button {
+  width: 100%;
+  height: 3rem;
+  background: #9ee0f4;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: grey;
+  font-weight: 500;
+  margin-top: 25px;
+  transition: 0.5s;
+}
+
+.contactForm button:hover {
+  background: #5fc1f0;
+  color: #333;
+}
+
+@media screen and (max-width: 1024px) {
   .contact {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    background: #fca438;
   }
-  
-  form {
-    width: 100vw;
-    background: #fff;
-    padding: 1rem 1rem 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
-    color: #333;
-    margin: 1rem;
+
+  .separator {
+    display: none;
   }
-  
-  form h2 {
-    color: #000000;
-    font-size: 2rem;
-    text-align: center;
-    padding-bottom: 1rem;
+
+  .contactForm {
+    width: 90%;
+    margin-top: 2rem;
   }
-  
-  form .input-box {
-    margin-top: 10px;
+
+  .contactInfo {
+    margin-bottom: 2rem;
   }
-  
-  .input-box input {
-    width: 100%;
-    height: 3rem;
-    background: transparent;
-    border: 0.1rem solid #eaeaea;
-    outline: none;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #333;
+}
+
+@media screen and (min-width: 868px) {
+  .contact {
+    width: 60%;
   }
-  
-  .input-box textarea {
-    width: 100%;
-    height: 5rem;
-    background: transparent;
-    border: 0.1rem solid #eaeaea;
-    outline: none;
-    border-radius: 0.5rem;
-    padding: 15px;
-    font-size: 0.9rem;
-    color: #333;
-    margin-top: 0.5rem;
+
+  .contactForm {
+    margin-left: 2rem;
+    padding: 2rem;
   }
-  
-  form button {
-    width: 100%;
-    height: 3rem;
-    background: #9ee0f4;
-    border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: grey;
-    font-weight: 500;
-    margin-top: 25px;
-    transition: 0.5s;
+
+  .separator {
+    display: block;
   }
-  
-  form button:hover {
-    background: #5fc1f0;
-    color: #333;
+}
+
+@media screen and (min-width: 1468px) {
+  .contact {
+    width: 60%;
   }
-  
-  @media screen and (min-width: 768px) {
-    form {
-      margin: 3rem 200px;
-    }
+
+  .contactForm {
+    margin-left: 4rem;
+    padding: 2rem;
   }
-  
-  @media screen and (min-width: 1468px) {
-    form {
-      margin: 3rem 400px;
-    }
-  }
-  
+}

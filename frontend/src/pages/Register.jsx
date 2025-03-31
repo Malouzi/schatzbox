@@ -1,83 +1,93 @@
-import { useState } from 'react';
-import styles from './Register.module.css';
+import { useState } from "react";
+import styles from "./Register.module.css";
+import { Alert, Button, FormControl, Input, InputLabel } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
-export default function Register() {
-  const [formUser, setFormUser] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+const Register = () => {
+  const [formError, setFormError] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setFormUser({
-      ...formUser,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/auth/register`, {
-        method: "POST",
-        credentials: "include",
-        body: JSON.stringify(formUser),
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const response = await axios.post("http://localhost:3000/auth/register", {
+        username,
+        email,
+        password,
       });
-      if (response.ok) {
-        setFormUser({ username: "", email: "", password: "" });
-      } else {
-        console.log("error");
-      }
+      setFormSuccess(true);
+      navigate("/login");
+      setTimeout(() => {
+        setFormSuccess(false);
+      }, 2000);
     } catch (error) {
-      console.error(error);
+      console.error("Registration failed:", error.response ? error.response.data.message : "Server not reachable");
+      setFormError(true);
+      setTimeout(() => {
+        setFormError(false);
+      }, 2000);
     }
   };
 
   return (
     <div className={styles.registerPage}>
       <div className={styles.registerContainer}>
-        <h1>Registrieren</h1>
-        <form onSubmit={handleSubmit} className={styles.registerForm}>
-          <div className={styles.formGroup}>
-            <label>Benutzername:</label>
-            <input
-              autoComplete="username"
-              type="text"
+        {formError && <Alert severity="error">Es gab einen Fehler bei der Registrierung!</Alert>}
+        {formSuccess && <Alert severity="success">Benutzer erfolgreich registriert!</Alert>}
+
+        <h1 className={styles.registerTitle}>Registrieren</h1>
+        <form className={styles.registerForm} onSubmit={handleSubmit}>
+          <FormControl className={styles.registerFormControl}>
+            <InputLabel htmlFor="username">Benutzername</InputLabel>
+            <Input
               name="username"
-              value={formUser.username}
-              onChange={handleChange}
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
-          </div>
-          <div className={styles.formGroup}>
-            <label>E-Mail:</label>
-            <input
-              autoComplete="email"
-              type="email"
+          </FormControl>
+
+          <FormControl className={styles.registerFormControl}>
+            <InputLabel htmlFor="email">E-Mail</InputLabel>
+            <Input
               name="email"
-              value={formUser.email}
-              onChange={handleChange}
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-          </div>
-          <div className={styles.formGroup}>
-            <label>Passwort:</label>
-            <input
-              autoComplete="new-password"
-              type="password"
+          </FormControl>
+
+          <FormControl className={styles.registerFormControl}>
+            <InputLabel htmlFor="password">Passwort</InputLabel>
+            <Input
               name="password"
-              value={formUser.password}
-              onChange={handleChange}
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-          <button type="submit" className={styles.registerButton}>Registrieren</button>
+          </FormControl>
+
+          <Button type="submit" variant="contained" className={styles.registerButton}>
+            Registrieren
+          </Button>
         </form>
+        <p className={styles.registerText}>
+          Schon ein Konto? <Link to="/login" className={styles.registerLink}>Melde dich hier an</Link>
+        </p>
       </div>
     </div>
   );
-}
+};
+
+export default Register;

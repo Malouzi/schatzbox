@@ -1,75 +1,83 @@
-import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext.jsx';
-import styles from './Cart.module.css';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext.jsx";
+import styles from "./Cart.module.css";
+import { Alert, Button } from "@mui/material";
 
 const Cart = () => {
-  const { cartItems, removeFromCart, updateQuantity, totalPrice } = useContext(CartContext);
-  
+  const { cartItems, removeFromCart, updateQuantity, totalPrice } =
+    useContext(CartContext);
+
   const handlePrepayment = async () => {
-    const response = await fetch('/api/payment/confirm-prepayment', {
-      method: 'POST',
+    const response = await fetch("/api/payment/confirm-prepayment", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ orderId: '12345' }),
+      body: JSON.stringify({ orderId: "12345" }),
     });
 
     if (response.ok) {
       const data = await response.json();
       alert(data.message);
     } else {
-      alert('Fehler bei der Zahlungsbestätigung');
+      alert("Fehler bei der Zahlungsbestätigung");
     }
   };
 
-  return ( 
-    <div className={styles.cartContainer}>
-      <h2>Warenkorb</h2>
-      {cartItems.length === 0 ? (
-        <p>Ihr Warenkorb ist leer.</p>
-      ) : (
-        <div>
-          {cartItems.map(item => (
-            <div key={item.id} className={styles.cartItem}>
-              <img src={`/${item.coverImage}`} alt={item.title} className={styles.cartItemImage} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>Preis: {item.price} €</p>
-                <p>Menge: {item.quantity}</p>
-                <input
-                  type="number"
-                  value={item.quantity}
-                  onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+  return (
+    <div className={styles.cartPage}>
+      <div className={styles.cartContainer}>
+        <h1 className={styles.cartTitle}>Warenkorb</h1>
+        {cartItems.length === 0 ? (
+          <Alert severity="info">Ihr Warenkorb ist leer.</Alert>
+        ) : (
+          <div className={styles.cartItems}>
+            {cartItems.map((item) => (
+              <div key={item.id} className={styles.cartItem}>
+                <img
+                  src={`/${item.coverImage}`}
+                  alt={item.title}
+                  className={styles.cartItemImage}
                 />
-                <button onClick={() => removeFromCart(item.id)}>Entfernen</button>
+                <div className={styles.cartItemDetails}>
+                  <h3>{item.title}</h3>
+                  <p>Preis: {item.price} €</p>
+                  <div className={styles.cartItemQuantity}>
+                    <input
+                      type="number"
+                      value={item.quantity}
+                      onChange={(e) =>
+                        updateQuantity(item.id, parseInt(e.target.value))
+                      }
+                      className={styles.quantityInput}
+                    />
+                  </div>
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => removeFromCart(item.id)}
+                    className={styles.removeButton}
+                  >
+                    Entfernen
+                  </Button>
+                </div>
               </div>
-            </div>
-          ))}
-      <h3>Gesamtpreis: {totalPrice} €</h3> 
-
-        </div>
-      )}
-      <button onClick={handlePrepayment}>Bezahlen</button>
+            ))}
+            <h3 className={styles.totalPrice}>Gesamtpreis: {totalPrice} €</h3>
+          </div>
+        )}
+        {cartItems.length > 0 && (
+          <Button
+            variant="contained"
+            className={styles.checkoutButton}
+            onClick={handlePrepayment}
+          >
+            Bezahlen
+          </Button>
+        )}
+      </div>
     </div>
   );
-}
+};
 
-const handlePrepayment = async () => {
-  const response = await fetch('/api/payment/confirm-prepayment', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ orderId: '12345' }),
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    alert(data.message);
-  } else {
-    alert('Fehler bei der Zahlungsbestätigung');
-  }
-}
-
-
-export default Cart
+export default Cart;
