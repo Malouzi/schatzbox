@@ -164,4 +164,6 @@
     button {
       font-size: 1.5rem;
     }
-  } */
+  } */console.log('Product Details Container Styles Loaded');
+console.log('Product Details Image Styles Loaded');
+console.log('Product Details Button Styles Loaded');
