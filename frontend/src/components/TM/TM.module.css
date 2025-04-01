@@ -1,0 +1,55 @@
+/*TM.module.css */
+
+
+.mapContainer {
+  position: relative;
+  width: 100%; /* Stellt sicher, dass die Karte sich anpasst */
+  /*height: auto;  Passt die Höhe automatisch an */
+  /*max-width: 100vw;  Verhindert, dass sie zu groß wird */
+  overflow: hidden;
+  min-height:100vh; /* Schneidet alles Überstehende ab */
+  pointer-events: none;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Damit die Schatzkarte sich an den Container anpasst */
+  height: 100%;
+  pointer-events: auto; /* Damit die Karte nicht klickbar ist  TEST*/
+  z-index: 1;
+}
+
+.svgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+ z-index: 10; 
+} 
+
+/* Media Queries für größere Bildschirme */
+
+/*Tablet*/
+@media (min-width: 768px) {
+  .mapContainer {
+    min-height: 100vh;
+  }
+  .background {
+   object-fit: cover;
+  }
+
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .mapContainer {
+    min-height: 100vh; 
+  }
+  .background {
+   object-fit: cover;
+  }
+  
+}

@@ -1,3 +1,5 @@
+
+import Cart from '../Cart/Cart.jsx';
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { CartContext } from "../../context/CartContext";
@@ -42,7 +44,9 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
+
       <div className={`${styles["navbar-left"]} ${isOpen ? styles["open"] : ""}`}>
+
         <div className={styles.hamburger} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -64,6 +68,9 @@ export default function Navbar() {
               <Link to="/login">Login</Link>
             )}
           </li>
+          <li>
+            <Link to="/schatzkarte">Schatzkarte</Link>
+          </li>
         </ul>
       </div>
       <div className={styles.navbarMiddle}>
@@ -73,9 +80,11 @@ export default function Navbar() {
       </div>
 
       <div className={styles.navbarRight}>
+
         <Link to={"/cart"} className={styles.cartIcon}>
           <BiShoppingBag />
           <span className={styles.cartCount}>{totalItems}</span>
+
         </Link>
       </div>
     </nav>

@@ -3,6 +3,7 @@ import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './components/Cart/Cart';
+import Checkout from './pages/Checkout';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -10,10 +11,11 @@ import ProductSection from './components/ProductSection/ProductSection';
 import Angebote from './components/Angebote';
 import ContactForm from './components/ContactForm/ContactForm';
 import ProtectedRoute from './components/ProtectedRoutes';
-import PenguinSlideFlipCard from './components/PenguinRiddleBox/PenguinSlideFlipCard';
+import SquirrelCard from './components/SquirrelCard/SquirrelCard';
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
+import TM from './components/TM/TM';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ProductDetails from './pages/ProductDetails';
@@ -32,12 +34,13 @@ export default function App() {
           <Route path="/" element={
             <>
               <Welcome />
-              <PenguinSlideFlipCard />
+              { <SquirrelCard /> }
               <main>
                 <ProductSection />
                 <ContactForm />
               </main>
             </>
+
           } />
           
           <Route path="/customer-profile" element={
@@ -53,11 +56,14 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/schatzkarte" element={<TM />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           
           {/* Admin Bereich ohne Schutz zum Testen vorläufig */}
           <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
+
 
         <Footer />
       </Router>
@@ -74,5 +80,3 @@ const AdminRoutes = () => {
     </Routes>
   );
 };
-
-

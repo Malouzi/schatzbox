@@ -1,0 +1,42 @@
+/* CardRiddle.module.css */
+
+/* Container für die Fragekarte */
+.cardriddle {
+  background: #cbe07c;
+  border: 2px solid #478121;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 280px;
+  margin: auto;
+}
+
+/* Frage-Text */
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Container für Antwortoptionen/ in Spalten angeordnet */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Antwort-Button */
+.optionButton1 {
+  padding: 0.5rem 1rem;
+  border: 1px solid #794607;
+  border-radius: 4px;
+  background-color: #d3a966;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover ... Antwort-Buttons */
+.optionButton1:hover {
+  background-color: #e1efc4;
+  color: #794607;
+}
