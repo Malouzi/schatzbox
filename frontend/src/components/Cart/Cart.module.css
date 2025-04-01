@@ -1,4 +1,3 @@
-/* Allgemeine Container-Stile */
 .cartPage {
   flex: 1;
   display: flex;
@@ -21,7 +20,6 @@
   align-items: center;
 }
 
-/* Titel des Warenkorbs */
 .cartTitle {
   font-size: 1.8rem;
   font-weight: bold;
@@ -29,7 +27,6 @@
   margin-bottom: 1rem;
 }
 
-/* Container für die Artikel */
 .cartItems {
   width: 100%;
   display: flex;
@@ -37,7 +34,6 @@
   gap: 1rem;
 }
 
-/* Einzelne Artikel im Warenkorb */
 .cartItem {
   display: flex;
   align-items: center;
@@ -75,27 +71,25 @@
   background-color: #f44336 !important;
 }
 
-/* Gesamter Preis anzeigen */
 .totalPrice {
   font-size: 1.2rem;
   font-weight: bold;
   margin-top: 1rem;
 }
 
-/* Bezahlbutton */
 .checkoutButton {
   background-color: #f58a08 !important;
   color: white !important;
-  padding: 0.75rem; /* Standard Padding */
+  padding: 0.75rem; 
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
   transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
   margin-top: 20px;
   border: 2px solid transparent;
-  width: 100%; /* Setzt die Breite auf 100% */
-  padding-top: 1rem; /* Fügt Padding oben hinzu */
-  padding-bottom: 1rem; /* Optional: Wenn du auch am unteren Rand Padding haben willst */
+  width: 100%; 
+  padding-top: 1rem; 
+  padding-bottom: 1rem;
 }
 
 .checkoutButton:hover {
@@ -104,8 +98,6 @@
   border: 2px solid #f58a08 !important;
 }
 
-
-/* Responsive Design */
 @media (min-width: 768px) {
   .cartContainer {
     width: 50%;
