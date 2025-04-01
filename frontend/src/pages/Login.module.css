@@ -9,7 +9,7 @@ body {
   flex-direction: column;
 }
 
-.registerPage {
+.loginPage {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
   padding: 1rem;
 }
 
-.registerContainer {
+.loginContainer {
   background: white;
   padding: 2rem;
   border-radius: 10px;
@@ -31,48 +31,33 @@ body {
   align-items: center;
 }
 
-.registerForm {
+.loginForm {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.registerFormControl {
+.loginFormControl {
   width: 100%;
 }
 
-.registerButton {
-  background-color: #f58a08;
-  color: white;
-  padding: 0.75rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.registerButton:hover {
-  background-color: #f58a08;
-  color: white;
-}
-
-.registerText {
+.loginText {
   margin-top: 1rem;
 }
 
-.registerLink {
+.loginLink {
   color: #f58a08;
   text-decoration: none;
   font-weight: bold;
 }
 
-.registerLink:hover {
+.loginLink:hover {
   text-decoration: underline;
 }
 
 @media (min-width: 768px) {
-  .registerContainer {
+  .loginContainer {
     width: 50%;
     max-width: 600px;
   }
