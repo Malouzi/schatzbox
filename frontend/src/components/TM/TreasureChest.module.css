@@ -3,27 +3,25 @@
 
 .chestContainer {
     position: absolute;
-    bottom: 200px;  
-    left: 400px;
+    bottom: 430px;  
+    left: 50%;
     transform: translateX(-50%);
-   width: 2360px;
-    height: 1640px;
-    /*overflow: visible;*/
+   width: 100vw;
+    height: auto;
     z-index: 20;
     cursor: pointer;  
 }
 
-.overlay {
-  position: absolute;
-  top: 1370px;
-  right: 180px;
-transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
+  .overlay {
+    position: absolute;
+    top: 50%;    
+    left: 55%;   
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
 
 .modal {
 
@@ -36,7 +34,7 @@ transform: translate(-50%, -50%);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   color: rgb(62, 207, 103);
-  padding: 10px 15px;
+  padding: 5px 10px;
   border: 2px solid rgb(112, 59, 13);
   border-radius: 5px;
   background-color: #F0EAD6;
@@ -60,3 +58,74 @@ transform: translate(-50%, -50%);
   background-color: #85e730;
 }
 
+/* Tablet-Anpassungen (ab 768px) */
+@media (min-width: 768px) {
+  .chestContainer {
+    bottom: 210px;
+    left: 400px;
+    width: 100vw;        
+  }
+
+  .overlay {
+    top: 75%;
+    left: 71%;
+    width:250px;
+    height:180px;
+  }
+
+  .modal {
+    width:155px;
+    height:70px;
+  }
+
+
+ .discountCode {
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color:rgb(62, 207, 103);
+  
+   }
+  
+    .copyButton {
+      width:120px;
+      height: 25px;
+      font-size: 0.8rem;
+      margin-bottom: 45px;
+    }
+
+}
+
+/* Desktop-Anpassungen (ab 1024px) */
+@media (min-width: 1024px) {
+  .chestContainer {
+    bottom: 200px;
+    left:570px;
+    width: 120vw;     
+  }
+  .overlay {
+    top: 82%;
+    left: 85%;
+    width: 80px;
+    height:50px;
+  }
+
+  .modal {
+    width:160px;
+    height:70px;
+  }
+
+ .discountCode {
+margin-top: 40px;
+margin-bottom: 5px;
+font-size: 1rem;
+color:rgb(62, 207, 103);
+ }
+
+  .copyButton {
+    width:100px;
+    height: 25px;
+    font-size: 0.7rem;
+    margin-bottom: 45px;
+  }
+}

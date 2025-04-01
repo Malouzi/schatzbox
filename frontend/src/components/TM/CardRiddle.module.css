@@ -8,7 +8,7 @@
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   text-align: center;
-  width: 280px;
+  width: 220px;
   margin: auto;
 }
 
@@ -40,3 +40,18 @@
   background-color: #e1efc4;
   color: #794607;
 }
+
+/* Tablet-Version (ab 768px) */
+@media (min-width: 768px) {
+.cardriddle {
+  width: 260px;
+}
+}
+
+/* Desktop-Version (ab 1024px) */
+@media (min-width: 1024px) {
+  .cardriddle {
+    width: 280px;
+  }
+}
+

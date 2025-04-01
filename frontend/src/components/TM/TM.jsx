@@ -39,7 +39,7 @@ const TM = () => {
         <EichhoernchenMitSprechblase /> 
       </svg>
          {/* TreasureChest-Komponente mit Props*/}
-         <TreasureChest solvedAll={solvedAll} discountCode="SCHATZBOX10"/> 
+         <TreasureChest solvedAll={solvedAll} discountCode="SCHATZBOX10" className={styles.treasureChest}/> 
     </div>
   );
 };
