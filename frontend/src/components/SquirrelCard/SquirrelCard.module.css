@@ -1,22 +1,24 @@
-/*SquirrelCard.module.css*/
+/* SquirrelCard.module.css */
 
+/* Mobile-First Basis-Stile */
 .cardContainer {
   position: relative;
   background-color: #fff;
-  padding: 50px 20px 40px;
+  padding: 50px 70px 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(185, 115, 95, 0.2);
-  max-width: 420px;
-  margin-left: 68%; /* Abstand zum rechten Rand */
+  width: 95%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .cardContent {
   position: relative;
-  margin-left: 100px;
-  padding-left: 100px;
-  align-items: center;
   display: flex;
-  flex-direction: column; /* Damit Sprechblase und Pfeil untereinander stehen */
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .closeButton {
@@ -29,7 +31,7 @@
   height: 28px;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   cursor: pointer;
   z-index: 10;
 }
@@ -45,15 +47,16 @@
 
 .squirrelImage {
   position: absolute;
-  width: 100%; 
+  width: 75%;
   height: auto;
-  top: -30px;
-  left: -150px;
+  top: 22px;
+  left: -80px;
   z-index: 1;
   object-fit: contain;
 }
 
 .speechBubble {
+  width:85%;
   background: rgba(188, 74, 12, 0.7);
   color: #fff;
   padding: 8px;
@@ -61,7 +64,8 @@
   position: relative;
   text-align: center;
   flex: 1;
-  margin-bottom: 20px; /* Abstand zum Pfeil */
+  margin-bottom: 20px;
+  margin-left:160px;
 }
 
 .speechText {
@@ -70,16 +74,15 @@
   line-height: 1.4;
 }
 
-/* Pfeil außerhalb der Sprechblase, in Schwarz und mit Hover-Effekt */
 .arrowLink {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content:right;
   cursor: pointer;
   z-index: 10;
   text-decoration: none;
   transition: transform 0.4s ease;
-  color: #000;  /* Pfeil in Schwarz */
+  color: #000;
 }
 
 .arrowLink:hover {
@@ -88,20 +91,29 @@
 
 .arrowIcon {
   font-size: 48px;
-  color: inherit;  /*das Icoon erbt die Farbe (#000) vom Link */
+  color: inherit;
 }
 
-/* Responsive Anpassung für mobile Geräte */
-@media (max-width: 768px) {
+/* Desktop-Stile für größere Bildschirme */
+@media (min-width: 769px) {
   .cardContainer {
-    width: 95%;
-    max-width: 100%;
-    margin: 0 auto;
+    max-width: 420px;
+    margin-left: 68%; /* Abstand zum rechten Rand */
   }
+  
   .cardContent {
-    flex-direction: column;
+    margin-left: 0px;
+    padding-left: 100px;
   }
+  
+.speechBubble {
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 90px;
+}
+
   .squirrelImage {
-    width: 80%;
+    width: 90%;
+    top: -10px;
   }
 }
