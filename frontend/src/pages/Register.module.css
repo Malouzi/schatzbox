@@ -43,7 +43,7 @@ body {
 }
 
 .registerButton {
-  background-color: #f58a08;
+  background-color: #f58a08 !important;
   color: white;
   padding: 0.75rem;
   border-radius: 5px;
