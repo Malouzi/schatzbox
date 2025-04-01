@@ -1,3 +1,4 @@
+/* Allgemeine Styles für die Slideshow */
 .sliderContainer {
   position: relative;
   width: 100%;
@@ -12,7 +13,64 @@
 .sliderImage {
   width: 100%;
   object-fit: cover;
-  object-position: center; /* Bild Ausichtung Mitte */
+  object-position: center;
+}
+
+.customDot {
+  background-color: #f58a08;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Media Queries für Desktop-Ansicht und Icons */
+@media screen and (min-width: 398px) {
+  .iconContainer {
+    display: none; /* Icons werden auf kleineren Bildschirmen ausgeblendet */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sliderImage {
+    height: 60vh; /* Bildhöhe auf größeren Bildschirmen */
+  }
+
+  /* Container für Social Media Icons */
+  .iconContainer {
+    display: flex !important;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    z-index: 10 !important;
+  }
+
+  /* Styling für die Social Media Icons */
+  .icon {
+    font-size: 30px;
+  }
+}
+
+
+
+/* .sliderContainer {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  position: relative;
+}
+
+.sliderImage {
+  width: 100%;
+  object-fit: cover;
+  object-position: center; 
 }
 
 .customDot {
@@ -24,6 +82,6 @@
 
 @media screen and (min-width: 768px) {
   .sliderImage {
-    height: 60vh; 
+    height: 80vh; 
     }
-}
+} */

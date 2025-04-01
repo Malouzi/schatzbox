@@ -57,7 +57,7 @@ export default function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/kontakt">Kontakt</Link>
+            <Link to="/Contact">Kontakt</Link>
           </li>
           <li>
             {isAuthenticated ? (
