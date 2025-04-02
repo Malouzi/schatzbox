@@ -78,7 +78,21 @@ const Register = () => {
             />
           </FormControl>
 
-          <Button type="submit" variant="contained" className={styles.registerButton}>
+          <Button
+            type="submit"
+            variant="contained"
+            className={styles.loginButton}
+            sx={{
+              backgroundColor: "#f58a08",
+              color: "#fff",
+              border: "2px solid transparent",
+              "&:hover": {
+                backgroundColor: "#fff",
+                color: "#f58a08",
+                border: "2px solid #f58a08",
+              },
+            }}
+          >
             Registrieren
           </Button>
         </form>
