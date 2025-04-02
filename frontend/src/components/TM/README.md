@@ -42,4 +42,6 @@ npx @svgr/cli src/assets/Nurdeckel.svg --out-dir src/components/TM
 
 npx @svgr/cli src/assets/Pfad3.svg --out-dir src/components/TM
 
+npx @svgr/cli src/assets/Kompass1.svg --out-dir src/components/TM
+
 + svgo.config.cjs

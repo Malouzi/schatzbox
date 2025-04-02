@@ -47,7 +47,7 @@ const TreasureChest = ({ solvedAll, discountCode }) => {
       <div className={styles.overlay} onClick={() => setShowOverlay(false)}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
           {/*<h2>Rabattcode:</h2>*/}
-          <p>{discountCode}</p>
+          <p className={styles.discountCode}>{discountCode}</p>
           <button
             className={styles.copyButton}
             onClick={() => {

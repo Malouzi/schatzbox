@@ -2,10 +2,13 @@
 - npm install (Marie)
 - npm install react-router-dom (Marie)
 - npm install sweetalert2 (Simia)
-- npm i react-icons (Marie)
+- npm i react-icons (Marie/Nell)
 - npm i axios (Marie)
 - npm i notistack (Marie)
 - npm i react-slick (Simia)
+- npm i framer-motion (Nell)
+- npm install gsap (Nell)
+
 
 # ContactForm:
 - used web3forms and connected for results to simia_karegar@live.de
