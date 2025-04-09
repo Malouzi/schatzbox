@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ProductCard from '../ProductCard/ProductCard';
-import styles from './ProductList.module.css';
+
 
 const ProductList = ({ products }) => {
   return (
@@ -14,10 +14,11 @@ const ProductList = ({ products }) => {
           description={product.description}
           coverImage={product.coverImage}
           price={product.price}
-          rating={product.rating} // Bewertung übergeben
-          availability={product.availability} // Verfügbarkeit übergeben
+          //rating={product.rating} // Bewertung übergeben
+          //availability={product.availability} // Verfügbarkeit übergeben
         />
       ))}
+      <p>★</p>
     </div>
   );
 };
@@ -30,8 +31,8 @@ ProductList.propTypes = {
       description: PropTypes.string.isRequired,
       coverImage: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired,
-      availability: PropTypes.bool.isRequired,
+      showRating={false}
+showAvailability={false}
     })
   ).isRequired,
 };
