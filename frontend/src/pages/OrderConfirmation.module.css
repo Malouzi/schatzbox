@@ -1,0 +1,15 @@
+.confirmationContainer {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.confirmationContainer h1 {
+  color: #333;
+}
+
+.confirmationContainer p {
+  color: #666;
+}

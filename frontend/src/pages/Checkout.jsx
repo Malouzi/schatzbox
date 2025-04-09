@@ -1,11 +1,10 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
-import axios from 'axios';
 import styles from './Checkout.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
-  const { cartItems, totalPrice, clearCart } = useContext(CartContext);
-  const [sameAddress, setSameAddress] = useState(false);
+  const { cartItems, clearCart } = useContext(CartContext);
   const [formData, setFormData] = useState({
     name: '',
     billingStreet: '',
@@ -14,51 +13,36 @@ const Checkout = () => {
     shippingPostalCode: '',
     paymentMethod: 'rechnung',
   });
-  const [orderStatus, setOrderStatus] = useState(null);
+  const [sameAddress, setSameAddress] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleCheckboxChange = (e) => {
-    setSameAddress(e.target.checked);
-    if (e.target.checked) {
+  const handleCheckboxChange = () => {
+    setSameAddress(!sameAddress);
+    if (!sameAddress) {
       setFormData({
         ...formData,
         shippingStreet: formData.billingStreet,
         shippingPostalCode: formData.billingPostalCode,
       });
+    } else {
+      setFormData({
+        ...formData,
+        shippingStreet: '',
+        shippingPostalCode: '',
+      });
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const userId = '12345'; 
-    const productIds = cartItems.map(item => item.id);
-    const status = 'pending';
-    const notes = '';
-
-    try {
-      const response = await axios.post('/orders/order', {
-        userId,
-        productIds,
-        status,
-        notes,
-      });
     
-      console.log("Antwort vom Server:", response.data);
-      
-      if (response.status === 201) {
-        setOrderStatus('Bestellung erfolgreich!');
-        clearCart();
-      } else {
-        setOrderStatus('Fehler beim Absenden der Bestellung. Bitte versuchen Sie es erneut.');
-      }
-    } catch (error) {
-      console.error('Fehler beim Erstellen der Bestellung:', error);
-      setOrderStatus('Fehler beim Absenden der Bestellung. Bitte versuchen Sie es erneut.');
-    }
+    navigate('/order-confirmation');
+    clearCart(); 
   };
 
   return (
@@ -78,7 +62,6 @@ const Checkout = () => {
               required
             />
           </div>
-
           <h3>Rechnungsadresse</h3>
           <div>
             <label>Straße:</label>
@@ -100,7 +83,27 @@ const Checkout = () => {
               required
             />
           </div>
-
+          <h3>Lieferadresse</h3>
+          <div>
+            <label>Straße:</label>
+            <input
+              type="text"
+              name="shippingStreet"
+              value={sameAddress ? formData.billingStreet : formData.shippingStreet}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Postleitzahl:</label>
+            <input
+              type="text"
+              name="shippingPostalCode"
+              value={sameAddress ? formData.billingPostalCode : formData.shippingPostalCode}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div>
             <input
               type="checkbox"
@@ -109,33 +112,6 @@ const Checkout = () => {
             />
             <label>Lieferadresse gleich Rechnungsadresse</label>
           </div>
-
-          {!sameAddress && (
-            <>
-              <h3>Lieferadresse</h3>
-              <div>
-                <label>Straße:</label>
-                <input
-                  type="text"
-                  name="shippingStreet"
-                  value={formData.shippingStreet}
-                  onChange={handleChange}
-                  required={!sameAddress}
-                />
-              </div>
-              <div>
-                <label>Postleitzahl:</label>
-                <input
-                  type="text"
-                  name="shippingPostalCode"
-                  value={formData.shippingPostalCode}
-                  onChange={handleChange}
-                  required={!sameAddress}
-                />
-              </div>
-            </>
-          )}
-
           <div>
             <label>Zahlungsmethode:</label>
             <select
@@ -147,14 +123,9 @@ const Checkout = () => {
               <option value="vorkasse">Vorkasse</option>
             </select>
           </div>
-
-          <h3>Gesamtpreis: {totalPrice} €</h3>
-          <button type="submit" className={styles.buttonblue}>Bestellen</button>
+          <button type="submit">Bestellen</button>
         </form>
       )}
-
-      {/* Erfolgs-/Fehlermeldung anzeigen */}
-      {orderStatus && <p>{orderStatus}</p>}
     </div>
   );
 };

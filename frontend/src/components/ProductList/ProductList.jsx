@@ -33,7 +33,7 @@ ProductList.propTypes = {
       rating: PropTypes.number.isRequired,
       availability: PropTypes.bool.isRequired,
     })
-  ).isRequired, // Prop-Validierung für products
+  ).isRequired,
 };
 
 export default ProductList;

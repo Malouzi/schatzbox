@@ -1,29 +1,26 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext.jsx";
 import styles from "./Cart.module.css";
 import { Alert, Button } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, totalPrice } =
     useContext(CartContext);
-
-  const handlePrepayment = async () => {
-    const response = await fetch("/api/payment/confirm-prepayment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ orderId: "12345" }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      alert(data.message);
+  const [discountCode, setDiscountCode] = useState("");
+  const [discountApplied, setDiscountApplied] = useState(false);
+  const navigate = useNavigate();
+  const handlePrepayment = () => {
+    navigate("/checkout");
+  };
+  const applyDiscount = () => {
+    if (discountCode === "SCHATZBOX10") {
+      setDiscountApplied(true);
     } else {
-      alert("Fehler bei der Zahlungsbestätigung");
+      alert("Ungültiger Rabattcode");
     }
   };
-
+  const discountAmount = discountApplied ? totalPrice * 0.1 : 0;
+  const finalPrice = totalPrice - discountAmount;
   return (
     <div className={styles.cartPage}>
       <div className={styles.cartContainer}>
@@ -63,7 +60,35 @@ const Cart = () => {
                 </div>
               </div>
             ))}
-            <h3 className={styles.totalPrice}>Gesamtpreis: {totalPrice} €</h3>
+            {/* Rabattcode-Eingabezeile */}
+            <div className={styles.discountRow}>
+              <input
+                type="text"
+                value={discountCode}
+                onChange={(e) => setDiscountCode(e.target.value)}
+                placeholder="Rabattcode"
+                className={styles.discountInput}
+              />
+              <Button variant="contained" onClick={applyDiscount}>
+                Rabatt anwenden
+              </Button>
+            </div>
+            <div className={styles.priceSummary}>
+              <div className={styles.labelColumn}>
+                <p>Gesamtpreis:</p>
+                {discountApplied && <p>Rabatt:</p>}
+                <p>zu zahlender Betrag (inkl. MwSt.):</p>
+              </div>
+              <div className={styles.valueColumn}>
+                <p>{totalPrice.toFixed(2)} €</p>
+                {discountApplied && (
+                  <p className={styles.discountAmount}>
+                    -{discountAmount.toFixed(2)} €
+                  </p>
+                )}
+                <p>{finalPrice.toFixed(2)} €</p>
+              </div>
+            </div>
           </div>
         )}
         {cartItems.length > 0 && (
@@ -79,5 +104,4 @@ const Cart = () => {
     </div>
   );
 };
-
 export default Cart;

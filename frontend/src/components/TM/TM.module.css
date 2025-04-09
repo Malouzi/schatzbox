@@ -5,23 +5,29 @@
 .mapContainer {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 145vh;
   overflow: hidden;
-  pointer-events: none;
-}
-
-.background {
+  pointer-events: none; }
+  /*
+  background-image: url('../../assets/Background.png'); /* Pfad zum Bild
+  background-size: cover;      /* Bild passt sich an den Container an
+  background-position: top center; /* Zentriert das Bild
+  background-repeat: no-repeat; /* Verhindert Wiederholungen
+*/
+/* Hintergrundbild als Pseudo-Element */
+.mapContainer::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Sorgt dafür, dass das Bild immer passend skaliert */
-  pointer-events: auto;
-  z-index: 1;
+  height: 100%; /* sichtbare Bereich Höhe */
+  background-image: url('../../assets/Background.png');
+  background-size: 100vh;
+  background-position: top right;
+  background-repeat: no-repeat;
+  z-index: 0; /* Damit es hinter den anderen Inhalten liegt */
 }
-
-
 .svgContainer {
   position: absolute;
   top: 0;
@@ -30,38 +36,36 @@
   height: 50%;
   z-index: 10;
 }
-
 .treasureChest {
   position: absolute;
-  bottom: 15px;
+bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
-  max-width: 40%;  /* relative Breite, damit sie nicht zu groß wird */
+  max-width: 60%;  /* relative Breite, damit sie nicht zu groß wird */
 }
-
-/* Tablet-Version (ab 768px) */
+/* Tablet (ab 768px) */
 @media (min-width: 768px) {
-
   .svgContainer {
     height: 100%;
   }
-  
- 
   .treasureChest {
-    max-width: 30%;
+    width: 30%;
     bottom: 20px;
   }
 }
-
-/* Desktop-Version (ab 1024px) */
+/* Desktop (ab 1024px) */
 @media (min-width: 1024px) {
-
   .svgContainer {
-    height: 110%;
+    height: 65%;
+    width: 100%;
   }
-  
-
+  @media (min-width: 1024px) {
+    .mapContainer::before {
+      background-size: 140vh;
+      background-position: top center;
+    }
+  }
   .treasureChest {
     max-width: 20%;
     bottom: 30px;

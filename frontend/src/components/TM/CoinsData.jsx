@@ -60,11 +60,11 @@ const coinsData = [
       imageSrc: coinImg,
       transform: "matrix(0.1704 0 0 0.1704 680 850)",
       riddle: {
-        text: "Wer scheint in der Nacht?",
+        text: "Welche Farbe hat der Himmel?",
         options: [
-          { label: "Der Mond", correct: true },
-          { label: "Die Sonne", correct: false },
-          { label: "Die Planeten", correct: false }
+          { label: "blau", correct: true },
+          { label: "braun", correct: false },
+          { label: "grün", correct: false }
         ]
       }
     },

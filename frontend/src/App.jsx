@@ -7,6 +7,7 @@ import Checkout from './pages/Checkout';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
+import OrderConfirmation from './pages/OrderConfirmation';
 import ProductSection from './components/ProductSection/ProductSection';
 import Angebote from './components/Angebote';
 import ContactForm from './components/ContactForm/ContactForm';
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/schatzkarte" element={<TM />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           

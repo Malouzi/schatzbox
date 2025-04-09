@@ -1,7 +1,6 @@
 //TM.jsx
 
 import React, { useState } from 'react';
-import Background from "./Background.jsx";
 import TreasureChest from "./TreasureChest.jsx";
 import styles from "./TM.module.css";
 import Coins from "./Coins.jsx";
@@ -22,9 +21,7 @@ const TM = () => {
 
   return (
     <div className={styles.mapContainer}>
-      {/* Hintergrundbild */}
-        <Background className={styles.background} /> 
-        
+              
 
       {/* SVG-Container für die Animationen */}
       <svg
