@@ -52,6 +52,7 @@ const Checkout = () => {
         <p>Ihr Warenkorb ist leer.</p>
       ) : (
         <form onSubmit={handleSubmit}>
+            <h3>Rechnungsadresse</h3>
           <div>
             <label>Name:</label>
             <input
@@ -60,10 +61,9 @@ const Checkout = () => {
               value={formData.name}
               onChange={handleChange}
               required
-            />
-          </div>
-          <h3>Rechnungsadresse</h3>
-          <div>
+              />
+              </div>
+              <div>
             <label>Straße:</label>
             <input
               type="text"
@@ -82,6 +82,14 @@ const Checkout = () => {
               onChange={handleChange}
               required
             />
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              checked={sameAddress}
+              onChange={handleCheckboxChange}
+            />
+            <label>Lieferadresse gleich Rechnungsadresse</label>
           </div>
           <h3>Lieferadresse</h3>
           <div>
@@ -103,14 +111,6 @@ const Checkout = () => {
               onChange={handleChange}
               required
             />
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              checked={sameAddress}
-              onChange={handleCheckboxChange}
-            />
-            <label>Lieferadresse gleich Rechnungsadresse</label>
           </div>
           <div>
             <label>Zahlungsmethode:</label>

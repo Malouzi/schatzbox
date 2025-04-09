@@ -1,17 +1,13 @@
-//SquirrelCard.jsx
-
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdClose, MdKeyboardArrowRight } from 'react-icons/md';
 import { gsap } from 'gsap';
 import styles from './SquirrelCard.module.css';
 import squirrelImage from '../../assets/EichhörnchenWinkt.svg';
-
 export default function SquirrelCard() {
   const [visible, setVisible] = useState(true);
   const navigate = useNavigate();
   const squirrelRef = useRef(null);
-
   useEffect(() => {
     if (visible) {
       gsap.fromTo(
@@ -21,22 +17,18 @@ export default function SquirrelCard() {
       );
     }
   }, [visible]);
-
   const handleNavigate = (e) => {
     e.stopPropagation();
     navigate('/schatzkarte');
   };
-
   const handleClose = (e) => {
     e.stopPropagation();
     setVisible(false);
   };
-
   if (!visible) return null;
-
   return (
     <div className={styles.cardContainer}>
-      {/* Schließ-Button */}
+      {/* Schließ-Button
       <button
         className={styles.closeButton}
         onClick={handleClose}
@@ -44,8 +36,7 @@ export default function SquirrelCard() {
         aria-label="Karte schließen"
       >
         <MdClose className={styles.closeIcon5} />
-      </button>
-
+      </button> */}
       <div className={styles.cardContent}>
         <img
           ref={squirrelRef}
@@ -53,7 +44,6 @@ export default function SquirrelCard() {
           alt="Eichhörnchen"
           className={styles.squirrelImage}
         />
-
         <div className={styles.speechBubble}>
           <p className={styles.speechText}>
             Hey, Lust auf einen Rabattcode?
@@ -61,7 +51,6 @@ export default function SquirrelCard() {
             Dann komm mal mit ...
           </p>
         </div>
-
         {/* Pfeil außerhalb der Sprechblase */}
         <a
           href="/schatzkarte"
@@ -75,4 +64,4 @@ export default function SquirrelCard() {
       </div>
     </div>
   );
-} 
+}

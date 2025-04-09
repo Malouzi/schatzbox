@@ -7,12 +7,10 @@ import Checkout from './pages/Checkout';
 import Welcome from './components/Welcome/Welcome';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import OrderConfirmation from './pages/OrderConfirmation';
 import ProductSection from './components/ProductSection/ProductSection';
 import Angebote from './components/Angebote';
 import ContactForm from './components/ContactForm/ContactForm';
 import ProtectedRoute from './components/ProtectedRoutes';
-import SquirrelCard from './components/SquirrelCard/SquirrelCard';
 import { Admin } from './pages/Admin';
 import { EditProduct } from './pages/EditProduct';
 import { DeleteProduct } from './pages/DeleteProduct';
@@ -24,32 +22,26 @@ import Imprint from "./components/Imprint/Imprint";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Contact from "./components/Contact/Contact";
 import CustomerProfile from "./pages/CustomerProfile";
-
 export default function App() {
   return (
     <AuthProvider>
       <Router>
         <Navbar />
-
         <Routes>
           <Route path="/" element={
             <>
-              <Welcome />
-              { <SquirrelCard /> }
+            <Welcome />
               <main>
                 <ProductSection />
                 <ContactForm />
               </main>
             </>
-
           } />
-          
           <Route path="/customer-profile" element={
             <ProtectedRoute>
               <CustomerProfile />
             </ProtectedRoute>
           } />
-          
           <Route path="/angebote" element={<Angebote />} />
           <Route path="/imprint" element={<Imprint />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -58,21 +50,16 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/schatzkarte" element={<TM />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          
           {/* Admin Bereich ohne Schutz zum Testen vorläufig */}
           <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
-
-
         <Footer />
       </Router>
     </AuthProvider>
   );
 }
-
 const AdminRoutes = () => {
   return (
     <Routes>
@@ -82,3 +69,9 @@ const AdminRoutes = () => {
     </Routes>
   );
 };
+
+
+
+
+
+

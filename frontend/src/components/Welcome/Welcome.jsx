@@ -6,13 +6,19 @@ import Slideshow from "../Slideshow/Slideshow";
 import styles from "./Welcome.module.css";
 import CirclesRight from "../Circles/CirclesRight";
 import CirclesLeft from "../Circles/CirclesLeft";
-//import { FaHome, FaUser, FaCog } from 'react-icons/fa'
-
+import SquirrelCard from '../SquirrelCard/SquirrelCard';
 export default function Welcome() {
   return (
     <>
       <Slideshow />
-      <CirclesRight />
+      <div className={styles.bubbleCardWrapper}>
+  <div className={styles.bubbles}>
+    <CirclesLeft />
+  </div>
+  <div className={styles.card}>
+    <SquirrelCard />
+  </div>
+</div>
       <div className={styles.container1}>
         <h1>Willkommen bei Schatzbox</h1>
         <br />
@@ -38,8 +44,6 @@ export default function Welcome() {
         <br />
         <h1>Und so einfach funktioniert's:</h1>
       </div>
-
-
       <div className={styles.listContainer}>
         <div className={styles.container2}>
           <ul className={styles.listWelcome}>
@@ -52,7 +56,6 @@ export default function Welcome() {
             </li>
           </ul>
         </div>
-
         <div className={styles.container3}>
           <ul className={styles.listWelcome}>
             <li className={styles.listItem}>
@@ -63,7 +66,6 @@ export default function Welcome() {
             </li>
           </ul>
         </div>
-
         <div className={styles.container4}>
           <ul className={styles.listWelcome}>
             <li className={styles.listItem}>
@@ -75,8 +77,7 @@ export default function Welcome() {
           </ul>
     </div>
       </div>
-
-      <CirclesLeft />
+      <CirclesRight />
     </>
   );
 }
