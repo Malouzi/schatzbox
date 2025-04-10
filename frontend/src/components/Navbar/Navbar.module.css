@@ -8,112 +8,96 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  position: relative; 
+  position: relative;
 }
-
 .navbar-left {
   display: flex;
   align-items: center;
   position: relative;
 }
-
 .hamburger {
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
-
 .hamburger span {
   display: block;
   width: 29px;
   height: 2.5px;
-  background-color: #f58a08;
+  background-color: #F58A08;
   margin: 2.7px 0;
   transition: all 0.3s ease;
   transform-origin: center;
 }
-
 .navbar-left.open .hamburger span:nth-child(1) {
   transform: translateY(5px) rotate(45deg);
 }
-
 .navbar-left.open .hamburger span:nth-child(2) {
   opacity: 0;
 }
-
 .navbar-left.open .hamburger span:nth-child(3) {
   transform: translateY(-11px) rotate(-45deg);
 }
-
 .navbar-left ul {
   display: none;
   flex-direction: column;
   position: absolute;
   list-style: none !important;
-  top: 5rem;
-  left: 0;
+  top: 60px; /* Menü am unteren Rand der Navbar */
+  left: -50px;   /* ganz links */
   width: 15rem;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 999;
 }
-
 .navbar-left.open ul {
   display: flex;
 }
-
 .navbar-left li {
   display: block;
   cursor: pointer;
   font-size: 1.1rem;
   color: black;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .navbar-left a {
   display: block;
-  color: #f58a08;
+  color: #F58A08;
   text-decoration: none;
   list-style: none;
   padding: 1rem;
+  transition: color 0.3s ease;
 }
-
-.navbar-left a:hover {
+/* Hover-Effekt */
+.navbar-left li:hover {
+  background-color: #F58A08;
+}
+.navbar-left li:hover a {
   color: white;
 }
-
 .navbar-left .dropdown {
   background-color: white;
   margin: 0;
   list-style: none;
 }
-
-.navbar-left li:hover {
-  background-color: #f58a08;
-  color: white;
-}
-
 .navbarMiddle {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  z-index: 10; 
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
-
 .navbarMiddle img {
-  height: 70px;
+  height: 65px;
   transition: transform 0.3s ease;
 }
-
 .navbarMiddle img:hover {
   transform: scale(1.05);
 }
-
 .navbarRight {
   position: relative;
 }
-
 .cartIcon {
   background: none;
   border: none;
@@ -123,12 +107,10 @@
   transition: transform 0.3s ease;
   position: relative;
 }
-
 .cartIcon:hover {
   transform: scale(1.1);
   font-weight: bold;
 }
-
 .cartCount {
   background-color: orange;
   color: white;
@@ -143,44 +125,36 @@
   right: -5px;
   font-size: 10px;
 }
-
 .btnLogout {
   border: none;
 }
-
 @media screen and (min-width: 1024px) {
   .navbar-left {
     display: flex;
     position: static;
   }
-
   .hamburger {
-    display: none; 
+    display: none;
   }
-
   .navbar-left ul {
-    display: flex; 
+    display: flex;
     position: static;
     flex-direction: row;
     width: auto;
     box-shadow: none;
   }
-
   .navbar-left li {
     display: inline-block;
     margin-right: 2rem;
   }
-
   .navbar-left .dropdown {
     background-color: transparent;
   }
 }
-
 @media screen and (max-width: 1024px) {
   .navbar-left ul {
     display: none;
   }
-
   .navbar-left.open ul {
     display: flex;
     flex-direction: column;

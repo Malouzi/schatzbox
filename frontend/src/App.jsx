@@ -22,6 +22,8 @@ import Imprint from "./components/Imprint/Imprint";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 import Contact from "./components/Contact/Contact";
 import CustomerProfile from "./pages/CustomerProfile";
+import OrderConfirmation from "./pages/OrderConfirmation";
+
 export default function App() {
   return (
     <AuthProvider>
@@ -50,6 +52,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/schatzkarte" element={<TM />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           {/* Admin Bereich ohne Schutz zum Testen vorläufig */}
